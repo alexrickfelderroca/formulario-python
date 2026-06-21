@@ -241,7 +241,7 @@ pre code{white-space:pre}
 <a class="lvl3" href="#buscar-si-el-valor-esta-si-no-interpolar-patron-de-examen">Buscar si el valor está; si no, interpolar (patrón de examen)</a>
 <a class="lvl3" href="#interpolacion-de-lagrange-version-pura-sin-librerias-evaluar-en-un-punto">Interpolación de Lagrange — versión PURA (sin librerías), evaluar en un punto</a>
 <a class="lvl3" href="#interpolacion-de-lagrange-con-los-3-puntos-mas-cercanos">Interpolación de Lagrange con los 3 puntos más cercanos</a>
-<a class="lvl3" href="#interpolacion-de-lagrange-con-sympy-polinomio-simbolico">Interpolación de Lagrange con sympy (polinomio simbólico)</a>
+<a class="lvl3" href="#lagrange-de-tus-listas-x-y-al-polinomio-la-grafica-con-librerias">Lagrange: de tus listas x, y al polinomio + la gráfica (con librerías)</a>
 <a class="lvl3" href="#polinomio-interpolador-de-newton-diferencias-divididas">Polinomio interpolador de Newton (diferencias divididas)</a>
 <a class="lvl3" href="#vandermonde">Vandermonde</a>
 <a class="lvl3" href="#splines-cubicos">Splines cúbicos</a>
@@ -400,7 +400,7 @@ pre code{white-space:pre}
 <a class="t3" href="#buscar-si-el-valor-esta-si-no-interpolar-patron-de-examen">Buscar si el valor está; si no, interpolar (patrón de examen)</a>
 <a class="t3" href="#interpolacion-de-lagrange-version-pura-sin-librerias-evaluar-en-un-punto">Interpolación de Lagrange — versión PURA (sin librerías), evaluar en un punto</a>
 <a class="t3" href="#interpolacion-de-lagrange-con-los-3-puntos-mas-cercanos">Interpolación de Lagrange con los 3 puntos más cercanos</a>
-<a class="t3" href="#interpolacion-de-lagrange-con-sympy-polinomio-simbolico">Interpolación de Lagrange con sympy (polinomio simbólico)</a>
+<a class="t3" href="#lagrange-de-tus-listas-x-y-al-polinomio-la-grafica-con-librerias">Lagrange: de tus listas x, y al polinomio + la gráfica (con librerías)</a>
 <a class="t3" href="#polinomio-interpolador-de-newton-diferencias-divididas">Polinomio interpolador de Newton (diferencias divididas)</a>
 <a class="t3" href="#vandermonde">Vandermonde</a>
 <a class="t3" href="#splines-cubicos">Splines cúbicos</a>
@@ -3341,15 +3341,18 @@ print("Temperatura estimada en t =", x_objetivo, ":", valor)</code></pre></div>
 Temperatura estimada en t = 2.5 : 58.4875</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Para <code class="inline">x_objetivo = 2.5</code> las distancias son: a 0→2.5, a 1→1.5, a 2→0.5, a 3→0.5, a 4→1.5. Los tres más cercanos son los de <code class="inline">x = 2, 3, 1</code> (distancias 0.5, 0.5, 1.5), que reordenados por <code class="inline">x</code> dan <code class="inline">[(1,50.5),(2,55.8),(3,61.2)]</code>. Eso reproduce EXACTAMENTE la salida del examen.</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si dos puntos empatan en distancia (como 1 y 4, ambos a 1.5) y solo cabe uno, el bubble sort estable se queda con el de menor índice/<code class="inline">x</code>. Si la salida no cuadra con la esperada del enunciado, revisa los empates: a veces el profe espera el de la izquierda.</div></div>
-<h3 id="interpolacion-de-lagrange-con-sympy-polinomio-simbolico">Interpolación de Lagrange con sympy (polinomio simbólico)</h3>
-<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>te DEJAN librerías y piden "el polinomio interpolador" (la fórmula expandida) o graficarlo, no solo un valor. Esta es la versión del alumno con <code class="inline">sympy</code>.</div></div>
-<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">x</code>, <code class="inline">y</code>: los datos.</li><li><code class="inline">x_eval</code> si quieres evaluar en puntos concretos.</li></ul></div></div>
+<h3 id="lagrange-de-tus-listas-x-y-al-polinomio-la-grafica-con-librerias">Lagrange: de tus listas x, y al polinomio + la gráfica (con librerías)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>te dan una <strong>lista de puntos <code class="inline">x</code> e <code class="inline">y</code></strong> y te piden "el <strong>polinomio interpolador</strong> que pasa por todos los puntos" y/o "<strong>represéntalo</strong> / haz la <strong>gráfica</strong>". Te DEJAN librerías. Es la versión "todo en uno": imprime la fórmula del polinomio, lo evalúa en el punto que quieras y dibuja la gráfica con los puntos. (Es el típico apartado del examen P1.)</div></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">x</code>, <code class="inline">y</code>: tus puntos.</li><li><code class="inline">x_new</code>: (opcional) un punto donde evaluar el polinomio.</li></ul></div></div>
+<div class="callout notouch"><span class="ico">🚫</span><div class="body"><span class="label">NO tocar</span>la función <code class="inline">lagrange_polinomio</code> y la parte de la gráfica.</div></div>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
 
-x = np.array([0, 1, 2, 3])
-y = np.array([1, 3, 2, 5])
+# === PON AQUÍ TUS PUNTOS ===
+x = np.array([0, 1, 2, 3])      # tus x
+y = np.array([1, 3, 2, 5])      # tus y
+x_new = 1.5                     # (opcional) un punto donde evaluar el polinomio
 
 X = sp.Symbol("x")
 
@@ -3364,22 +3367,32 @@ def lagrange_polinomio(x, y):
         P = P + y[i] * L
     return sp.expand(P)
 
+# 1) EL POLINOMIO interpolador (la fórmula)
 P = lagrange_polinomio(x, y)
-print("Polinomio de Lagrange:")
+print("Polinomio interpolador de Lagrange:")
 print(P)
 
+# 2) (opcional) evaluarlo en un punto
 f_lagrange = sp.lambdify(X, P, "numpy")
+print("Valor en x =", x_new, ":", float(f_lagrange(x_new)))
+
+# 3) LA GRÁFICA: curva + puntos + el punto evaluado
 x_eval = np.linspace(min(x), max(x), 200)
 y_eval = f_lagrange(x_eval)
 
-plt.plot(x_eval, y_eval, label="Lagrange")
-plt.scatter(x, y, label="Datos")
+plt.plot(x_eval, y_eval, label="Polinomio de Lagrange")
+plt.scatter(x, y, color="black", label="Datos")
+plt.scatter(x_new, f_lagrange(x_new), color="red", zorder=5, label="Predicción")
 plt.xlabel("x")
 plt.ylabel("y")
+plt.title("Interpolación de Lagrange")
 plt.legend()
 plt.grid(True)
 plt.show()</code></pre></div>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>La diferencia con la versión pura es que aquí <code class="inline">X = sp.Symbol("x")</code> es una variable simbólica, así que <code class="inline">sp.expand(P)</code> te da la FÓRMULA del polinomio (p. ej. <code class="inline">x**3 - 4*x**2 + ...</code>). Si solo necesitas un número y no te dejan librerías, usa <code class="inline">lagrange_eval</code> puro. Si necesitas la fórmula o la gráfica, usa esta.</div></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Polinomio interpolador de Lagrange:
+7*x**3/6 - 5*x**2 + 35*x/6 + 1
+Valor en x = 1.5 : 2.4375</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Cambias solo <code class="inline">x</code>, <code class="inline">y</code> (y <code class="inline">x_new</code> si quieres) y obtienes las 3 cosas: la FÓRMULA del polinomio por pantalla, su VALOR en el punto que elijas, y la GRÁFICA con la curva, los puntos en negro y la predicción en rojo. <code class="inline">X = sp.Symbol("x")</code> es lo que hace que salga la fórmula; si NO te dejan librerías, no puedes sacar la fórmula, pero sí el valor con la versión pura <code class="inline">lagrange_eval</code> (más arriba).</div></div>
 <h3 id="polinomio-interpolador-de-newton-diferencias-divididas">Polinomio interpolador de Newton (diferencias divididas)</h3>
 <div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>piden el polinomio interpolador "por el método de Newton" o "por diferencias divididas". Mismo resultado que Lagrange (el polinomio que pasa por todos los puntos es único), pero construido con la tabla de diferencias divididas. Versión del alumno (con librerías).</div></div>
 <div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">x</code>, <code class="inline">y</code>: los datos.</li></ul></div></div>
