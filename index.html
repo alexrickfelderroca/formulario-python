@@ -218,6 +218,7 @@ pre code{white-space:pre}
 <a class="lvl3" href="#resumen-cual-usar-y-complejidad">Resumen: cuál usar y complejidad</a>
 <a class="lvl2" href="#4-busqueda-y-deteccion"><span class="num">4</span>Búsqueda y detección</a>
 <a class="lvl3" href="#busqueda-exhaustiva-lineal">Búsqueda exhaustiva (lineal)</a>
+<a class="lvl3" href="#buscar-en-una-lista-de-tuplas-dado-x-devolver-f-x">Buscar en una lista de tuplas (dado x, devolver f(x))</a>
 <a class="lvl3" href="#buscar-todos-los-que-cumplen-una-condicion-contar-filtrar">Buscar todos los que cumplen una condición / contar / filtrar</a>
 <a class="lvl3" href="#busqueda-binaria-lista-ordenada">Búsqueda binaria (lista ordenada)</a>
 <a class="lvl3" href="#busqueda-estocastica-aleatoria">Búsqueda estocástica (aleatoria)</a>
@@ -286,7 +287,7 @@ pre code{white-space:pre}
 <a class="lvl3" href="#construir-una-matriz-de-0-y-1">Construir una matriz de 0 y 1</a>
 <a class="lvl3" href="#operaciones-sobre-matrices">Operaciones sobre matrices</a>
 <a class="lvl3" href="#representar-la-matriz-con-imshow">Representar la matriz con imshow</a>
-<a class="lvl3" href="#variantes-19">Variantes</a>
+<a class="lvl3" href="#variantes-20">Variantes</a>
 <a class="lvl2" href="#12-simulacion-de-estados-y-procesamiento-de-eventos"><span class="num">12</span>Simulación de estados y procesamiento de eventos</a>
 <a class="lvl3" href="#el-patron-general-recorrer-eventos-manteniendo-un-estado">El patrón general: recorrer eventos manteniendo un estado</a>
 <a class="lvl3" href="#convertir-horas-hh-mm-a-minutos-y-calcular-duraciones">Convertir horas "HH:MM" a minutos y calcular duraciones</a>
@@ -376,6 +377,7 @@ pre code{white-space:pre}
 <a class="t3" href="#resumen-cual-usar-y-complejidad">Resumen: cuál usar y complejidad</a>
 <a class="t2" href="#4-busqueda-y-deteccion"><span class="n">4.</span>Búsqueda y detección</a>
 <a class="t3" href="#busqueda-exhaustiva-lineal">Búsqueda exhaustiva (lineal)</a>
+<a class="t3" href="#buscar-en-una-lista-de-tuplas-dado-x-devolver-f-x">Buscar en una lista de tuplas (dado x, devolver f(x))</a>
 <a class="t3" href="#buscar-todos-los-que-cumplen-una-condicion-contar-filtrar">Buscar todos los que cumplen una condición / contar / filtrar</a>
 <a class="t3" href="#busqueda-binaria-lista-ordenada">Búsqueda binaria (lista ordenada)</a>
 <a class="t3" href="#busqueda-estocastica-aleatoria">Búsqueda estocástica (aleatoria)</a>
@@ -444,7 +446,7 @@ pre code{white-space:pre}
 <a class="t3" href="#construir-una-matriz-de-0-y-1">Construir una matriz de 0 y 1</a>
 <a class="t3" href="#operaciones-sobre-matrices">Operaciones sobre matrices</a>
 <a class="t3" href="#representar-la-matriz-con-imshow">Representar la matriz con imshow</a>
-<a class="t3" href="#variantes-19">Variantes</a>
+<a class="t3" href="#variantes-20">Variantes</a>
 <a class="t2" href="#12-simulacion-de-estados-y-procesamiento-de-eventos"><span class="n">12.</span>Simulación de estados y procesamiento de eventos</a>
 <a class="t3" href="#el-patron-general-recorrer-eventos-manteniendo-un-estado">El patrón general: recorrer eventos manteniendo un estado</a>
 <a class="t3" href="#convertir-horas-hh-mm-a-minutos-y-calcular-duraciones">Convertir horas "HH:MM" a minutos y calcular duraciones</a>
@@ -507,7 +509,7 @@ pre code{white-space:pre}
 <h4 id="ordenacion-y-ranking-parte-3">Ordenación y ranking (Parte 3)</h4>
 <ul><li>"<strong>ordena</strong> de mayor a menor / de menor a mayor" / "<strong>ranking</strong>" / "los <strong>3 mejores</strong>" / "los que tienen <strong>mayor</strong> velocidad" / "ordena por tiempo creciente" → <strong>ordenación (Parte 3)</strong>.</li><li>"ordena por <strong>varios criterios</strong>" (ciudad y luego semana...) → ordenación por clave compuesta (Parte 3).</li><li>"los <strong>tres mejores valores de a</strong>" / "los <strong>3 instantes</strong> con mayor velocidad" → ordena y coge los primeros con <code class="inline">lista[:3]</code> (Parte 3).</li><li>"<strong>sin lambda</strong>" → versión <code class="inline">bubble_sort_una_columna(datos, posicion, descendente)</code> que ordena por índice (Parte 3).</li></ul>
 <h4 id="busqueda-parte-4">Búsqueda (Parte 4)</h4>
-<ul><li>"<strong>busca</strong> si el valor 2.5 <strong>está en la lista</strong>" / "¿<strong>en qué posición</strong> está?" → <strong>búsqueda (Parte 4)</strong>: exhaustiva (lista desordenada) o binaria (lista ordenada).</li><li>"comprueba si <strong>existe</strong> una distancia con rentabilidad exactamente 20" → búsqueda exhaustiva con condición (Parte 4).</li><li>"búsqueda <strong>aleatoria / con intentos / estocástica</strong>" → búsqueda estocástica (Parte 4).</li></ul>
+<ul><li>"<strong>busca</strong> si el valor 2.5 <strong>está en la lista</strong>" / "¿<strong>en qué posición</strong> está?" → <strong>búsqueda (Parte 4)</strong>: exhaustiva (lista desordenada) o binaria (lista ordenada).</li><li>"te dan una <strong>lista de tuplas</strong> <code class="inline">(x, f(x))</code> y piden el <strong>f(x) de un x</strong>" / "¿qué temperatura hay en t=2?" / "devuelve el valor asociado a..." → <strong>buscar en una lista de tuplas (Parte 4)</strong>.</li><li>"comprueba si <strong>existe</strong> una distancia con rentabilidad exactamente 20" → búsqueda exhaustiva con condición (Parte 4).</li><li>"búsqueda <strong>aleatoria / con intentos / estocástica</strong>" → búsqueda estocástica (Parte 4).</li></ul>
 <h4 id="generar-valores-con-paso-parte-2">Generar valores con paso (Parte 2)</h4>
 <ul><li>"<strong>genera</strong> valores <strong>enteros</strong> de x entre 0 y 8" → <code class="inline">range(x_min, x_max + 1)</code> (Parte 2).</li><li>"genera tiempos <strong>equiespaciados</strong> con <strong>paso 0.5</strong>" / "con paso h = 0.1" → <code class="inline">np.arange(t_min, t_max + paso, paso)</code> (Parte 2).</li><li>"<strong>n puntos</strong> equiespaciados" / "1000 valores entre 0 y 10" → <code class="inline">np.linspace(a, b, n)</code> (Parte 2).</li></ul>
 <h4 id="simulacion-de-estados-y-eventos-parte-12">Simulación de estados y eventos (Parte 12)</h4>
@@ -2324,6 +2326,93 @@ if pos != -1:
 else:
     print("No está")</code></pre></div>
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Tupla encontrada: (2, 55.8)</div></div>
+<h3 id="buscar-en-una-lista-de-tuplas-dado-x-devolver-f-x">Buscar en una lista de tuplas (dado x, devolver f(x))</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>Te dan una lista de TUPLAS tipo <code class="inline">[(x, f(x)), ...]</code> — por ejemplo <code class="inline">(tiempo, temperatura)</code>, <code class="inline">(x, y)</code>, <code class="inline">(distancia, rentabilidad)</code> — y te piden "¿qué valor le corresponde a x?", "devuelve f(x) para ese x", "busca la temperatura en t=2", "dame el valor asociado a...". Es buscar por un cajetín y devolver el OTRO.</div></div>
+<p>A diferencia de la búsqueda normal (que devuelve la posición), aquí queremos directamente el <strong>valor emparejado</strong>. Recorres las tuplas; cuando el primer cajetín coincide con lo que buscas, devuelves el segundo. Si no está, devuelves <code class="inline">None</code>.</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">datos</code> = tu lista de tuplas</li><li><code class="inline">objetivo</code> = el valor de x que buscas</li><li><code class="inline">col_busca</code> = cajetín por el que buscas (0 = primero)</li><li><code class="inline">col_devuelve</code> = cajetín que quieres de vuelta (1 = segundo)</li></ul></div></div>
+<div class="callout notouch"><span class="ico">🚫</span><div class="body"><span class="label">NO tocar</span>el <code class="inline">for</code> y los <code class="inline">return</code> de la función.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def buscar_valor_en_tuplas(datos, objetivo, col_busca=0, col_devuelve=1):
+    for tupla in datos:
+        if tupla[col_busca] == objetivo:
+            return tupla[col_devuelve]
+    return None
+
+# ==========================
+# CAMBIAR ESTA PARTE
+# ==========================
+
+datos = [(0, 45.0), (1, 50.5), (2, 55.8), (3, 61.2), (4, 68.0)]
+objetivo = 2        # el x que busco (aquí, el tiempo 2)
+
+valor = buscar_valor_en_tuplas(datos, objetivo)
+
+if valor is not None:
+    print("f(", objetivo, ") =", valor)
+else:
+    print("El valor", objetivo, "no está en los datos")</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>f( 2 ) = 55.8</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">col_busca</code> y <code class="inline">col_devuelve</code> son las posiciones dentro de cada tupla. Con <code class="inline">(tiempo, temperatura)</code>: <code class="inline">col_busca=0</code> (buscas por tiempo) y <code class="inline">col_devuelve=1</code> (te devuelve la temperatura). Devuelve <code class="inline">None</code> si el x no está: por eso comprobamos <code class="inline">if valor is not None</code>.</div></div>
+<h4 id="variantes-5">Variantes</h4>
+<p>Buscar al revés (te dan f(x) y quieres el x): intercambia los cajetines.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">datos = [(0, 45.0), (1, 50.5), (2, 55.8), (3, 61.2), (4, 68.0)]
+
+# ¿en qué tiempo la temperatura vale 61.2?
+x = buscar_valor_en_tuplas(datos, 61.2, col_busca=1, col_devuelve=0)
+print("x =", x)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>x = 3</div></div>
+<p>Devolver la tupla entera (o decir que no está):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def buscar_tupla(datos, objetivo, col_busca=0):
+    for tupla in datos:
+        if tupla[col_busca] == objetivo:
+            return tupla
+    return None
+
+datos = [(0, 45.0), (1, 50.5), (2, 55.8), (3, 61.2), (4, 68.0)]
+t = buscar_tupla(datos, 3)
+if t is not None:
+    print("Tupla:", t, "-&gt; f(x) =", t[1])
+else:
+    print("No está")</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Tupla: (3, 61.2) -&gt; f(x) = 61.2</div></div>
+<p>Si los datos vienen en dos listas separadas <code class="inline">x</code> e <code class="inline">y</code> (en vez de tuplas):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">x = [0, 1, 2, 3, 4]
+y = [45.0, 50.5, 55.8, 61.2, 68.0]
+objetivo = 2
+
+valor = None
+for i in range(len(x)):
+    if x[i] == objetivo:
+        valor = y[i]
+        break
+
+if valor is not None:
+    print("f(", objetivo, ") =", valor)
+else:
+    print("No está")</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>f( 2 ) = 55.8</div></div>
+<p>Versión BINARIA (más rápida) si las tuplas están ordenadas por el primer cajetín:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def buscar_valor_binaria(datos, objetivo):
+    izquierda = 0
+    derecha = len(datos) - 1
+    while izquierda &lt;= derecha:
+        medio = (izquierda + derecha) // 2
+        if datos[medio][0] == objetivo:
+            return datos[medio][1]
+        elif objetivo &lt; datos[medio][0]:
+            derecha = medio - 1
+        else:
+            izquierda = medio + 1
+    return None
+
+datos = [(0, 45.0), (1, 50.5), (2, 55.8), (3, 61.2), (4, 68.0)]
+print(buscar_valor_binaria(datos, 3))</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>61.2</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Patrón clásico de examen: "busca f(x); si está, devuélvelo; si no, estima por interpolación". Aquí tienes la primera mitad. Cuando <code class="inline">buscar_valor_en_tuplas</code> devuelve <code class="inline">None</code>, pasas a interpolar entre los dos puntos que rodean a <code class="inline">x</code> (ver Parte 6). El esqueleto de decisión es:</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">valor = buscar_valor_en_tuplas(datos, objetivo)
+if valor is not None:
+    print("Está en los datos:", valor)
+else:
+    print("No está: hay que interpolar (ver Parte 6)")</code></pre></div>
 <h3 id="buscar-todos-los-que-cumplen-una-condicion-contar-filtrar">Buscar todos los que cumplen una condición / contar / filtrar</h3>
 <div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"¿cuántos hay mayores que...?", "guarda todos los que...", "filtra los que cumplen", "¿existe alguno con valor exactamente...?", "¿cuál es el máximo/mínimo?". En cuanto el enunciado dice "todos los que" o "cuántos", es esto: recorrer y mirar un <code class="inline">if</code>.</div></div>
 <p>La plantilla base recorre la lista y guarda en <code class="inline">resultados</code> los que cumplen la condición del <code class="inline">if</code>. Cambiando solo el <code class="inline">if</code> y lo que haces dentro, resuelves contar, filtrar, buscar máximo, comprobar existencia, etc.</p>
@@ -2346,7 +2435,7 @@ resultado = busqueda_exhaustiva_condicion(lista)
 print("Elementos que cumplen la condición:", resultado)</code></pre></div>
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Elementos que cumplen la condición: [7, 9, 5]</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>la condición es lo único que cambias. Mayores que 5 -&gt; <code class="inline">lista[i] &gt; 5</code>. Pares -&gt; <code class="inline">lista[i] % 2 == 0</code>. Negativos -&gt; <code class="inline">lista[i] &lt; 0</code>. Entre 10 y 20 -&gt; <code class="inline">10 &lt;= lista[i] &lt;= 20</code>.</div></div>
-<h4 id="variantes-5">Variantes</h4>
+<h4 id="variantes-6">Variantes</h4>
 <p>Contar cuántos cumplen (en vez de guardarlos, sumas 1):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def contar_condicion(lista):
     cuenta = 0
@@ -2510,7 +2599,7 @@ else:
 Intentos usados: (varía: depende del azar)</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>como es aleatoria, la salida CAMBIA cada vez que ejecutas. Si <code class="inline">max_intentos</code> es pequeño, puede no encontrarlo aunque esté. El <code class="inline">set</code> de visitados evita repetir la misma posición dos veces.</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si quieres que salga siempre lo mismo para comprobar, pon <code class="inline">random.seed(0)</code> justo después del <code class="inline">import random</code>. En el examen normalmente NO hace falta.</div></div>
-<h4 id="variantes-6">Variantes</h4>
+<h4 id="variantes-7">Variantes</h4>
 <p>Estocástica con cajetín: buscar por una posición de la tupla (p.ej. buscar la tupla cuyo tiempo, columna 0, sea 2):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import random
 
@@ -2615,7 +2704,7 @@ else:
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>El valor no está en la lista.
 Valor estimado en t = 2.5 : 58.5</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>el corazón del ejercicio es el <code class="inline">if pos != -1: ... else: ...</code>. Si <code class="inline">x_objetivo</code> cae en uno de los puntos (p.ej. 2.0), entra por el <code class="inline">if</code> y devuelve la <code class="inline">y</code> directa; si cae entre dos (p.ej. 2.5), entra por el <code class="inline">else</code> e interpola.</div></div>
-<h4 id="variantes-7">Variantes</h4>
+<h4 id="variantes-8">Variantes</h4>
 <p>Si el enunciado pide Lagrange con los 3 puntos más cercanos (en vez de lineal con 2), el esqueleto de decisión es el MISMO; solo cambias la función del <code class="inline">else</code>. Aquí el armazón con Lagrange puro de 3 puntos:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def buscar_en_lista(x, x_objetivo):
     for i in range(len(x)):
@@ -2758,7 +2847,7 @@ print("f(raíz):", f(raiz))</code></pre></div>
 f(raíz): 3.0144662866368890e-05</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>requisito OBLIGATORIO: <code class="inline">f(a)*f(b) &lt; 0</code> (signos distintos en los extremos). Si <code class="inline">f(a)</code> y <code class="inline">f(b)</code> tienen el mismo signo, el código avisa y devuelve <code class="inline">None</code>. Por eso <code class="inline">x**2-2</code> con <code class="inline">[1,2]</code> funciona (f(1)=-1, f(2)=2), pero con <code class="inline">[3,4]</code> fallaría (ambos positivos).</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>la raíz exacta de <code class="inline">x**2-2</code> es la raíz cuadrada de 2 ≈ 1.41421356. La bisección la aproxima muy bien. Si quieres más decimales, baja la <code class="inline">tolerancia</code> (p. ej. <code class="inline">0.0000001</code>).</div></div>
-<h4 id="variantes-8">Variantes</h4>
+<h4 id="variantes-9">Variantes</h4>
 <p>Para mostrar la raíz con los decimales que pida el enunciado, usa f-string:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">raiz = biseccion(f, a, b, tolerancia, max_iter)
 print(f"Raíz aproximada: {raiz:.4f}")</code></pre></div>
@@ -3472,7 +3561,7 @@ Ordenada b: 0.04
 Estimacion en x = 6 : 12.04</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">x</code> e <code class="inline">y</code> deben tener la <strong>misma longitud</strong>. Si <code class="inline">n*Sxx - Sx*Sx</code> da 0, es que todas las x son iguales (no hay recta posible). Esta versión NO necesita ningún <code class="inline">import</code>: es la que usas si prohíben librerías.</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si te piden el coeficiente de correlación o el error, calcula también <code class="inline">Syy = Σ yi²</code> y el error cuadrático <code class="inline">E = Σ (yi - f(xi))²</code> con otro for (ver más abajo el patrón general).</div></div>
-<h4 id="variantes-9">Variantes</h4>
+<h4 id="variantes-10">Variantes</h4>
 <p>Mil maneras de pedírtelo, todas con el MISMO código (solo cambias <code class="inline">x</code>, <code class="inline">y</code> y el punto):</p>
 <ul><li>"Pendiente de la recta de ajuste" → es <code class="inline">a</code>.</li><li>"Ordenada en el origen / intercepto" → es <code class="inline">b</code>.</li><li>"Valor de y cuando x vale 7" → <code class="inline">f(7)</code>.</li><li>"Predice y para x=..." → <code class="inline">f(...)</code>.</li><li>"Datos de temperatura vs tiempo, ajusta lineal" → mismo código, renombra mentalmente.</li></ul>
 <p>Calcular también el error del ajuste (cuánto se separa la recta de los datos):</p>
@@ -3560,7 +3649,7 @@ Polinomio ajustado:
 0.7571 x + 0.1343 x + 1.069
 Valor en x=2.5: 6.135</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">polyfit</code> con grado n NO pasa exactamente por los puntos (es ajuste, minimiza el error). Si quieres que pase EXACTAMENTE por todos los puntos, eso es interpolación (Lagrange/Newton/Vandermonde), no ajuste. Para grado n los coeficientes vienen ordenados del término de mayor grado al independiente: <code class="inline">coef[0]*x^n + ... + coef[n]</code>.</div></div>
-<h4 id="variantes-10">Variantes</h4>
+<h4 id="variantes-11">Variantes</h4>
 <ul><li>"Ajusta una parábola" → <code class="inline">grado = 2</code>.</li><li>"Ajuste cúbico" → <code class="inline">grado = 3</code>.</li><li>"¿Qué grado ajusta mejor?" → prueba varios grados y compara el error (mismo patrón de error de la sección general).</li></ul>
 <h3 id="ajuste-de-un-modelo-con-un-parametro-por-barrido-clave-examen-real">Ajuste de un modelo con UN parámetro por barrido (CLAVE - examen real)</h3>
 <div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>te dan un modelo con UN parámetro desconocido (por ejemplo <code class="inline">y(t) = a*t<strong>2 + t + 1</code>) y te piden "encuentra el valor de <code class="inline">a</code> que mejor ajusta", "explora a = ..., calcula el error para cada uno y quédate con el menor". Esto es el </strong>Problema 2 del final**. Si lo entiendes, sacas todos los puntos.</div></div>
@@ -3632,7 +3721,7 @@ Velocidad aproximada en t=2: 3.0000</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>ojo con el <code class="inline">round</code> al generar los <code class="inline">a</code>. Sin <code class="inline">round</code>, <code class="inline">0.5 + 0.1*1</code> puede dar <code class="inline">0.6000000000000001</code> y se ve feo (y el <code class="inline">&gt; 1.5</code> podría fallar). Por eso uso <code class="inline">round(..., 4)</code> y un margen <code class="inline">+ 0.0000001</code> en el corte.</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>comprobación a mano para <code class="inline">a = 0.5</code>, modelo <code class="inline">0.5*t² + t + 1</code>:<ul><li>t=0 → 1.0 (dato 1.0, error 0)</li><li>t=1 → 2.5 (dato 2.9, error 0.4² = 0.16)</li><li>t=2 → 5.0 (dato 5.8, error 0.8² = 0.64)</li><li>t=3 → 8.5 (dato 9.2, error 0.7² = 0.49)</li><li>t=4 → 13.0 (dato 13.1, error 0.1² = 0.01)</li><li>E(0.5) = 0.16 + 0.64 + 0.49 + 0.01 = <strong>1.3</strong> (el menor de todos, por eso <code class="inline">a = 0.5</code> gana).</li></ul></div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>la velocidad sale 3.0000 porque la derivada de <code class="inline">0.5*t² + t + 1</code> es <code class="inline">t + 1</code>, y en t=2 vale <code class="inline">2 + 1 = 3</code>. La derivada central da el valor exacto cuando el modelo es un polinomio de grado 2.</div></div>
-<h4 id="variantes-11">Variantes</h4>
+<h4 id="variantes-12">Variantes</h4>
 <ul><li><strong>Modelo distinto</strong>: solo cambias <code class="inline">def modelo(a, t_punto)</code>. Por ejemplo <code class="inline">y(t) = a*t**3</code> → <code class="inline">return a * t_punto**3</code>; o <code class="inline">y(x) = a*x + 2</code> → <code class="inline">return a*x_punto + 2</code>.</li><li><strong>Otro rango de a</strong>: cambia <code class="inline">a_min</code>, <code class="inline">a_max</code>, <code class="inline">paso</code> (por ejemplo de 0 a 2 con paso 0.05).</li><li><strong>Te piden la gráfica del mejor modelo</strong> (apartado 3 del final): añade matplotlib reutilizando el modelo:</li></ul>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -3736,7 +3825,7 @@ plt.grid(True)
 plt.show()</code></pre></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>el nombre del archivo y de las columnas tienen que coincidir EXACTAMENTE (mayúsculas, tildes, espacios). Si peta con "No such file", el archivo no está en la carpeta de <code class="inline">os.getcwd()</code>: muévelo ahí o pon la ruta completa, p.ej. <code class="inline">archivo = r"C:\Users\...\datos.xlsx"</code> (la <code class="inline">r</code> delante evita problemas con las barras).</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>si peta con "Missing optional dependency 'openpyxl'", es que falta el lector de Excel. En la consola de Spyder: <code class="inline">pip install openpyxl</code>.</div></div>
-<h4 id="variantes-12">Variantes</h4>
+<h4 id="variantes-13">Variantes</h4>
 <ul><li>"La hoja se llama Datos" → <code class="inline">hoja = "Datos"</code>.</li><li>"Es la primera hoja" → puedes quitar <code class="inline">sheet_name</code>: <code class="inline">df = pd.read_excel(archivo)</code>.</li><li>"Ajusta una parábola con los datos del Excel" → cambia el <code class="inline">1</code> por <code class="inline">2</code> en <code class="inline">polyfit</code>.</li><li>Si las columnas no tienen nombre, usa el índice: <code class="inline">x = df.iloc[:, 0].to_numpy()</code> (primera columna), <code class="inline">y = df.iloc[:, 1].to_numpy()</code> (segunda).</li></ul>
 <h3 id="predecir-y-comparar-lineal-vs-polinomica">Predecir y comparar lineal vs polinómica</h3>
 <div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"predice el valor en x=...", "compara la predicción lineal con la cuadrática/polinómica", "¿qué ajuste da mejor estimación?". Conecta con la interpolación de la Parte 6: interpolar pasa por los puntos; ajustar minimiza el error.</div></div>
@@ -4430,7 +4519,7 @@ plt.legend()
 plt.grid(True)
 plt.show()</code></pre></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>si el enunciado dice "marcadores negros", pon <code class="inline">color="black"</code>. Si no dice color, da igual, pero el negro nunca falla.</div></div>
-<h4 id="variantes-13">Variantes</h4>
+<h4 id="variantes-14">Variantes</h4>
 <p>Cambiar la forma del marcador con <code class="inline">marker</code>:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">plt.scatter(x, y, color="black", marker="o", label="Datos")   # círculos (por defecto)
 plt.scatter(x, y, color="black", marker="s", label="Datos")   # cuadrados
@@ -4465,7 +4554,7 @@ plt.legend()
 plt.grid(True)
 plt.show()</code></pre></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si el enunciado fija el intervalo ("en [0,4]"), pon <code class="inline">np.linspace(0, 4, 200)</code> directamente, sin <code class="inline">min</code>/<code class="inline">max</code>.</div></div>
-<h4 id="variantes-14">Variantes</h4>
+<h4 id="variantes-15">Variantes</h4>
 <p>Si tu modelo es un <code class="inline">np.poly1d</code> (recta de mínimos cuadrados, polinomio ajustado) lo evalúas igual, solo que <code class="inline">f_ajustada</code> ya es la función:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
 
@@ -4511,7 +4600,7 @@ plt.grid(True)
 plt.show()</code></pre></div>
 <p>Qué hace <code class="inline">plt.axhline(5, ...)</code>: dibuja una recta horizontal que cruza TODA la gráfica a la altura y = 5. Con <code class="inline">color</code>, <code class="inline">linestyle</code> y <code class="inline">label</code> la personalizas.</p>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">axhline</code> = "axis horizontal line". Para una vertical (en un valor de x) usas <code class="inline">plt.axvline(x_valor, ...)</code>.</div></div>
-<h4 id="variantes-15">Variantes</h4>
+<h4 id="variantes-16">Variantes</h4>
 <p>Sin <code class="inline">axhline</code>, dibujando una línea de un extremo a otro del eje X (sirve igual y a veces lo piden así):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">t_min = 0
 t_max = 10
@@ -4555,7 +4644,7 @@ plt.show()</code></pre></div>
 <p>Qué hace cada cosa:</p>
 <ul><li><code class="inline">plt.scatter(x_new, y_pred, color="red", zorder=5, ...)</code>: pinta UN punto rojo en esa posición, por delante de todo.</li><li><code class="inline">plt.annotate("texto", (x_new, y_pred), ...)</code>: escribe el texto al lado del punto. <code class="inline">xytext=(10, 10)</code> lo desplaza 10 puntos a la derecha y arriba para que no tape el punto.</li></ul>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">zorder</code> alto = se dibuja por encima. Si tu punto "desaparece" detrás de una curva, súbele el <code class="inline">zorder</code>.</div></div>
-<h4 id="variantes-16">Variantes</h4>
+<h4 id="variantes-17">Variantes</h4>
 <p>Marcar DOS predicciones (lineal y polinómica), cada una de un color, como en el examen P1:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">plt.scatter(x_new, y_lineal, color="red", zorder=5, label="Predicción lineal")
 plt.scatter(x_new, y_polin, color="green", zorder=5, label="Predicción polinómica")</code></pre></div>
@@ -4601,7 +4690,7 @@ plt.show()    # un solo show() al final muestra las DOS ventanas</code></pre></d
 <p>Qué hace cada cosa:</p>
 <ul><li>Varios <code class="inline">plt.plot</code> seguidos (sin <code class="inline">figure</code> entre medias) van a la MISMA gráfica.</li><li><code class="inline">plt.figure()</code> abre un lienzo NUEVO: lo que pintes después va a una ventana aparte.</li><li><code class="inline">np.zeros(len(x))</code> crea un vector lleno de ceros del mismo tamaño que <code class="inline">x</code>: al pintarlo sale la recta horizontal y = 0.</li><li>Un único <code class="inline">plt.show()</code> al final abre todas las figuras que hayas creado.</li></ul>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>si te piden "dos gráficas separadas" y no pones <code class="inline">plt.figure()</code>, todo se dibuja encima en la misma ventana. El <code class="inline">plt.figure()</code> es lo que las separa.</div></div>
-<h4 id="variantes-17">Variantes</h4>
+<h4 id="variantes-18">Variantes</h4>
 <p>Vector de ceros más corto, solo del intervalo (igual de válido):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
 x = np.linspace(0, 10, 200)
@@ -4693,7 +4782,7 @@ plt.show()</code></pre></div>
 <p>Qué hace cada cosa:</p>
 <ul><li><code class="inline">plt.imshow(matriz)</code>: cada celda de la matriz se pinta de un color según su valor.</li><li><code class="inline">plt.colorbar()</code>: la leyenda de colores a la derecha.</li><li><code class="inline">plt.xticks(range(...))</code> / <code class="inline">plt.yticks(range(...))</code>: ponen las marcas de los ejes en 0, 1, 2, ... (los índices de columnas y filas). <code class="inline">matriz.shape[1]</code> es el número de columnas y <code class="inline">matriz.shape[0]</code> el de filas.</li></ul>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>en <code class="inline">imshow</code> la fila 0 sale ARRIBA (como se lee una matriz), no abajo. Es lo normal para mapas y tableros.</div></div>
-<h4 id="variantes-18">Variantes</h4>
+<h4 id="variantes-19">Variantes</h4>
 <p>Cambiar la escala de colores con <code class="inline">cmap</code> (mapa de color):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">plt.imshow(matriz, cmap="gray")     # escala de grises
 plt.imshow(matriz, cmap="hot")      # negro-rojo-amarillo (mapa de calor)
@@ -5176,7 +5265,7 @@ plt.show()</code></pre></div>
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>(Se abre una ventana con la imagen de la matriz: cuadritos de un color para los 0 y de otro para los 1, con barra de color a la derecha y las marcas 0,1,2,3,4 en los ejes.)</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">imshow</code> pinta la fila 0 ARRIBA (el eje Y crece hacia abajo, como una tabla). Eso es lo normal y lo que esperan en el examen. No toques nada para "darle la vuelta".</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para verla en blanco y negro o con otro mapa de color, añade <code class="inline">cmap</code>: <code class="inline">plt.imshow(matriz, cmap="gray")</code>. Otros típicos: <code class="inline">"viridis"</code>, <code class="inline">"hot"</code>, <code class="inline">"Blues"</code>. Si no pones <code class="inline">cmap</code>, usa el de por defecto y vale igual.</div></div>
-<h3 id="variantes-19">Variantes</h3>
+<h3 id="variantes-20">Variantes</h3>
 <p>Más cosas que pueden pedir sobre el mismo esquema. Todas reutilizan el recorrido <code class="inline">for i ... for j ...</code> con control de bordes.</p>
 <h4 id="contar-cuantos-vecinos-cumplen-algo">Contar cuántos vecinos cumplen algo</h4>
 <p>En vez de marcar "válido/no válido", cuentas. Útil para "¿cuántos vecinos más altos tiene cada celda?" o el "Juego de la Vida" (contar vecinos vivos).</p>
@@ -5352,7 +5441,7 @@ print("Lista:", lista)</code></pre></div>
 Lista: [['Madrid', 130], ['Barcelona', 120], ['Sevilla', 20]]</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>El truco <code class="inline">if clave in dic: dic[clave] += x  else: dic[clave] = x</code> es lo que evita el error de sumar a una clave que aún no existe. Si pones <code class="inline">dic[clave] += x</code> sin el <code class="inline">if</code>, peta la primera vez con esa clave.</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para ordenar el ranking de mayor a menor, primero pasa el diccionario a lista de <code class="inline">[clave, total]</code> (como arriba) y luego ordénala por el total. Lo ves entero en la sección del parking.</div></div>
-<h4 id="variantes-20">Variantes</h4>
+<h4 id="variantes-21">Variantes</h4>
 <p>Contar apariciones (en vez de sumar un valor, sumas 1):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">palabras = ["sol", "mar", "sol", "luz", "mar", "sol"]
 conteo = {}
@@ -5527,7 +5616,7 @@ Ranking final: [['AB-123', 95], ['CD-456', 70], ['EF-789', 55], ['GH-111', 45]]<
 <p>Para que veas que el patrón funciona, seguimos B a mano (capacidad 3). Estado inicial: <code class="inline">dentro=[]</code>, <code class="inline">errores=0</code>.</p>
 <ul><li><code class="inline">ENTRA AA-111 09:00</code> (540 min): no está, cabe -&gt; <code class="inline">dentro=['AA-111']</code>, <code class="inline">entradas={AA-111:540}</code>.</li><li><code class="inline">SALE AA-111 09:30</code> (570 min): está dentro -&gt; duración 570-540 = 30, <code class="inline">tiempos={AA-111:30}</code>, <code class="inline">dentro=[]</code>.</li><li><code class="inline">SALE BB-222 09:40</code>: no está dentro -&gt; <strong>error 1</strong> (no toca el estado).</li><li><code class="inline">ENTRA CC-333 10:00</code> (600 min): no está, cabe -&gt; <code class="inline">dentro=['CC-333']</code>, <code class="inline">entradas={CC-333:600}</code>.</li><li><code class="inline">ENTRA CC-333 10:10</code>: ya estaba dentro -&gt; <strong>error 2</strong> (no toca el estado).</li><li><code class="inline">SALE CC-333 10:45</code> (645 min): está dentro -&gt; duración 645-600 = 45, <code class="inline">tiempos={AA-111:30, CC-333:45}</code>, <code class="inline">dentro=[]</code>.</li></ul>
 <p>Resultado: <code class="inline">Errores: 2</code>, <code class="inline">Coches dentro al final: []</code>, ranking ordenado de mayor a menor <code class="inline">[['CC-333', 45], ['AA-111', 30]]</code>. Justo lo esperado.</p>
-<h4 id="variantes-21">Variantes</h4>
+<h4 id="variantes-22">Variantes</h4>
 <p>Devolver también cuántos coches pasaron en total, o la lista de matrículas erróneas (en vez de solo contarlas): añade <code class="inline">matriculas_error = []</code> al estado y haz <code class="inline">matriculas_error.append(matricula)</code> en cada rama de error.</p>
 <p>Si la salida tiene que llevar segundos o el tiempo en horas: cambia solo lo que imprimes; por ejemplo <code class="inline">print("Horas:", duracion / 60)</code>.</p>
 <p>Si te piden el ranking de MENOR a mayor (al revés): en el bubble sort cambia <code class="inline">&lt;</code> por <code class="inline">&gt;</code> en la condición <code class="inline">if ranking[j][1] &lt; ranking[j + 1][1]</code>.</p>
@@ -5798,7 +5887,7 @@ print("Distancias al origen:", distancias_origen)</code></pre></div>
 Distancia [1,2]-[4,6]: 5.0
 Distancias al origen: [2.24, 2.69, 3.04, 0.0, 5.0, 2.83]</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">**0.5</code> es la raíz cuadrada (no hace falta <code class="inline">math</code>). <code class="inline">dx*dx</code> es igual que <code class="inline">dx**2</code>; usa el que quieras. Funciona con números negativos sin problema porque elevamos al cuadrado.</div></div>
-<h4 id="variantes-22">Variantes</h4>
+<h4 id="variantes-23">Variantes</h4>
 <p>Si te dan los puntos en variables sueltas (no en lista) puedes hacerlo en una línea sin función:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">x1, y1 = 1.0, 2.0
 x2, y2 = 4.0, 6.0
@@ -5845,7 +5934,7 @@ print(f"Centroide: [{round(cent[0], 2)}, {round(cent[1], 2)}]")</code></pre></di
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Centroide cuadrado: [1.0, 1.0]
 Centroide: [0.42, 0.42]</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Comprobación rápida del centroide del cuadrado: las x son 0,2,0,2 → media 1; las y son 0,0,2,2 → media 1; sale <code class="inline">[1.0, 1.0]</code>, justo el centro. Si tu código da otra cosa, tienes un fallo.</div></div>
-<h4 id="variantes-23">Variantes</h4>
+<h4 id="variantes-24">Variantes</h4>
 <p>Si te dejan usar <code class="inline">sum()</code> (no es el caso del parcial, pero por si acaso), es más corto. <strong>Recuerda: en el parcial, NO.</strong></p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def centroide_con_sum(lista_puntos):
     n = len(lista_puntos)
@@ -5900,7 +5989,7 @@ Distancia de ese punto al centroide: 4.32
 Punto más cercano al centroide: [0.0, 0.0]
 Distancia de ese punto al centroide: 0.59</div></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Para "más lejano" arranca <code class="inline">dist_max = 0</code> y compara con <code class="inline">&gt;</code>. Para "más cercano" arranca <code class="inline">dist_min</code> MUY grande y compara con <code class="inline">&lt;</code>. Si confundes el arranque (p.ej. empezar <code class="inline">dist_min = 0</code> para buscar el más cercano), nunca entrará en el <code class="inline">if</code> y darás un resultado falso.</div></div>
-<h4 id="variantes-24">Variantes</h4>
+<h4 id="variantes-25">Variantes</h4>
 <p>La referencia no tiene por qué ser el centroide. Si te piden "el punto más lejano del origen" pon <code class="inline">referencia = [0., 0.]</code>. Si te piden "el más cercano al punto [5, 5]", pon <code class="inline">referencia = [5., 5.]</code>. Solo cambia esa línea:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">referencia = [0., 0.]   # cámbiala por lo que pida el enunciado
 dist_max = 0
@@ -5947,7 +6036,7 @@ for i in range(len(puntos)):          # para cada punto i
 print("Vecino más cercano de cada punto (índices):", vecinos)</code></pre></div>
 <div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Vecino más cercano de cada punto (índices): [3, 3, 3, 0, 0, 3]</div></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Lee la salida así: el punto 0 tiene como vecino más cercano al punto 3; el punto 1 también al 3; etc. Si quieres ver el punto en sí y no el índice, imprime <code class="inline">puntos[vecinos[i]]</code>.</div></div>
-<h4 id="variantes-25">Variantes</h4>
+<h4 id="variantes-26">Variantes</h4>
 <p>Para mostrar también la distancia al vecino, guarda <code class="inline">dist_min</code> en otra lista:</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">vecinos = []
 distancias_vecino = []
@@ -6046,7 +6135,7 @@ plt.ylabel("h(x)")
 plt.legend()
 plt.show()</code></pre></div>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si te piden "cruces con un valor horizontal" (p.ej. dónde <code class="inline">f(x) = 5</code>), define <code class="inline">h(x) = f(x) - 5</code> y aplica el mismo método. Es lo mismo: buscar dónde <code class="inline">h</code> cambia de signo.</div></div>
-<h4 id="variantes-26">Variantes</h4>
+<h4 id="variantes-27">Variantes</h4>
 <p>Para afinar el cruce más allá del punto medio, mete una bisección dentro del tramo donde <code class="inline">h1 * h2 &lt; 0</code> (ver la parte de métodos numéricos / bisección). El punto medio del intervalo ya es suficiente si la malla es fina.</p>
 <p>Si solo te piden <strong>contar</strong> cuántas veces se cruzan, basta con <code class="inline">print(len(cruces))</code>.</p>
 <h3 id="variantes-geometria-de-puntos">Variantes (geometría de puntos)</h3>
@@ -6909,7 +6998,7 @@ print(f"Raíz aproximada: {raiz:.4f}")          # Raíz aproximada: 1.4142</code
 3.1416
 2.5000
 a = 1.235, b = 9.800</div></div>
-<h4 id="variantes-27">Variantes</h4>
+<h4 id="variantes-28">Variantes</h4>
 <p>Redondear todos los elementos de una lista (versión pura con <code class="inline">for</code>):</p>
 <div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">valores = [1.23456, 2.71828, 3.14159]
 
