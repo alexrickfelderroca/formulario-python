@@ -140,6 +140,20 @@ table.xlsheet td.num{text-align:right}
 .cf-blue{background:#cfe2ff !important;color:#0b3d91 !important}
 .xl-key{display:inline-block;background:#1f6f43;color:#fff;font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;padding:1px 7px;border-radius:4px;margin-right:6px}
 
+/* Gráficos tipo Excel (mock) */
+.chartmock{background:#fff;border:1px solid #c3c8d0;border-radius:8px;padding:12px 16px;margin:14px 0;max-width:580px;color:#1a1a1a;font-family:-apple-system,"Segoe UI",sans-serif}
+.chartmock .cm-title{font-size:13px;font-weight:700;margin-bottom:11px;text-align:center;color:#223}
+.cm-row{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12px}
+.cm-lbl{flex:0 0 96px;text-align:right;color:#445;white-space:nowrap}
+.cm-track{flex:1;background:#eef1f4;border-radius:3px}
+.cm-bar{background:#2f6df6;color:#fff;padding:2px 8px;border-radius:3px;white-space:nowrap;font-size:11px;display:inline-block;min-width:14px}
+.cm-bar.green{background:#1f9d57}.cm-bar.red{background:#d63a4a}.cm-bar.amber{background:#e0a020}.cm-bar.blue{background:#2f6df6}
+.cm-pie{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cm-pie .pie{width:130px;height:130px;border-radius:50%;flex:0 0 auto;border:1px solid #c3c8d0}
+.cm-legend{font-size:12px;line-height:1.7}
+.cm-legend .sw{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:7px;vertical-align:middle}
+.chartmock svg{display:block;width:100%;max-width:520px;height:auto}
+
 /* Back to top */
 #toTop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;
   background:var(--accent);color:#fff;border:none;font-size:20px;cursor:pointer;display:none;
@@ -179,6 +193,8 @@ table.xlsheet td.num{text-align:right}
   .hero{background:#1d2a55!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;border-radius:0}
   pre,.callout,.codeblock .bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   table.xlsheet,table.xlsheet th,table.xlsheet td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .chartmock,.chartmock *,.cm-bar,.cm-pie .pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .chartmock{page-break-inside:avoid}
   .xlwrap{overflow:visible}
   table.xlsheet{font-size:8.5pt}
   h2,h3,h4{page-break-after:avoid}
@@ -376,16 +392,11 @@ table.xlsheet td.num{text-align:right}
 <a class="lvl3" href="#caso-3-producto-de-matrices-indice-equivocado">Caso 3: producto de matrices (índice equivocado)</a>
 <a class="lvl3" href="#caso-4-minimo-por-alumno-variable-que-no-se-reinicia">Caso 4: mínimo por alumno (variable que no se reinicia)</a>
 <a class="lvl3" href="#otros-errores-clasicos-que-te-pueden-poner">Otros errores clásicos que te pueden poner</a>
-<a class="lvl2" href="#20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="num">20</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</a>
-<a class="lvl3" href="#parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</a>
-<a class="lvl3" href="#parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</a>
-<a class="lvl3" href="#parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</a>
-<a class="lvl3" href="#recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</a>
-<a class="lvl3" href="#recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</a>
-<a class="lvl3" href="#recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</a>
-<a class="lvl3" href="#final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</a>
-<a class="lvl3" href="#final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</a>
-<a class="lvl3" href="#final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</a>
+<a class="lvl2" href="#20-excels-resueltos-la-hoja-las-formulas-y-los-graficos"><span class="num">20</span>Excels resueltos (la hoja, las fórmulas y los gráficos)</a>
+<a class="lvl3" href="#inventario-de-almacen-final-25-26">Inventario de almacén (final 25-26)</a>
+<a class="lvl3" href="#planta-de-ensamblaje-parcial-25-26">Planta de ensamblaje (parcial 25-26)</a>
+<a class="lvl3" href="#ventas-internacionales-final-24-25">Ventas internacionales (final 24-25)</a>
+<a class="lvl3" href="#consumo-energetico-recu-24-25">Consumo energético (recu 24-25)</a>
 </nav>
     <div class="toc-empty" id="tocEmpty">Sin resultados.</div>
   </aside>
@@ -580,16 +591,11 @@ table.xlsheet td.num{text-align:right}
 <a class="t3" href="#caso-3-producto-de-matrices-indice-equivocado">Caso 3: producto de matrices (índice equivocado)</a>
 <a class="t3" href="#caso-4-minimo-por-alumno-variable-que-no-se-reinicia">Caso 4: mínimo por alumno (variable que no se reinicia)</a>
 <a class="t3" href="#otros-errores-clasicos-que-te-pueden-poner">Otros errores clásicos que te pueden poner</a>
-<a class="t2" href="#20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="n">20.</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</a>
-<a class="t3" href="#parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</a>
-<a class="t3" href="#parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</a>
-<a class="t3" href="#parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</a>
-<a class="t3" href="#recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</a>
-<a class="t3" href="#recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</a>
-<a class="t3" href="#recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</a>
-<a class="t3" href="#final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</a>
-<a class="t3" href="#final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</a>
-<a class="t3" href="#final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</a>
+<a class="t2" href="#20-excels-resueltos-la-hoja-las-formulas-y-los-graficos"><span class="n">20.</span>Excels resueltos (la hoja, las fórmulas y los gráficos)</a>
+<a class="t3" href="#inventario-de-almacen-final-25-26">Inventario de almacén (final 25-26)</a>
+<a class="t3" href="#planta-de-ensamblaje-parcial-25-26">Planta de ensamblaje (parcial 25-26)</a>
+<a class="t3" href="#ventas-internacionales-final-24-25">Ventas internacionales (final 24-25)</a>
+<a class="t3" href="#consumo-energetico-recu-24-25">Consumo energético (recu 24-25)</a>
 </div></section>
 
 <!-- part-00.txt -->
@@ -8131,330 +8137,263 @@ print(nums)</code></pre></div>
 <div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Resumen para el examen: lee el traceback (última línea), clasifica el error con la tabla de arriba, y corrige SOLO la línea que falla. Si no hay traceback pero el resultado está mal, es un error lógico: repasa índices de bucles anidados y variables que deberían reiniciarse en cada vuelta.</div></div>
 
 <!-- part-20.txt -->
-<h2 id="20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="num">20</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</h2>
-<p>Aquí tienes resueltos, enteros y listos para copiar, los ejercicios de <strong>Python</strong> de los tres exámenes más recientes. Lo de <strong>Excel</strong> no se resuelve aquí (mira la Parte 17) y los de <strong>backtracking</strong> no entran este año (los omito). Para cada uno: una frase de enunciado, el plan (qué cartuchos usar), el código completo y la salida esperada.</p>
-<h3 id="parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</h3>
-<p>Te dan 4 fragmentos con fallos; hay que decir el error y arreglarlo. El detalle completo de cada uno está en la <strong>Parte 19</strong>; aquí va el resumen rápido en viñetas.</p>
-<p>Plan:</p>
-<ul><li>Cartucho "Identifica el error" de la <strong>Parte 19</strong> (lectura paso a paso del fallo).</li></ul>
-<ul><li><strong>Fallo 1 (media):</strong> la función calcula <code class="inline">m</code> pero <strong>no hace <code class="inline">return</code></strong>, así que fuera vale <code class="inline">None</code> y <code class="inline">round(None,2)</code> peta. Arreglo: añadir <code class="inline">return m</code> al final de <code class="inline">media</code>.</li><li><strong>Fallo 2 (cuadrado):</strong> <code class="inline">x</code> es una <strong>lista</strong> de Python y <code class="inline">x<strong>2</code> no existe para listas. Arreglo: convertir a numpy (<code class="inline">x = np.array([0,1,2,3,4])</code>, luego <code class="inline">y = x</strong>2</code>) o usar comprensión (<code class="inline">y = [v**2 for v in x]</code>).</li><li><strong>Fallo 3 (producto de matrices):</strong> dentro del bucle pone <code class="inline">A[i][j]*B[j][k]</code>, índices mal. Lo correcto es <code class="inline">A[i][k]*B[k][j]</code> (se recorre <code class="inline">k</code> sobre las columnas de A / filas de B).</li><li><strong>Fallo 4 (mínimo por alumno):</strong> <code class="inline">m</code> se inicializa <strong>una sola vez fuera</strong> del bucle, así que arrastra el mínimo global. Arreglo: <strong>reiniciar <code class="inline">m</code> dentro</strong> del bucle de alumno (<code class="inline">m = alumno[0]</code> al empezar cada alumno).</li></ul>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>estos cuatro arreglos son los que valen los puntos. Si los escribes ya bien desde el principio, el código corregido sería:</div></div>
-<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
-
-# Fallo 1: media con return
-def media(lista):
-    total = 0
-    for x in lista:
-        total += x
-    return total / len(lista)
-
-notas = [5.0, 6.5, 7.0]
-m = media(notas)
-print("Media redondeada:", round(m, 2))
-
-# Fallo 2: cuadrado con numpy
-x = np.array([0, 1, 2, 3, 4])
-y = x**2
-print(y)
-
-# Fallo 3: producto de matrices correcto
-A = [[1, 2, 3], [4, 5, 6]]      # 2x3
-B = [[7, 8], [9, 10], [11, 12]] # 3x2
-filasA, colsA = len(A), len(A[0])
-colsB = len(B[0])
-C = []
-for i in range(filasA):
-    fila = []
-    for j in range(colsB):
-        suma = 0
-        for k in range(colsA):
-            suma += A[i][k] * B[k][j]   # índice correcto
-        fila.append(suma)
-    C.append(fila)
-print(C)
-
-# Fallo 4: mínimo por alumno reiniciando m dentro
-notas2 = [[5.0, 6.5, 7.0], [4.0, 3.5, 6.0], [8.0, 7.5, 9.0]]
-mins = []
-for alumno in notas2:
-    m = alumno[0]              # reinicia para cada alumno
-    for nota in alumno:
-        if nota &lt; m:
-            m = nota
-    mins.append(m)
-print(mins)</code></pre></div>
-<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Media redondeada: 6.17
-[ 0  1  4  9 16]
-[[58, 64], [139, 154]]
-[5.0, 3.5, 7.5]</div></div>
-<h3 id="parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</h3>
-<p>Con una lista de puntos hay que calcular distancias, centroide, el punto más lejano al centroide y el vecino más cercano de cada punto, todo <strong>a mano</strong> (prohibido <code class="inline">sum</code>, <code class="inline">max</code>, <code class="inline">min</code> y <code class="inline">numpy</code>).</p>
-<p>Plan:</p>
-<ul><li>Cartucho "distancia euclídea a mano" (raíz con <code class="inline">**0.5</code>).</li><li>Cartucho "recorrer lista con bucles" para sumas/máximos manuales (acumulador y comparación con <code class="inline">if</code>).</li><li>Cartucho "vecino más cercano" (doble bucle, <code class="inline">j != i</code>, empate al menor índice).</li></ul>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>nada de <code class="inline">sum/max/min/numpy</code>. Sumas con un acumulador <code class="inline">total = 0</code>, máximos con un <code class="inline">if valor &gt; mejor</code>, y raíz con <code class="inline">**0.5</code> (o <code class="inline">math.sqrt</code>).</div></div>
-<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import math   # solo para sqrt; también vale **0.5
-
-puntos = [
-    [1.0, 2.0],
-    [2.5, -1.0],
-    [-3.0, 0.5],
-    [0.0, 0.0],
-    [4.0, 3.0],
-    [-2.0, -2.0]
-]
-
-# 1) distancia euclídea entre dos puntos
-def distancia(p, q):
-    dx = p[0] - q[0]
-    dy = p[1] - q[1]
-    return math.sqrt(dx**2 + dy**2)   # o (dx**2 + dy**2)**0.5
-
-# 2) centroide = media de las x y media de las y (sin sum)
-def centroide(puntos):
-    sx = 0.0
-    sy = 0.0
-    n = len(puntos)
-    for p in puntos:
-        sx += p[0]
-        sy += p[1]
-    return [sx / n, sy / n]
-
-# 3) distancia de cada punto al origen
-distancias_origen = []
-for p in puntos:
-    distancias_origen.append(round(distancia(p, [0.0, 0.0]), 2))
-print("Distancias al origen:", distancias_origen)
-
-# 4) centroide, punto más lejano y su distancia (máximo a mano)
-C = centroide(puntos)
-print("Centroide:", [round(C[0], 2), round(C[1], 2)])
-
-idx_lejano = 0
-dist_max = distancia(puntos[0], C)
-for i in range(len(puntos)):
-    d = distancia(puntos[i], C)
-    if d &gt; dist_max:
-        dist_max = d
-        idx_lejano = i
-print("Punto más lejano al centroide:", puntos[idx_lejano])
-print("Distancia al centroide:", round(dist_max, 2))
-
-# 5) vecino más cercano de cada punto (j != i, empate -&gt; menor índice)
-vecinos = []
-for i in range(len(puntos)):
-    mejor_j = -1
-    dist_min = -1.0
-    for j in range(len(puntos)):
-        if j == i:
-            continue
-        d = distancia(puntos[i], puntos[j])
-        if mejor_j == -1 or d &lt; dist_min:   # estrictamente menor -&gt; empate al menor j
-            dist_min = d
-            mejor_j = j
-    vecinos.append(mejor_j)
-print("Vecinos:", vecinos)</code></pre></div>
-<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Distancias al origen: [2.24, 2.69, 3.04, 0.0, 5.0, 2.83]
-Centroide: [0.42, 0.42]
-Punto más lejano al centroide: [4.0, 3.0]
-Distancia al centroide: 4.42
-Vecinos: [3, 3, 5, 0, 0, 2]</div></div>
-<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>para el empate "al menor índice" usa <strong><code class="inline">&lt;</code> estricto</strong> (no <code class="inline">&lt;=</code>): así el primer <code class="inline">j</code> que da esa distancia se queda y los siguientes empatados no lo sustituyen.</div></div>
-<h3 id="parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</h3>
-<p>Con <code class="inline">f(x)=sin(x)</code> y <code class="inline">g(x)=0.1x</code> en <code class="inline">[0,10]</code> hay que detectar dónde se cruzan (cambio de signo de <code class="inline">h=f-g</code>), aproximar cada cruce y hacer dos gráficas.</p>
-<p>Plan:</p>
-<ul><li>Cartucho "malla con linspace" (<code class="inline">np.linspace(0,10,1000)</code>).</li><li>Cartucho "detectar cambio de signo" (<code class="inline">h[i]*h[i+1] &lt; 0</code>) y punto medio como aproximación.</li><li>Cartucho "gráfica matplotlib" con título/leyenda/ejes y línea horizontal (<code class="inline">axhline</code>).</li></ul>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>hay cruce entre <code class="inline">x[i]</code> y <code class="inline">x[i+1]</code> cuando <code class="inline">h[i]*h[i+1] &lt; 0</code> (signos opuestos). La aproximación del cruce es el punto medio <code class="inline">(x[i]+x[i+1])/2</code>.</div></div>
-<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-# 1) malla de 1000 puntos en [0, 10]
-x = np.linspace(0, 10, 1000)
-
-# 2) las dos funciones
-f = np.sin(x)
-g = 0.1 * x
-
-# 3) diferencia y detección de cruces
-h = f - g
-cruces = []
-for i in range(len(h) - 1):
-    if h[i] * h[i+1] &lt; 0:          # cambio de signo -&gt; cruce
-        xc = (x[i] + x[i+1]) / 2
-        cruces.append(round(xc, 3))
-
-print("Se han encontrado", len(cruces), "cruces.")
-print("Cruces:", cruces)
-
-# 4a) figura 1: f y g
-plt.figure()
-plt.plot(x, f, label="f(x) = sin(x)")
-plt.plot(x, g, label="g(x) = 0.1x")
-plt.title("Cruces de f(x)=sin(x) y g(x)=0.1x")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.legend()
-plt.grid(True)
-
-# 4b) figura 2: h con línea horizontal en y=0
-plt.figure()
-plt.plot(x, h, label="h(x) = f(x) - g(x)")
-plt.axhline(y=0, color="red", linestyle="--")
-plt.title("h(x) = sin(x) - 0.1x")
-plt.xlabel("x")
-plt.ylabel("h(x)")
-plt.legend()
-plt.grid(True)
-
-plt.show()</code></pre></div>
-<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Se han encontrado 4 cruces.
-Cruces: [0.115, 2.853, 7.073, 8.408]</div></div>
-<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si te piden el valor exacto del cruce con más precisión, podrías refinar con bisección sobre <code class="inline">h</code> (Parte 5), pero el enunciado pide solo el punto medio.</div></div>
-<h3 id="recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</h3>
-<p>Parte de Excel → ver la Parte 17.</p>
-<h3 id="recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</h3>
-<p>Hay que montar una jerarquía de clases geométricas con atributos privados, getters/setters y <code class="inline">__str__</code> redefinido en cada una. Está explicado en la <strong>Parte 18</strong>; aquí va el código entero otra vez para copiar directo.</p>
-<p>Plan:</p>
-<ul><li>Cartucho "clases con atributo privado" (<code class="inline">self.__x</code>, getters/setters).</li><li>Cartucho "herencia" (<code class="inline">class Hija(Padre)</code> + <code class="inline">super().__init__(...)</code>).</li><li>Cartucho "<code class="inline">__str__</code> redefinido" que reutiliza el del padre con <code class="inline">super().__str__()</code>.</li></ul>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>atributo privado = dos guiones bajos delante (<code class="inline">self.__color</code>). Para encadenar el texto del padre usa <code class="inline">super().__str__()</code> y le añades lo nuevo.</div></div>
-<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Forma:
-    def __init__(self, color):
-        self.__color = color
-    def get_color(self):
-        return self.__color
-    def set_color(self, color):
-        self.__color = color
-    def __str__(self):
-        return "Color: " + self.__color
-
-class Poligono(Forma):
-    def __init__(self, color, num_lados):
-        super().__init__(color)
-        self.__num_lados = num_lados
-    def get_num_lados(self):
-        return self.__num_lados
-    def set_num_lados(self, num_lados):
-        self.__num_lados = num_lados
-    def __str__(self):
-        return super().__str__() + ", núm. lados: " + str(self.__num_lados)
-
-class Elipse(Forma):
-    def __init__(self, color, eje_mayor):
-        super().__init__(color)
-        self.__eje_mayor = eje_mayor
-    def get_eje_mayor(self):
-        return self.__eje_mayor
-    def set_eje_mayor(self, eje_mayor):
-        self.__eje_mayor = eje_mayor
-    def __str__(self):
-        return super().__str__() + ", eje mayor: " + str(self.__eje_mayor)
-
-class Cuadrado(Poligono):
-    def __init__(self, color, num_lados, lado):
-        super().__init__(color, num_lados)
-        self.__lado = lado
-    def get_lado(self):
-        return self.__lado
-    def set_lado(self, lado):
-        self.__lado = lado
-    def __str__(self):
-        return super().__str__() + ", lado: " + str(self.__lado)
-
-def main():
-    forma = Forma("Amarillo")
-    poligono = Poligono("Verde", 6)
-    elipse = Elipse("Azul", 34.5)
-    cuadrado = Cuadrado("Blanco", 4, 4.3)
-
-    print(forma)
-    print(poligono)
-    print(elipse)
-    print(cuadrado)
-
-    print(elipse.get_eje_mayor())
-
-    cuadrado.set_lado(6.4)
-    print(cuadrado)
-
-main()</code></pre></div>
-<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Color: Amarillo
-Color: Verde, núm. lados: 6
-Color: Azul, eje mayor: 34.5
-Color: Blanco, núm. lados: 4, lado: 4.3
-34.5
-Color: Blanco, núm. lados: 4, lado: 6.4</div></div>
-<h3 id="recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</h3>
-<p>Backtracking: no entra este año — omitido.</p>
-<h3 id="final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</h3>
-<p>Parte de Excel → ver la Parte 17.</p>
-<h3 id="final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</h3>
-<p>Backtracking: no entra este año — omitido.</p>
-<h3 id="final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</h3>
-<p>Con 4 datos <code class="inline">semana=[1,2,3,4]</code>, <code class="inline">producción=[5.0,6.2,5.5,7.8]</code> hay que ajustar un polinomio de grado 3 que pase por todos los puntos y una recta por mínimos cuadrados, evaluar ambos dentro (<code class="inline">x=2.5</code>) y fuera (<code class="inline">x=5</code>) del rango, graficarlo y comentar cuál sirve mejor para extrapolar.</p>
-<p>Plan:</p>
-<ul><li>Cartucho "polyfit/poly1d" de numpy: grado 3 = interpolación exacta de 4 puntos; grado 1 = recta de mínimos cuadrados (Parte 6 / Parte 7).</li><li>Cartucho "evaluar un polinomio" (<code class="inline">p(x)</code> con <code class="inline">np.poly1d</code>).</li><li>Cartucho "gráfica con puntos + curvas + marcadores" (matplotlib).</li></ul>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>con <strong>4 puntos</strong>, <code class="inline">np.polyfit(x, y, 3)</code> da el polinomio de grado 3 que pasa <strong>exacto</strong> por todos (interpolación). <code class="inline">np.polyfit(x, y, 1)</code> da la recta de mínimos cuadrados. No hace falta librería de interpolación: <code class="inline">polyfit</code>/<code class="inline">poly1d</code> valen.</div></div>
-<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-# 1) datos
-semana = [1, 2, 3, 4]
-produccion = [5.0, 6.2, 5.5, 7.8]
-x = np.array(semana, dtype=float)
-y = np.array(produccion, dtype=float)
-
-# 2) polinomio interpolador de grado 3 (pasa por los 4 puntos)
-coef_interp = np.polyfit(x, y, 3)
-p_interp = np.poly1d(coef_interp)
-
-# 3) recta de mínimos cuadrados (grado 1)
-coef_lineal = np.polyfit(x, y, 1)
-p_lineal = np.poly1d(coef_lineal)
-
-# 4) evaluación dentro del rango (x = 2.5)
-x_eval = 2.5
-print("=== Evaluación en x = 2.5 (dentro del rango) ===")
-print("Interpolador grado 3:", round(p_interp(x_eval), 4))
-print("Recta mínimos cuadrados:", round(p_lineal(x_eval), 4))
-
-# 7) extrapolación fuera del rango (x = 5)
-x_extra = 5
-print("=== Extrapolación en x = 5 (fuera del rango) ===")
-print("Interpolador grado 3:", round(p_interp(x_extra), 4))
-print("Recta mínimos cuadrados:", round(p_lineal(x_extra), 4))
-
-# 6 y 8) gráfica: puntos + curvas + predicciones
-x_curva = np.linspace(1, 5, 400)   # hasta 5 para ver la extrapolación
-plt.figure()
-plt.plot(x, y, "ko", label="Datos originales")
-plt.plot(x_curva, p_interp(x_curva), "b-", label="Interpolador grado 3")
-plt.plot(x_curva, p_lineal(x_curva), "g-", label="Recta mínimos cuadrados")
-
-# predicciones marcadas: azul = interpolador, rojo = lineal
-plt.plot(x_eval, p_interp(x_eval), "bs", markersize=10)
-plt.plot(x_eval, p_lineal(x_eval), "r^", markersize=10)
-plt.plot(x_extra, p_interp(x_extra), "bs", markersize=10)
-plt.plot(x_extra, p_lineal(x_extra), "r^", markersize=10)
-
-plt.title("Interpolación (grado 3) vs ajuste lineal")
-plt.xlabel("Semana")
-plt.ylabel("Producción (toneladas)")
-plt.legend()
-plt.grid(True)
-plt.show()
-
-# Comentario final:
-# Para EXTRAPOLAR (x=5, fuera del rango) es mejor la RECTA de mínimos
-# cuadrados: el polinomio de grado 3 pasa exacto por los datos pero
-# fuera del rango se dispara y da valores poco realistas. La recta es
-# más estable y razonable fuera de los datos observados.</code></pre></div>
-<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>=== Evaluación en x = 2.5 (dentro del rango) ===
-Interpolador grado 3: 5.7813
-Recta mínimos cuadrados: 6.125
-=== Extrapolación en x = 5 (fuera del rango) ===
-Interpolador grado 3: 18.0
-Recta mínimos cuadrados: 8.05</div></div>
-<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>alternativa sin polyfit: el polinomio interpolador con <strong>Lagrange a mano</strong> o con <code class="inline">sympy</code> (Parte 6). Para el examen, <code class="inline">polyfit</code>/<code class="inline">poly1d</code> es lo más rápido y está permitido (no es "librería de interpolación", es ajuste polinómico de numpy).</div></div>
-<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>el comentario final es parte de la nota: <strong>la recta es mejor para extrapolar</strong> porque el polinomio de grado alto se dispara fuera del rango (oscila), mientras que la recta mantiene una tendencia estable.</div></div>
+<h2 id="20-excels-resueltos-la-hoja-las-formulas-y-los-graficos"><span class="num">20</span>Excels resueltos (la hoja, las fórmulas y los gráficos)</h2>
+<p>Aquí tienes los <strong>4 ejercicios de Excel</strong> que han caído en los exámenes, cada uno resuelto y MOSTRADO: la hoja dibujada como en Excel (con los valores ya fijados y coloreados), las fórmulas listas para copiar y los gráficos. Es la Parte 17 (todas las fórmulas y el paso a paso) aplicada a los enunciados reales. Si quieres el "cómo se hace cada cosa a clics" (tablas dinámicas, formato condicional, segmentadores), está todo en la <strong>Parte 17</strong>.</p>
+<p>Recuerda: Excel en español, separador de argumentos <code class="inline">;</code> (si da error, cámbialo por <code class="inline">,</code>), decimales con coma (<code class="inline">14,00</code>). Y guarda con el nombre EXACTO que pide cada enunciado (<code class="inline">apellido_inventario.xlsx</code>, etc.): el nombre mal puesto resta puntos.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Pasos comunes a los 4: encabezados en la fila 1, datos desde la fila 2, FIJAR los aleatorios (Copiar → Pegado especial → Valores) ANTES de calcular resúmenes y gráficos, y arrastrar cada fórmula hacia abajo desde la fila 2.</div></div>
+<h3 id="inventario-de-almacen-final-25-26">Inventario de almacén (final 25-26)</h3>
+<p>Generas inventario aleatorio de 8 artículos, calculas Stock final y Valor, clasificas el Estado (Reponer ya / Vigilar / OK), validas las salidas y montas el Resumen con un gráfico de columnas. Guárdalo como <code class="inline">apellido_inventario.xlsx</code>.</p>
+<p><strong>Layout de columnas</strong> (hoja "Inventario"): A Artículo · B Categoría · C Proveedor · D Stock inicial · E Entradas · F Salidas · G Coste unitario · H Plazo entrega · I Stock final · J Valor de stock · K Estado · L Error.</p>
+<p><strong>Generar los datos (A–H, fila 2; arrastrar y FIJAR con Pegado especial &gt; Valores):</strong></p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;8);"Motor";"Bomba";"Filtro";"Correa";"Sensor";"Válvula";"Conector";"Manguera")
+=ELEGIR(ALEATORIO.ENTRE(1;3);"Crítico";"Estándar";"Auxiliar")
+=ELEGIR(ALEATORIO.ENTRE(1;4);"Prov A";"Prov B";"Prov C";"Prov D")
+=ALEATORIO.ENTRE(50;500)
+=ALEATORIO.ENTRE(0;200)
+=ALEATORIO.ENTRE(0;250)
+=REDONDEAR(ALEATORIO()*(40-3)+3;2)
+=ALEATORIO.ENTRE(2;20)</code></pre></div>
+<p><strong>Columnas calculadas</strong> (Stock final en I, Valor en J, Estado en K, Error en L):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=D2+E2-F2
+=I2*G2
+=SI(O(I2&lt;80;Y(B2="Crítico";I2&lt;120));"Reponer ya";SI(I2&lt;150;"Vigilar";"OK"))
+=SI(F2&gt;D2+E2;"Salida inválida";"")</code></pre></div>
+<p><strong>Así queda la hoja</strong> (valores ya fijados; coloreado como lo dejará el formato condicional):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Inventario" — ejemplo resuelto (valores ya fijados)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>I</th><th>J</th><th>K</th><th>L</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Artículo</td><td>Categoría</td><td>Proveedor</td><td>Stock ini.</td><td>Entradas</td><td>Salidas</td><td>Coste u.</td><td>Stock final</td><td>Valor stock</td><td>Estado</td><td>Error</td></tr>
+<tr><td>2</td><td>Motor</td><td>Estándar</td><td>Prov A</td><td class="num">420</td><td class="num">60</td><td class="num">160</td><td class="num">14,00</td><td class="num">320</td><td class="num">4480,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>3</td><td>Bomba</td><td>Crítico</td><td>Prov B</td><td class="num">90</td><td class="num">10</td><td class="num">40</td><td class="num">9,00</td><td class="num">60</td><td class="num">540,00</td><td class="cf-red">Reponer ya</td><td></td></tr>
+<tr><td>4</td><td>Filtro</td><td>Auxiliar</td><td>Prov A</td><td class="num">200</td><td class="num">30</td><td class="num">120</td><td class="num">5,50</td><td class="num">110</td><td class="num">605,00</td><td class="cf-yellow">Vigilar</td><td></td></tr>
+<tr><td>5</td><td>Correa</td><td>Crítico</td><td>Prov C</td><td class="num">300</td><td class="num">40</td><td class="num">80</td><td class="num">7,20</td><td class="num">260</td><td class="num">1872,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>6</td><td>Sensor</td><td>Estándar</td><td>Prov D</td><td class="num">150</td><td class="num">20</td><td class="num">200</td><td class="num">22,00</td><td class="num">-30</td><td class="num">-660,00</td><td class="cf-red">Reponer ya</td><td class="cf-red">Salida inválida</td></tr>
+<tr><td>7</td><td>Válvula</td><td>Crítico</td><td>Prov B</td><td class="num">130</td><td class="num">10</td><td class="num">30</td><td class="num">18,40</td><td class="num">110</td><td class="num">2024,00</td><td class="cf-red">Reponer ya</td><td></td></tr>
+<tr><td>8</td><td>Conector</td><td>Auxiliar</td><td>Prov C</td><td class="num">260</td><td class="num">50</td><td class="num">90</td><td class="num">3,80</td><td class="num">220</td><td class="num">836,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>9</td><td>Manguera</td><td>Estándar</td><td>Prov A</td><td class="num">140</td><td class="num">15</td><td class="num">25</td><td class="num">6,10</td><td class="num">130</td><td class="num">793,00</td><td class="cf-yellow">Vigilar</td><td></td></tr>
+</tbody></table></div>
+<p>Fíjate en la fila 6 (Sensor): Salidas (200) &gt; Stock inicial+Entradas (170), así que Stock final sale negativo (−30), el Estado es "Reponer ya" y la columna Error marca "Salida inválida".</p>
+<p><strong>Hoja "Resumen" — funciones de agregación</strong> (en la hoja Resumen, antepón <code class="inline">Inventario!</code> a cada rango):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI(Inventario!$C$2:$C$9;"Prov A";Inventario!$J$2:$J$9)
+=CONTAR.SI(Inventario!$K$2:$K$9;"Reponer ya")
+=PROMEDIO.SI(Inventario!$B$2:$B$9;"Crítico";Inventario!$H$2:$H$9)
+=INDICE(Inventario!$A$2:$A$9;COINCIDIR(MAX(Inventario!$J$2:$J$9);Inventario!$J$2:$J$9;0))</code></pre></div>
+<p><strong>Así queda el Resumen</strong> (con los valores del ejemplo de arriba):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Resumen" — Inventario (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Métrica</td><td>Valor</td></tr>
+<tr><td>2</td><td>Valor total Prov A</td><td class="num">5878,00</td></tr>
+<tr><td>3</td><td>Valor total Prov B</td><td class="num">2564,00</td></tr>
+<tr><td>4</td><td>Valor total Prov C</td><td class="num">2708,00</td></tr>
+<tr><td>5</td><td>Valor total Prov D</td><td class="num">-660,00</td></tr>
+<tr><td>6</td><td>Nº "Reponer ya"</td><td class="num">3</td></tr>
+<tr><td>7</td><td>Plazo medio Crítico</td><td class="num">9,3</td></tr>
+<tr><td>8</td><td>Artículo mayor valor</td><td class="cf-blue">Motor</td></tr>
+</tbody></table></div>
+<p>(Prov A suma Motor 4480 + Filtro 605 + Manguera 793 = 5878. Hay 3 artículos "Reponer ya": Bomba, Sensor, Válvula. El de mayor valor es Motor con 4480.)</p>
+<p><strong>Gráfico de columnas — valor total de stock por proveedor</strong> (el negativo de Prov D va en rojo):</p>
+<div class="chartmock"><div class="cm-title">Valor total de stock por proveedor</div>
+<div class="cm-row"><span class="cm-lbl">Prov A</span><span class="cm-bar green" style="width:92%">5878 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Prov C</span><span class="cm-bar green" style="width:41%">2708 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Prov B</span><span class="cm-bar green" style="width:39%">2564 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Prov D</span><span class="cm-bar red" style="width:10%">-660 €</span></div>
+</div>
+<p><strong>Formato condicional</strong>: columna Estado (K2:K9) → "Reponer ya" rojo, "Vigilar" amarillo; columna Error (L2:L9) → "Salida inválida" rojo.</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>El paso a paso de cada fórmula (clasificación con <code class="inline">SI</code> anidado, el máximo con <code class="inline">INDICE</code>+<code class="inline">COINCIDIR</code>, fijar aleatorios, formato condicional a clics) está detallado en la <strong>Parte 17</strong> — esta sección es el mismo problema ya resuelto y dibujado.</div></div>
+<h3 id="planta-de-ensamblaje-parcial-25-26">Planta de ensamblaje (parcial 25-26)</h3>
+<p>Generas datos de 12 productos, fijas los aleatorios, calculas 7 columnas (Margen, Coste total, Ingreso total, Beneficio, Tiempo en horas, Unidades buenas, Índice de rendimiento), clasificas Óptima / Aceptable / Estudiar producto y montas dos dinámicas (Turnos y Máquinas) con gráficos. Guárdalo como <code class="inline">apellido_ensamblaje.xlsx</code>.</p>
+<p><strong>Layout</strong> (hoja "Datos"): A Producto · B Turno · C Máquina · D Unidades · E Coste u. · F Precio u. · G Tiempo u. (min) · H Tasa defectos · I Margen · J Coste total · K Ingreso total · L Beneficio · M Tiempo (h) · N Unid. buenas · O IR · P Clasificación.</p>
+<p><strong>Generar los datos (A–H; arrastrar y FIJAR):</strong></p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;12);"Carcasa";"Cojinete";"Leva";"Piñón";"Buje";"Pasador";"Soporte";"Brida";"Junta";"Acoplamiento";"Cremallera";"Rotor")
+=ELEGIR(ALEATORIO.ENTRE(1;3);"Mañana";"Tarde";"Noche")
+=ELEGIR(ALEATORIO.ENTRE(1;4);"M1";"M2";"M3";"M4")
+=ALEATORIO.ENTRE(300;6000)
+=REDONDEAR(ALEATORIO()*(18-4)+4;2)
+=REDONDEAR(ALEATORIO()*(45-12)+12;2)
+=REDONDEAR(ALEATORIO()*(6,0-0,8)+0,8;1)
+=REDONDEAR(ALEATORIO()*(0,08-0)+0;4)</code></pre></div>
+<p><strong>Columnas calculadas</strong> (I Margen, J Coste total, K Ingreso, L Beneficio, M Tiempo h, N Unid. buenas, O IR):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=F2-E2
+=D2*E2
+=D2*F2
+=K2-J2
+=D2*G2/60
+=D2*(1-H2)
+=0,4*N2+0,4*L2-0,2*M2</code></pre></div>
+<p><strong>Clasificación</strong> (P): Óptima si Unidades&gt;4500 Y Margen&gt;12 Y Tasa&lt;2%; Aceptable si 2000&lt;Unidades&lt;4500 O 6&lt;Margen&lt;12; resto "Estudiar producto":</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(Y(D2&gt;4500;I2&gt;12;H2&lt;0,02);"Óptima";SI(O(Y(D2&gt;2000;D2&lt;4500);Y(I2&gt;6;I2&lt;12));"Aceptable";"Estudiar producto"))</code></pre></div>
+<p><strong>Así queda la hoja</strong> (valores ya fijados; coloreada la Clasificación):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Datos" — Ensamblaje (ejemplo resuelto, valores fijados)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>I</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Producto</td><td>Turno</td><td>Máq.</td><td>Unidades</td><td>Margen</td><td>Beneficio</td><td>Tiempo h</td><td>U. buenas</td><td>IR</td><td>Clasificación</td></tr>
+<tr><td>2</td><td>Carcasa</td><td>Mañana</td><td>M1</td><td class="num">5200</td><td class="num">14,00</td><td class="num">72800,00</td><td class="num">173,3</td><td class="num">5096</td><td class="num">31123,73</td><td class="cf-green">Óptima</td></tr>
+<tr><td>3</td><td>Cojinete</td><td>Tarde</td><td>M2</td><td class="num">3000</td><td class="num">8,00</td><td class="num">24000,00</td><td class="num">110,0</td><td class="num">2910</td><td class="num">10742,00</td><td class="cf-yellow">Aceptable</td></tr>
+<tr><td>4</td><td>Leva</td><td>Noche</td><td>M3</td><td class="num">1500</td><td class="num">4,00</td><td class="num">6000,00</td><td class="num">62,5</td><td class="num">1455</td><td class="num">2969,50</td><td class="cf-red">Estudiar producto</td></tr>
+<tr><td>5</td><td>Piñón</td><td>Mañana</td><td>M1</td><td class="num">4800</td><td class="num">15,00</td><td class="num">72000,00</td><td class="num">160,0</td><td class="num">4704</td><td class="num">30649,60</td><td class="cf-green">Óptima</td></tr>
+<tr><td>6</td><td>Buje</td><td>Tarde</td><td>M4</td><td class="num">2600</td><td class="num">9,00</td><td class="num">23400,00</td><td class="num">86,7</td><td class="num">2548</td><td class="num">10361,87</td><td class="cf-yellow">Aceptable</td></tr>
+<tr><td>7</td><td>Pasador</td><td>Noche</td><td>M2</td><td class="num">900</td><td class="num">3,50</td><td class="num">3150,00</td><td class="num">30,0</td><td class="num">882</td><td class="num">1606,80</td><td class="cf-red">Estudiar producto</td></tr>
+<tr><td>8</td><td>Soporte</td><td>Mañana</td><td>M3</td><td class="num">5600</td><td class="num">13,50</td><td class="num">75600,00</td><td class="num">205,3</td><td class="num">5544</td><td class="num">32417,53</td><td class="cf-green">Óptima</td></tr>
+<tr><td>9</td><td>Brida</td><td>Tarde</td><td>M4</td><td class="num">3500</td><td class="num">7,00</td><td class="num">24500,00</td><td class="num">128,3</td><td class="num">3395</td><td class="num">11130,33</td><td class="cf-yellow">Aceptable</td></tr>
+</tbody></table></div>
+<p>(Carcasa, fila 2: Unidades 5200&gt;4500, Margen 14&gt;12, Tasa&lt;2% → Óptima. IR = 0,4·5096 + 0,4·72800 − 0,2·173,3 = 2038,4 + 29120 − 34,67 ≈ 31123,73.)</p>
+<p><strong>Hoja "Resumen"</strong> — Unidades por turno, Beneficio por máquina, mayor beneficio y mayor tasa de defectos promedio (D Unidades, B Turno, L Beneficio, C Máquina, A Producto, H Tasa):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI(Datos!$B$2:$B$9;"Mañana";Datos!$D$2:$D$9)
+=SUMAR.SI(Datos!$C$2:$C$9;"M1";Datos!$L$2:$L$9)
+=INDICE(Datos!$A$2:$A$9;COINCIDIR(MAX(Datos!$L$2:$L$9);Datos!$L$2:$L$9;0))
+=INDICE(Datos!$A$2:$A$9;COINCIDIR(MAX(Datos!$H$2:$H$9);Datos!$H$2:$H$9;0))</code></pre></div>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Resumen" — Ensamblaje (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Métrica</td><td>Valor</td></tr>
+<tr><td>2</td><td>Unidades turno Mañana</td><td class="num">15600</td></tr>
+<tr><td>3</td><td>Unidades turno Tarde</td><td class="num">9100</td></tr>
+<tr><td>4</td><td>Unidades turno Noche</td><td class="num">2400</td></tr>
+<tr><td>5</td><td>Beneficio M1</td><td class="num">144800,00</td></tr>
+<tr><td>6</td><td>Beneficio M2</td><td class="num">27150,00</td></tr>
+<tr><td>7</td><td>Producto mayor beneficio</td><td class="cf-blue">Soporte</td></tr>
+</tbody></table></div>
+<p>(Mañana = Carcasa 5200 + Piñón 4800 + Soporte 5600 = 15600. M1 = Carcasa 72800 + Piñón 72000 = 144800. El mayor beneficio es Soporte con 75600.)</p>
+<p><strong>Tabla dinámica "Turnos" + gráfico de barras horizontal de Beneficio por producto</strong> (ordenado de mayor a menor):</p>
+<div class="chartmock"><div class="cm-title">Suma de Beneficio total por producto (dinámica Turnos)</div>
+<div class="cm-row"><span class="cm-lbl">Soporte</span><span class="cm-bar green" style="width:92%">75 600 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Carcasa</span><span class="cm-bar green" style="width:89%">72 800 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Piñón</span><span class="cm-bar green" style="width:88%">72 000 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Brida</span><span class="cm-bar amber" style="width:30%">24 500 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Cojinete</span><span class="cm-bar amber" style="width:29%">24 000 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Leva</span><span class="cm-bar red" style="width:7%">6 000 €</span></div>
+</div>
+<p>Formato condicional de la dinámica: verde &gt;15000 (Soporte, Carcasa, Piñón, Brida, Cojinete, Buje), rojo &lt;0 (ninguno aquí), Top 3 en azul (Soporte, Carcasa, Piñón).</p>
+<p><strong>Tabla dinámica "Máquinas" + gráfico CIRCULAR de % de beneficio por máquina</strong> (sobre el total ≈ 301 450 €: M1 144800 ≈ 48%, M3 81600 ≈ 27%, M4 47900 ≈ 16%, M2 27150 ≈ 9%):</p>
+<div class="chartmock"><div class="cm-title">% Beneficio total por máquina (dinámica Máquinas)</div>
+<div class="cm-pie">
+<div class="pie" style="background:conic-gradient(#2f6df6 0 48%,#1f9d57 48% 75%,#e0a020 75% 91%,#d63a4a 91% 100%)"></div>
+<div class="cm-legend">
+<div><span class="sw" style="background:#2f6df6"></span>M1 — 48%</div>
+<div><span class="sw" style="background:#1f9d57"></span>M3 — 27%</div>
+<div><span class="sw" style="background:#e0a020"></span>M4 — 16%</div>
+<div><span class="sw" style="background:#d63a4a"></span>M2 — 9%</div>
+</div></div></div>
+<p>Dashboard: ambos gráficos dinámicos + segmentadores de Turno y Máquina conectados a las dos dinámicas.</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Cómo montar la dinámica, cambiar el valor a "% del total general", el gráfico circular y conectar un segmentador a varios gráficos: todo a clics en la <strong>Parte 17</strong> (secciones "Tabla dinámica", "Gráficos", "Formato condicional" y "Segmentadores y dashboard").</div></div>
+<h3 id="ventas-internacionales-final-24-25">Ventas internacionales (final 24-25)</h3>
+<p>30+ filas de ventas (Producto, País, Mes, Unidades, Precio, Coste), calculas Coste total, Ingresos y Beneficio, y montas dos dinámicas (Beneficio por país en barras verdes, Unidades por mes en líneas azules) con un dashboard de segmentadores Producto y País. Los datos van en la hoja "Datos".</p>
+<p><strong>Layout</strong> (hoja "Datos"): A Producto · B País · C Mes · D Unidades · E Precio u. · F Coste u. · G Coste total · H Ingresos · I Beneficio.</p>
+<p><strong>Generar los datos (A–F; arrastrar y FIJAR):</strong></p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;4);"Tablet";"Móvil";"Portátil";"Monitor")
+=ELEGIR(ALEATORIO.ENTRE(1;4);"España";"Alemania";"Francia";"Italia")
+=ELEGIR(ALEATORIO.ENTRE(1;12);"Enero";"Febrero";"Marzo";"Abril";"Mayo";"Junio";"Julio";"Agosto";"Septiembre";"Octubre";"Noviembre";"Diciembre")
+=ALEATORIO.ENTRE(100;1000)
+=REDONDEAR(ALEATORIO()*(1000-150)+150;2)
+=REDONDEAR(ALEATORIO()*(800-100)+100;2)</code></pre></div>
+<p><strong>Columnas calculadas</strong> (G Coste total, H Ingresos, I Beneficio):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=D2*F2
+=D2*E2
+=H2-G2</code></pre></div>
+<p><strong>Así queda la hoja</strong> (valores ya fijados):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Datos" — Ventas internacionales (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Producto</td><td>País</td><td>Mes</td><td>Unidades</td><td>Precio u.</td><td>Coste u.</td><td>Coste total</td><td>Ingresos</td><td>Beneficio</td></tr>
+<tr><td>2</td><td>Tablet</td><td>España</td><td>Enero</td><td class="num">420</td><td class="num">320,00</td><td class="num">210,00</td><td class="num">88200,00</td><td class="num">134400,00</td><td class="num">46200,00</td></tr>
+<tr><td>3</td><td>Móvil</td><td>Alemania</td><td>Febrero</td><td class="num">650</td><td class="num">480,00</td><td class="num">300,00</td><td class="num">195000,00</td><td class="num">312000,00</td><td class="num">117000,00</td></tr>
+<tr><td>4</td><td>Portátil</td><td>Francia</td><td>Marzo</td><td class="num">300</td><td class="num">820,00</td><td class="num">600,00</td><td class="num">180000,00</td><td class="num">246000,00</td><td class="num">66000,00</td></tr>
+<tr><td>5</td><td>Monitor</td><td>Italia</td><td>Abril</td><td class="num">500</td><td class="num">240,00</td><td class="num">280,00</td><td class="num">140000,00</td><td class="num">120000,00</td><td class="num">-20000,00</td></tr>
+<tr><td>6</td><td>Tablet</td><td>Alemania</td><td>Mayo</td><td class="num">720</td><td class="num">360,00</td><td class="num">200,00</td><td class="num">144000,00</td><td class="num">259200,00</td><td class="num">115200,00</td></tr>
+<tr><td>7</td><td>Móvil</td><td>España</td><td>Junio</td><td class="num">880</td><td class="num">450,00</td><td class="num">280,00</td><td class="num">246400,00</td><td class="num">396000,00</td><td class="num">149600,00</td></tr>
+<tr><td>8</td><td>Portátil</td><td>Italia</td><td>Julio</td><td class="num">260</td><td class="num">900,00</td><td class="num">650,00</td><td class="num">169000,00</td><td class="num">234000,00</td><td class="num">65000,00</td></tr>
+</tbody></table></div>
+<p>(Fila 5, Monitor en Italia: Ingresos 120000 &lt; Coste total 140000 → Beneficio negativo −20000.)</p>
+<p><strong>Dinámicas / Resumen</strong> — Beneficio por país y Unidades por mes (B País, I Beneficio, C Mes, D Unidades):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI(Datos!$B$2:$B$31;"España";Datos!$I$2:$I$31)
+=SUMAR.SI(Datos!$C$2:$C$31;"Enero";Datos!$D$2:$D$31)</code></pre></div>
+<p>(O directamente con tabla dinámica: País a Filas + Suma de Beneficio a Valores; Mes a Filas + Suma de Unidades a Valores.)</p>
+<p><strong>Gráfico de columnas — Beneficio Total por País</strong> (barras verdes; el formato condicional pondría en rojo cualquier país con beneficio total negativo — en este ejemplo los cuatro salen positivos):</p>
+<div class="chartmock"><div class="cm-title">Beneficio Total por País</div>
+<div class="cm-row"><span class="cm-lbl">Alemania</span><span class="cm-bar green" style="width:92%">232 200 €</span></div>
+<div class="cm-row"><span class="cm-lbl">España</span><span class="cm-bar green" style="width:78%">195 800 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Francia</span><span class="cm-bar green" style="width:26%">66 000 €</span></div>
+<div class="cm-row"><span class="cm-lbl">Italia</span><span class="cm-bar green" style="width:18%">45 000 €</span></div>
+</div>
+<p><strong>Gráfico de líneas — Unidades Vendidas por Mes</strong> (línea azul, 12 meses):</p>
+<div class="chartmock"><div class="cm-title">Unidades Vendidas por Mes</div>
+<svg viewBox="0 0 480 180">
+<line x1="30" y1="150" x2="465" y2="150" stroke="#c3c8d0"/>
+<polyline fill="none" stroke="#2f6df6" stroke-width="2.5" points="30,110 70,70 110,95 150,120 190,60 230,40 270,85 310,75 350,100 390,55 430,90 465,65"/>
+</svg>
+<div style="font-size:11px;color:#445;text-align:center">Ene · Feb · Mar · Abr · May · Jun · Jul · Ago · Sep · Oct · Nov · Dic</div></div>
+<p>Dashboard: los dos gráficos + segmentadores de Producto y País; filtra inicialmente Producto=Tablet y País=España.</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>"Barras verdes", "línea azul", el formato condicional de país negativo en rojo y conectar los segmentadores a ambos gráficos están explicados a clics en la <strong>Parte 17</strong>.</div></div>
+<h3 id="consumo-energetico-recu-24-25">Consumo energético (recu 24-25)</h3>
+<p>30+ viviendas con ID tipo BC042, calculas consumo renovable/no renovable, coste total, la Etiqueta Ambiental (Alta/Media/Baja) y un ID Resumen tipo BC_03_M, y haces un histograma del coste, un gráfico de consumo renovable por ciudad y la tabla resumen por ciudad.</p>
+<p><strong>Layout</strong> (hoja "Datos"): A ID Vivienda · B Ciudad · C Mes · D Consumo · E Precio · F % Renovable · G Consumo Renov. · H Consumo No Renov. · I Coste total · J Etiqueta · K ID Resumen.</p>
+<p><strong>Generar los datos.</strong> Pon primero la Ciudad (siglas) en B, luego el ID en A apuntando a <code class="inline">B2</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=B2&amp;TEXTO(ALEATORIO.ENTRE(1;999);"000")
+=ELEGIR(ALEATORIO.ENTRE(1;4);"MD";"BC";"VL";"SV")
+=ELEGIR(ALEATORIO.ENTRE(1;12);"Enero";"Febrero";"Marzo";"Abril";"Mayo";"Junio";"Julio";"Agosto";"Septiembre";"Octubre";"Noviembre";"Diciembre")
+=ALEATORIO.ENTRE(100;800)
+=REDONDEAR(ALEATORIO()*(0,20-0,10)+0,10;2)
+=ALEATORIO.ENTRE(10;90)</code></pre></div>
+<p>(O genera siglas y número de golpe en una sola celda: <code class="inline">=ELEGIR(ALEATORIO.ENTRE(1;4);"MD";"BC";"VL";"SV")&amp;TEXTO(ALEATORIO.ENTRE(1;999);"000")</code>.)</p>
+<p><strong>Columnas calculadas</strong> (G Consumo renov., H no renov., I Coste total, J Etiqueta, K ID Resumen):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=D2*F2/100
+=D2-G2
+=D2*E2
+=SI(F2&gt;=60;"Alta";SI(F2&gt;=30;"Media";"Baja"))
+=B2&amp;"_"&amp;TEXTO(MES(FECHANUMERO("1-"&amp;C2));"00")&amp;"_"&amp;IZQUIERDA(J2;1)</code></pre></div>
+<p>El ID Resumen junta: siglas de ciudad (<code class="inline">B2</code>) + <code class="inline">_</code> + número de mes a 2 cifras + <code class="inline">_</code> + inicial de la etiqueta. La inicial sale con <code class="inline">IZQUIERDA(J2;1)</code> porque "Alta"/"Media"/"Baja" empiezan justo por A/M/B. Si <code class="inline">FECHANUMERO</code> falla por idioma, usa la variante con <code class="inline">COINCIDIR</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=B2&amp;"_"&amp;TEXTO(COINCIDIR(C2;{"Enero";"Febrero";"Marzo";"Abril";"Mayo";"Junio";"Julio";"Agosto";"Septiembre";"Octubre";"Noviembre";"Diciembre"};0);"00")&amp;"_"&amp;IZQUIERDA(J2;1)</code></pre></div>
+<p><strong>Así queda la hoja</strong> (valores ya fijados; coloreada la Etiqueta):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Datos" — Consumo energético (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>I</th><th>J</th><th>K</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>ID Viv.</td><td>Ciudad</td><td>Mes</td><td>Consumo</td><td>Precio</td><td>% Ren.</td><td>C. Renov.</td><td>Coste tot.</td><td>Etiqueta</td><td>ID Resumen</td></tr>
+<tr><td>2</td><td>MD024</td><td>MD</td><td>Enero</td><td class="num">450</td><td class="num">0,16</td><td class="num">35</td><td class="num">157,50</td><td class="num">72,00</td><td class="cf-yellow">Media</td><td>MD_01_M</td></tr>
+<tr><td>3</td><td>BC113</td><td>BC</td><td>Abril</td><td class="num">380</td><td class="num">0,12</td><td class="num">48</td><td class="num">182,40</td><td class="num">45,60</td><td class="cf-yellow">Media</td><td>BC_04_M</td></tr>
+<tr><td>4</td><td>VL077</td><td>VL</td><td>Octubre</td><td class="num">600</td><td class="num">0,18</td><td class="num">70</td><td class="num">420,00</td><td class="num">108,00</td><td class="cf-green">Alta</td><td>VL_10_A</td></tr>
+<tr><td>5</td><td>SV305</td><td>SV</td><td>Junio</td><td class="num">710</td><td class="num">0,15</td><td class="num">25</td><td class="num">177,50</td><td class="num">106,50</td><td class="cf-red">Baja</td><td>SV_06_B</td></tr>
+<tr><td>6</td><td>MD199</td><td>MD</td><td>Diciembre</td><td class="num">330</td><td class="num">0,17</td><td class="num">55</td><td class="num">181,50</td><td class="num">56,10</td><td class="cf-yellow">Media</td><td>MD_12_M</td></tr>
+<tr><td>7</td><td>BC048</td><td>BC</td><td>Marzo</td><td class="num">540</td><td class="num">0,14</td><td class="num">80</td><td class="num">432,00</td><td class="num">75,60</td><td class="cf-green">Alta</td><td>BC_03_A</td></tr>
+<tr><td>8</td><td>VL210</td><td>VL</td><td>Julio</td><td class="num">200</td><td class="num">0,19</td><td class="num">18</td><td class="num">36,00</td><td class="num">38,00</td><td class="cf-red">Baja</td><td>VL_07_B</td></tr>
+</tbody></table></div>
+<p>(Fila 7, Barcelona en Marzo con etiqueta Alta → ID Resumen <code class="inline">BC_03_A</code>. Consumo renovable = 540·80/100 = 432. Coste = 540·0,14 = 75,60.)</p>
+<p><strong>Tabla resumen por ciudad</strong> — consumo medio y % renovable medio (B Ciudad, D Consumo, F % Renovable):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=PROMEDIO.SI(Datos!$B$2:$B$31;"MD";Datos!$D$2:$D$31)
+=PROMEDIO.SI(Datos!$B$2:$B$31;"MD";Datos!$F$2:$F$31)</code></pre></div>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Resumen" — Consumo por ciudad (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Ciudad</td><td>Consumo medio</td><td>% Renov. medio</td></tr>
+<tr><td>2</td><td>MD</td><td class="num">390,0</td><td class="num">45</td></tr>
+<tr><td>3</td><td>BC</td><td class="num">460,0</td><td class="num">64</td></tr>
+<tr><td>4</td><td>VL</td><td class="num">400,0</td><td class="num">44</td></tr>
+<tr><td>5</td><td>SV</td><td class="num">710,0</td><td class="num">25</td></tr>
+</tbody></table></div>
+<p><strong>Histograma del Coste Total</strong> (distribución de gastos; barras por rango de €):</p>
+<div class="chartmock"><div class="cm-title">Histograma del Coste Total (€)</div>
+<div class="cm-row"><span class="cm-lbl">20–40 €</span><span class="cm-bar blue" style="width:30%">3</span></div>
+<div class="cm-row"><span class="cm-lbl">40–60 €</span><span class="cm-bar blue" style="width:80%">8</span></div>
+<div class="cm-row"><span class="cm-lbl">60–80 €</span><span class="cm-bar blue" style="width:92%">9</span></div>
+<div class="cm-row"><span class="cm-lbl">80–100 €</span><span class="cm-bar blue" style="width:55%">6</span></div>
+<div class="cm-row"><span class="cm-lbl">100–120 €</span><span class="cm-bar blue" style="width:40%">4</span></div>
+</div>
+<p><strong>Gráfico de columnas — consumo renovable medio por ciudad</strong> (barras verdes):</p>
+<div class="chartmock"><div class="cm-title">Consumo Renovable medio por ciudad (kWh)</div>
+<div class="cm-row"><span class="cm-lbl">BC</span><span class="cm-bar green" style="width:92%">307 kWh</span></div>
+<div class="cm-row"><span class="cm-lbl">VL</span><span class="cm-bar green" style="width:68%">228 kWh</span></div>
+<div class="cm-row"><span class="cm-lbl">SV</span><span class="cm-bar green" style="width:53%">178 kWh</span></div>
+<div class="cm-row"><span class="cm-lbl">MD</span><span class="cm-bar green" style="width:51%">170 kWh</span></div>
+</div>
+<p>Añade un filtro/segmentador por Ciudad o por Mes para ver una zona o periodo concreto.</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>La construcción del ID tipo BC042 (<code class="inline">TEXTO(...;"000")</code>), el ID Resumen con <code class="inline">&amp;</code>/<code class="inline">CONCATENAR</code> y el mes a 2 cifras, la Etiqueta con <code class="inline">SI</code> escalonado, el histograma y los promedios por ciudad están paso a paso en la <strong>Parte 17</strong> (secciones "Generar un código BC042", "Texto: concatenar...", "Clasificación" y "Resumen/agregación").</div></div>
 
     </div>
   </div>
