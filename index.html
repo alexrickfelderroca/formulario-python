@@ -125,6 +125,21 @@ pre code{white-space:pre}
 .tok-kw{color:var(--kw)}.tok-str{color:var(--str)}.tok-com{color:var(--com);font-style:italic}
 .tok-num{color:var(--num)}.tok-bi{color:var(--bi)}.tok-fn{color:var(--fn)}
 
+/* Hoja de cálculo tipo Excel (mock) */
+.xlwrap{overflow-x:auto;margin:16px 0;border-radius:8px}
+table.xlsheet{border-collapse:collapse;font-family:"SF Mono",Consolas,monospace;font-size:12.5px;background:#fff;color:#1a1a1a}
+table.xlsheet caption{caption-side:top;text-align:left;font-family:-apple-system,"Segoe UI",sans-serif;font-size:12.5px;color:var(--muted);margin-bottom:5px;font-style:italic}
+table.xlsheet th,table.xlsheet td{border:1px solid #c3c8d0;padding:3px 8px;white-space:nowrap;text-align:left}
+table.xlsheet thead th,table.xlsheet .rowhdr{background:#eef1f4;color:#445;text-align:center;font-weight:700}
+table.xlsheet tbody tr td:first-child{background:#eef1f4;color:#445;text-align:center;font-weight:700}
+table.xlsheet .hdr td{background:#dde3ea;font-weight:700;color:#223}
+table.xlsheet td.num{text-align:right}
+.cf-red{background:#f6c6cb !important;color:#7a1320 !important}
+.cf-yellow{background:#ffe7a3 !important;color:#6b5200 !important}
+.cf-green{background:#bfe8c9 !important;color:#0f5026 !important}
+.cf-blue{background:#cfe2ff !important;color:#0b3d91 !important}
+.xl-key{display:inline-block;background:#1f6f43;color:#fff;font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;padding:1px 7px;border-radius:4px;margin-right:6px}
+
 /* Back to top */
 #toTop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;
   background:var(--accent);color:#fff;border:none;font-size:20px;cursor:pointer;display:none;
@@ -163,6 +178,9 @@ pre code{white-space:pre}
   .content{max-width:100%;padding:0}
   .hero{background:#1d2a55!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;border-radius:0}
   pre,.callout,.codeblock .bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  table.xlsheet,table.xlsheet th,table.xlsheet td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .xlwrap{overflow:visible}
+  table.xlsheet{font-size:8.5pt}
   h2,h3,h4{page-break-after:avoid}
   .callout,.codeblock{page-break-inside:avoid}
   pre{white-space:pre-wrap;word-break:break-word}
@@ -323,6 +341,51 @@ pre code{white-space:pre}
 <a class="lvl3" href="#plantillas-en-blanco-listas-para-rellenar">Plantillas EN BLANCO listas para rellenar</a>
 <a class="lvl3" href="#glosario-rapido-enunciado-tecnica-resumen-final">Glosario rápido enunciado → técnica (resumen final)</a>
 <a class="lvl3" href="#checklist-antes-de-entregar">Checklist antes de entregar</a>
+<a class="lvl2" href="#17-excel-analisis-de-datos-formulas-tablas-dinamicas-graficos"><span class="num">17</span>Excel: análisis de datos (fórmulas, tablas dinámicas, gráficos)</a>
+<a class="lvl3" href="#como-es-siempre-el-examen-de-excel">Cómo es SIEMPRE el examen de Excel</a>
+<a class="lvl3" href="#generar-texto-aleatorio-de-una-lista-turno-ciudad-producto-categoria">Generar TEXTO aleatorio de una lista (Turno / Ciudad / Producto / Categoría)</a>
+<a class="lvl3" href="#generar-entero-aleatorio-en-un-rango-stock-unidades-consumo">Generar ENTERO aleatorio en un rango (Stock, Unidades, Consumo...)</a>
+<a class="lvl3" href="#generar-decimal-aleatorio-en-un-rango-coste-precio-tiempo-tasa">Generar DECIMAL aleatorio en un rango (Coste, Precio, Tiempo, Tasa...)</a>
+<a class="lvl3" href="#generar-un-codigo-tipo-bc042-siglas-numero-de-3-cifras">Generar un CÓDIGO tipo BC042 (siglas + número de 3 cifras)</a>
+<a class="lvl3" href="#fijar-los-valores-aleatorios-que-no-cambien">FIJAR los valores aleatorios (que no cambien)</a>
+<a class="lvl3" href="#columnas-calculadas-formulas-aritmeticas">Columnas CALCULADAS (fórmulas aritméticas)</a>
+<a class="lvl3" href="#columna-de-clasificacion-si-anidado-y-si-conjunto-con-y-o">Columna de CLASIFICACIÓN: SI anidado y SI.CONJUNTO con Y / O</a>
+<a class="lvl3" href="#columna-de-validacion-error">Columna de VALIDACIÓN (Error)</a>
+<a class="lvl3" href="#buscar-datos-buscarx-buscarv-indice-coincidir">BUSCAR datos: BUSCARX, BUSCARV, INDICE + COINCIDIR</a>
+<a class="lvl3" href="#el-elemento-con-el-maximo-articulo-con-mayor-valor-beneficio">El ELEMENTO con el MÁXIMO (artículo con mayor valor / beneficio)</a>
+<a class="lvl3" href="#resumen-agregacion-sumar-si-conjunto-contar-si-promedio-si">RESUMEN / agregación: SUMAR.SI(.CONJUNTO), CONTAR.SI, PROMEDIO.SI</a>
+<a class="lvl3" href="#texto-concatenar-sacar-siglas-mes-numero-construir-un-id-resumen">TEXTO: concatenar, sacar siglas, mes → número, construir un ID resumen</a>
+<a class="lvl3" href="#tabla-dinamica-pivot-table-a-clicks">TABLA DINÁMICA (pivot table) — a CLICKS</a>
+<a class="lvl3" href="#graficos-columnas-barras-lineas-circular-histograma-a-clicks">GRÁFICOS (columnas, barras, líneas, circular, histograma) — a CLICKS</a>
+<a class="lvl3" href="#formato-condicional-a-clicks">FORMATO CONDICIONAL — a CLICKS</a>
+<a class="lvl3" href="#segmentadores-slicers-y-dashboard-a-clicks">SEGMENTADORES (slicers) y DASHBOARD — a CLICKS</a>
+<a class="lvl3" href="#ejemplo-resuelto-completo-inventario-de-almacen">EJEMPLO RESUELTO COMPLETO — Inventario de almacén</a>
+<a class="lvl3" href="#mini-chuleta-de-funciones-espanol-ingles">Mini-chuleta de funciones (español → inglés)</a>
+<a class="lvl2" href="#18-programacion-orientada-a-objetos-clases-y-herencia"><span class="num">18</span>Programación orientada a objetos (clases y herencia)</a>
+<a class="lvl3" href="#que-es-una-clase-y-un-objeto">Qué es una clase y un objeto</a>
+<a class="lvl3" href="#clase-basica-init-atributos-y-metodos">Clase básica: __init__, atributos y métodos</a>
+<a class="lvl3" href="#atributos-privados-y-getters-setters">Atributos privados y getters/setters</a>
+<a class="lvl3" href="#el-metodo-str-como-se-imprime-un-objeto">El método __str__ (cómo se imprime un objeto)</a>
+<a class="lvl3" href="#herencia-una-clase-que-hereda-de-otra">Herencia (una clase que hereda de otra)</a>
+<a class="lvl3" href="#ejemplo-de-examen-resuelto-formas-forma-poligono-elipse-cuadrado">Ejemplo de examen resuelto: Formas (Forma, Polígono, Elipse, Cuadrado)</a>
+<a class="lvl3" href="#plantilla-en-blanco-para-clases-con-herencia">Plantilla en blanco para clases con herencia</a>
+<a class="lvl2" href="#19-identifica-el-error-depuracion-tipica-de-examen"><span class="num">19</span>Identifica el error (depuración típica de examen)</a>
+<a class="lvl3" href="#como-enfrentarte-a-identifica-el-error">Cómo enfrentarte a "identifica el error"</a>
+<a class="lvl3" href="#caso-1-funcion-que-calcula-la-media-falta-el-return">Caso 1: función que calcula la media (falta el return)</a>
+<a class="lvl3" href="#caso-2-elevar-al-cuadrado-una-lista-typeerror">Caso 2: elevar al cuadrado una lista (TypeError)</a>
+<a class="lvl3" href="#caso-3-producto-de-matrices-indice-equivocado">Caso 3: producto de matrices (índice equivocado)</a>
+<a class="lvl3" href="#caso-4-minimo-por-alumno-variable-que-no-se-reinicia">Caso 4: mínimo por alumno (variable que no se reinicia)</a>
+<a class="lvl3" href="#otros-errores-clasicos-que-te-pueden-poner">Otros errores clásicos que te pueden poner</a>
+<a class="lvl2" href="#20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="num">20</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</a>
+<a class="lvl3" href="#parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</a>
+<a class="lvl3" href="#parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</a>
+<a class="lvl3" href="#parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</a>
+<a class="lvl3" href="#recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</a>
+<a class="lvl3" href="#recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</a>
+<a class="lvl3" href="#recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</a>
+<a class="lvl3" href="#final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</a>
+<a class="lvl3" href="#final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</a>
+<a class="lvl3" href="#final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</a>
 </nav>
     <div class="toc-empty" id="tocEmpty">Sin resultados.</div>
   </aside>
@@ -482,6 +545,51 @@ pre code{white-space:pre}
 <a class="t3" href="#plantillas-en-blanco-listas-para-rellenar">Plantillas EN BLANCO listas para rellenar</a>
 <a class="t3" href="#glosario-rapido-enunciado-tecnica-resumen-final">Glosario rápido enunciado → técnica (resumen final)</a>
 <a class="t3" href="#checklist-antes-de-entregar">Checklist antes de entregar</a>
+<a class="t2" href="#17-excel-analisis-de-datos-formulas-tablas-dinamicas-graficos"><span class="n">17.</span>Excel: análisis de datos (fórmulas, tablas dinámicas, gráficos)</a>
+<a class="t3" href="#como-es-siempre-el-examen-de-excel">Cómo es SIEMPRE el examen de Excel</a>
+<a class="t3" href="#generar-texto-aleatorio-de-una-lista-turno-ciudad-producto-categoria">Generar TEXTO aleatorio de una lista (Turno / Ciudad / Producto / Categoría)</a>
+<a class="t3" href="#generar-entero-aleatorio-en-un-rango-stock-unidades-consumo">Generar ENTERO aleatorio en un rango (Stock, Unidades, Consumo...)</a>
+<a class="t3" href="#generar-decimal-aleatorio-en-un-rango-coste-precio-tiempo-tasa">Generar DECIMAL aleatorio en un rango (Coste, Precio, Tiempo, Tasa...)</a>
+<a class="t3" href="#generar-un-codigo-tipo-bc042-siglas-numero-de-3-cifras">Generar un CÓDIGO tipo BC042 (siglas + número de 3 cifras)</a>
+<a class="t3" href="#fijar-los-valores-aleatorios-que-no-cambien">FIJAR los valores aleatorios (que no cambien)</a>
+<a class="t3" href="#columnas-calculadas-formulas-aritmeticas">Columnas CALCULADAS (fórmulas aritméticas)</a>
+<a class="t3" href="#columna-de-clasificacion-si-anidado-y-si-conjunto-con-y-o">Columna de CLASIFICACIÓN: SI anidado y SI.CONJUNTO con Y / O</a>
+<a class="t3" href="#columna-de-validacion-error">Columna de VALIDACIÓN (Error)</a>
+<a class="t3" href="#buscar-datos-buscarx-buscarv-indice-coincidir">BUSCAR datos: BUSCARX, BUSCARV, INDICE + COINCIDIR</a>
+<a class="t3" href="#el-elemento-con-el-maximo-articulo-con-mayor-valor-beneficio">El ELEMENTO con el MÁXIMO (artículo con mayor valor / beneficio)</a>
+<a class="t3" href="#resumen-agregacion-sumar-si-conjunto-contar-si-promedio-si">RESUMEN / agregación: SUMAR.SI(.CONJUNTO), CONTAR.SI, PROMEDIO.SI</a>
+<a class="t3" href="#texto-concatenar-sacar-siglas-mes-numero-construir-un-id-resumen">TEXTO: concatenar, sacar siglas, mes → número, construir un ID resumen</a>
+<a class="t3" href="#tabla-dinamica-pivot-table-a-clicks">TABLA DINÁMICA (pivot table) — a CLICKS</a>
+<a class="t3" href="#graficos-columnas-barras-lineas-circular-histograma-a-clicks">GRÁFICOS (columnas, barras, líneas, circular, histograma) — a CLICKS</a>
+<a class="t3" href="#formato-condicional-a-clicks">FORMATO CONDICIONAL — a CLICKS</a>
+<a class="t3" href="#segmentadores-slicers-y-dashboard-a-clicks">SEGMENTADORES (slicers) y DASHBOARD — a CLICKS</a>
+<a class="t3" href="#ejemplo-resuelto-completo-inventario-de-almacen">EJEMPLO RESUELTO COMPLETO — Inventario de almacén</a>
+<a class="t3" href="#mini-chuleta-de-funciones-espanol-ingles">Mini-chuleta de funciones (español → inglés)</a>
+<a class="t2" href="#18-programacion-orientada-a-objetos-clases-y-herencia"><span class="n">18.</span>Programación orientada a objetos (clases y herencia)</a>
+<a class="t3" href="#que-es-una-clase-y-un-objeto">Qué es una clase y un objeto</a>
+<a class="t3" href="#clase-basica-init-atributos-y-metodos">Clase básica: __init__, atributos y métodos</a>
+<a class="t3" href="#atributos-privados-y-getters-setters">Atributos privados y getters/setters</a>
+<a class="t3" href="#el-metodo-str-como-se-imprime-un-objeto">El método __str__ (cómo se imprime un objeto)</a>
+<a class="t3" href="#herencia-una-clase-que-hereda-de-otra">Herencia (una clase que hereda de otra)</a>
+<a class="t3" href="#ejemplo-de-examen-resuelto-formas-forma-poligono-elipse-cuadrado">Ejemplo de examen resuelto: Formas (Forma, Polígono, Elipse, Cuadrado)</a>
+<a class="t3" href="#plantilla-en-blanco-para-clases-con-herencia">Plantilla en blanco para clases con herencia</a>
+<a class="t2" href="#19-identifica-el-error-depuracion-tipica-de-examen"><span class="n">19.</span>Identifica el error (depuración típica de examen)</a>
+<a class="t3" href="#como-enfrentarte-a-identifica-el-error">Cómo enfrentarte a "identifica el error"</a>
+<a class="t3" href="#caso-1-funcion-que-calcula-la-media-falta-el-return">Caso 1: función que calcula la media (falta el return)</a>
+<a class="t3" href="#caso-2-elevar-al-cuadrado-una-lista-typeerror">Caso 2: elevar al cuadrado una lista (TypeError)</a>
+<a class="t3" href="#caso-3-producto-de-matrices-indice-equivocado">Caso 3: producto de matrices (índice equivocado)</a>
+<a class="t3" href="#caso-4-minimo-por-alumno-variable-que-no-se-reinicia">Caso 4: mínimo por alumno (variable que no se reinicia)</a>
+<a class="t3" href="#otros-errores-clasicos-que-te-pueden-poner">Otros errores clásicos que te pueden poner</a>
+<a class="t2" href="#20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="n">20.</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</a>
+<a class="t3" href="#parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</a>
+<a class="t3" href="#parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</a>
+<a class="t3" href="#parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</a>
+<a class="t3" href="#recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</a>
+<a class="t3" href="#recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</a>
+<a class="t3" href="#recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</a>
+<a class="t3" href="#final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</a>
+<a class="t3" href="#final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</a>
+<a class="t3" href="#final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</a>
 </div></section>
 
 <!-- part-00.txt -->
@@ -7235,6 +7343,1118 @@ plt.show()</code></pre></div>
 <div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>has terminado y vas a guardar/entregar. Repasa esto en 30 segundos.</div></div>
 <ul><li>¿El archivo se llama exactamente como pedían? Suele ser <strong><code class="inline">apellido_PX.py</code></strong> (tu apellido + número de problema). Mira el enunciado.</li><li>¿Funciona con los DOS conjuntos de datos? Si dan un segundo juego de datos, cámbialos y vuelve a ejecutar: debe correr sin tocar el resto.</li><li>¿NO has escrito ningún resultado a mano? Todo número que imprimes debe salir de un <code class="inline">print(...)</code> que calcula Python, no copiado del enunciado.</li><li>¿Has puesto los decimales que pedían? Si decía "cuatro decimales", usa <code class="inline">f"{x:.4f}"</code> (no <code class="inline">round</code>, que se come ceros).</li><li>¿La gráfica tiene título, leyenda, nombres de ejes y rejilla? Y <code class="inline">plt.show()</code> al final.</li><li>¿Has respetado "sin librerías" o "sin lambda" si lo pedían? Repasa que no quede ningún <code class="inline">import numpy</code>, <code class="inline">np.</code>, <code class="inline">lambda</code> colado si estaba prohibido. Usa las versiones puras.</li><li>¿Imprimes EXACTAMENTE el formato de salida que piden? Mismo texto, mismo orden, mismos decimales. Si el ejemplo dice <code class="inline">Raíz aproximada: 1.4142</code>, que tu print diga eso clavado.</li><li>¿El código corre entero de arriba a abajo sin errores en rojo? Pulsa ejecutar una última vez y mira la consola limpia.</li><li>¿Los <code class="inline">import</code> necesarios están arriba del todo? <code class="inline">numpy</code>, <code class="inline">matplotlib.pyplot</code>, <code class="inline">pandas</code>, <code class="inline">sympy</code>, <code class="inline">random</code> según lo que uses.</li></ul>
 <div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si te queda tiempo, ejecuta el archivo una vez más entero (botón verde de Spyder, no por celdas) para asegurarte de que no dependes de variables que solo existían en una ejecución anterior.</div></div>
+
+<!-- part-17.txt -->
+<h2 id="17-excel-analisis-de-datos-formulas-tablas-dinamicas-graficos"><span class="num">17</span>Excel: análisis de datos (fórmulas, tablas dinámicas, gráficos)</h2>
+<p>Esta parte es para el ejercicio de <strong>Excel</strong> del examen. Siempre es el mismo tipo de problema "de empresa": te dan una lista de nombres (artículos, productos, ciudades...), generas datos aleatorios, calculas columnas, clasificas con lógica, haces un resumen con funciones, una tabla dinámica, gráficos, formato condicional y un dashboard con segmentadores. Aquí tienes TODO lo que pueden pedir, con la fórmula exacta lista para copiar y un ejemplo resuelto entero al final.</p>
+<p>Todo el examen es en <strong>Excel en español</strong>. El separador de argumentos que uso es el punto y coma <code class="inline">;</code>. En algunos Excel (según la configuración regional) el separador es la <strong>coma</strong> <code class="inline">,</code>. Si una fórmula te da error al pegarla, cambia los <code class="inline">;</code> por <code class="inline">,</code> y listo. Lo aviso en cada sección con <code class="inline">&gt;&gt;&gt; TIP</code>.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Guarda el archivo con el nombre EXACTO que pide el enunciado (por ejemplo <code class="inline">apellido_inventario.xlsx</code>). Si no, hay penalización de puntos. Cambia <code class="inline">apellido</code> por tu apellido real.</div></div>
+<h3 id="como-es-siempre-el-examen-de-excel">Cómo es SIEMPRE el examen de Excel</h3>
+<p>La estructura se repite año tras año. Si sabes hacer estos 8 pasos, lo tienes:</p>
+<p>1. <strong>Generar datos aleatorios</strong> a partir de una lista de nombres fija (texto aleatorio + números aleatorios + a veces un código tipo BC042). 2. <strong>Fijar los aleatorios</strong> (Copiar → Pegado especial → Valores) para que no cambien al recalcular. 3. <strong>Columnas calculadas</strong> con fórmulas aritméticas (Stock final, Valor, Margen, Ingresos, Beneficio, Coste total...). 4. <strong>Columna de clasificación</strong> con lógica (<code class="inline">SI</code> anidado o <code class="inline">SI.CONJUNTO</code> con <code class="inline">Y</code>/<code class="inline">O</code>): Reponer ya / Vigilar / OK; Óptima / Aceptable / Estudiar; Alta / Media / Baja. 5. <strong>Columna de validación/error</strong> (<code class="inline">SI</code> que comprueba una condición imposible). 6. <strong>Hoja "Resumen"</strong> con funciones de agregación: <code class="inline">SUMAR.SI.CONJUNTO</code>, <code class="inline">CONTAR.SI</code>, <code class="inline">PROMEDIO.SI</code>, y "el elemento con el máximo" con <code class="inline">INDICE</code>+<code class="inline">COINCIDIR</code> o <code class="inline">BUSCARX</code>. 7. <strong>Tabla dinámica</strong> (Insertar &gt; Tabla dinámica) + <strong>gráficos</strong> (columnas, barras, líneas, circular, histograma). 8. <strong>Formato condicional</strong> + <strong>segmentadores (slicers)</strong> + <strong>dashboard</strong>.</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Trabaja por columnas. Escribe la fórmula en la PRIMERA fila de datos (normalmente fila 2), comprueba que el resultado tiene sentido, y luego <strong>arrástrala hacia abajo</strong> (doble clic en el cuadradito de la esquina inferior derecha de la celda, o selecciona y <code class="inline">Ctrl+Mayús+Abajo</code> + <code class="inline">Ctrl+D</code>).</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Pon SIEMPRE encabezados en la fila 1 (Artículo, Categoría, Stock inicial...). Los datos empiezan en la fila 2. Esto es imprescindible para las tablas dinámicas y los segmentadores.</div></div>
+<h3 id="generar-texto-aleatorio-de-una-lista-turno-ciudad-producto-categoria">Generar TEXTO aleatorio de una lista (Turno / Ciudad / Producto / Categoría)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"asigna aleatoriamente: Crítico, Estándar o Auxiliar", "asigna aleatoriamente uno de los tres turnos", "selección aleatoria entre valores fijos", "selección aleatoria entre los 12 meses".</div></div>
+<p>Hay dos formas. La más directa es <code class="inline">ELEGIR</code> (CHOOSE) combinada con <code class="inline">ALEATORIO.ENTRE</code> (RANDBETWEEN): el aleatorio saca un número de 1 a n, y <code class="inline">ELEGIR</code> devuelve el texto de esa posición.</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;3);"Crítico";"Estándar";"Auxiliar")</code></pre></div>
+<p>Para 4 opciones (proveedores), simplemente sube el rango a 4 y añade el cuarto texto:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;4);"Prov A";"Prov B";"Prov C";"Prov D")</code></pre></div>
+<p>La variante con <code class="inline">INDICE</code> (INDEX) es mejor cuando la lista de opciones está escrita en celdas (por ejemplo los 8 artículos en un rango <code class="inline">$K$1:$K$8</code>). <code class="inline">ALEATORIO.ENTRE(1; n)</code> elige una fila al azar:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=INDICE($K$1:$K$8;ALEATORIO.ENTRE(1;8))</code></pre></div>
+<p>Para los 12 meses puedes poner los nombres en un rango aparte y usar <code class="inline">INDICE</code>, o escribirlos todos en <code class="inline">ELEGIR</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;12);"Enero";"Febrero";"Marzo";"Abril";"Mayo";"Junio";"Julio";"Agosto";"Septiembre";"Octubre";"Noviembre";"Diciembre")</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>El rango <code class="inline">1;n</code>: n = número de opciones.</li><li>Los textos entre comillas, en el MISMO orden que el número.</li><li>En la variante <code class="inline">INDICE</code>, el rango <code class="inline">$K$1:$K$8</code> (con <code class="inline">$</code> para que no se mueva al arrastrar) y el <code class="inline">8</code> final = número de filas de ese rango.</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Si usas <code class="inline">INDICE(lista; ALEATORIO.ENTRE(1;n))</code>, las referencias del rango de la lista deben ir con <code class="inline">$</code> (absolutas: <code class="inline">$K$1:$K$8</code>). Si no, al arrastrar hacia abajo el rango se desplaza y dejas filas fuera.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Separador coma vs punto y coma: si <code class="inline">=ELEGIR(ALEATORIO.ENTRE(1;3);"A";"B";"C")</code> da error, prueba <code class="inline">=ELEGIR(ALEATORIO.ENTRE(1,3),"A","B","C")</code>.</div></div>
+<h3 id="generar-entero-aleatorio-en-un-rango-stock-unidades-consumo">Generar ENTERO aleatorio en un rango (Stock, Unidades, Consumo...)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"Stock inicial (entre 50 y 500)", "Unidades: un valor entre 300 y 6000", "Consumo: número aleatorio entre 100 y 800", "% Renovable: entero entre 10% y 90%".</div></div>
+<p><code class="inline">ALEATORIO.ENTRE</code> (RANDBETWEEN) da un <strong>entero</strong> entre el mínimo y el máximo, ambos incluidos.</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(50;500)</code></pre></div>
+<p>Ejemplos del examen:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(0;200)
+=ALEATORIO.ENTRE(0;250)
+=ALEATORIO.ENTRE(2;20)
+=ALEATORIO.ENTRE(100;1000)</code></pre></div>
+<p>Para un porcentaje entero entre 10% y 90%, genera el entero y trátalo como número (luego das formato % o lo divides entre 100 si lo necesitas como fracción):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(10;90)</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>solo el mínimo y el máximo. El primer número es el más bajo, el segundo el más alto.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">ALEATORIO.ENTRE</code> solo da <strong>enteros</strong>. Si necesitas decimales (coste, precio, tiempo), usa la fórmula de la siguiente sección.</div></div>
+<h3 id="generar-decimal-aleatorio-en-un-rango-coste-precio-tiempo-tasa">Generar DECIMAL aleatorio en un rango (Coste, Precio, Tiempo, Tasa...)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"Coste unitario entre 3 y 40, con decimales", "Precio unitario entre 12 y 45 (con decimales)", "Tiempo unitario entre 0.8 y 6.0", "Precio decimal entre 0,10 y 0,20 redondeado a 2 decimales".</div></div>
+<p><code class="inline">ALEATORIO()</code> (RAND) da un decimal entre 0 y 1. Lo escalas al rango <code class="inline">[min, max]</code> con <code class="inline">min + ALEATORIO()*(max-min)</code> y rematas con <code class="inline">REDONDEAR</code> (ROUND) para fijar los decimales.</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=REDONDEAR(ALEATORIO()*(40-3)+3;2)</code></pre></div>
+<p>Lee la fórmula así: <code class="inline">(max-min)</code> es el ancho del rango, <code class="inline">*ALEATORIO()</code> lo encoge a un punto al azar dentro, <code class="inline">+min</code> lo sube al inicio del rango, y <code class="inline">REDONDEAR(...;2)</code> deja 2 decimales.</p>
+<p>Más ejemplos:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=REDONDEAR(ALEATORIO()*(45-12)+12;2)
+=REDONDEAR(ALEATORIO()*(6,0-0,8)+0,8;1)
+=REDONDEAR(ALEATORIO()*(0,20-0,10)+0,10;2)</code></pre></div>
+<p>Para una <strong>tasa de defectos entre 0% y 8% con decimales</strong> (como fracción 0–0,08):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=REDONDEAR(ALEATORIO()*(0,08-0)+0;4)</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">(max-min)+min</code>: pon tu máximo y tu mínimo (ojo: el <code class="inline">+min</code> final es el mismo mínimo).</li><li>El último número de <code class="inline">REDONDEAR(...;2)</code>: cuántos decimales quieres (2 para dinero, 1 para tiempo...).</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>En Excel español los decimales se escriben con <strong>coma</strong>: <code class="inline">0,8</code>, no <code class="inline">0.8</code>. Si tu Excel usa coma como separador de ARGUMENTOS, los decimales se escriben con punto y el separador de argumentos es la coma. Lo normal en España: decimales con coma, argumentos con <code class="inline">;</code>.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si el enunciado no pide decimales concretos, redondea a 2: queda limpio y nunca está mal.</div></div>
+<h3 id="generar-un-codigo-tipo-bc042-siglas-numero-de-3-cifras">Generar un CÓDIGO tipo BC042 (siglas + número de 3 cifras)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"ID Vivienda: siglas de la ciudad seguidas de un número de tres cifras (BC042, VL107)".</div></div>
+<p>La clave es <code class="inline">TEXTO</code> (TEXT) con el formato <code class="inline">"000"</code>, que convierte un número en texto rellenando con ceros a la izquierda hasta tener 3 cifras (7 → "007", 42 → "042"). Luego pegas las siglas delante con <code class="inline">&amp;</code> (concatenar).</p>
+<p>Si las siglas ya están en otra celda (por ejemplo la columna Ciudad ya tiene "BC" en <code class="inline">B2</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=B2&amp;TEXTO(ALEATORIO.ENTRE(1;999);"000")</code></pre></div>
+<p>Si las siglas las sacas de la ciudad completa ("Barcelona" en <code class="inline">B2</code>) tomando las 2 primeras letras en mayúscula:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=MAYUSC(IZQUIERDA(B2;2))&amp;TEXTO(ALEATORIO.ENTRE(1;999);"000")</code></pre></div>
+<p>Si quieres generar también las siglas al azar dentro de la misma fórmula:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;4);"MD";"BC";"VL";"SV")&amp;TEXTO(ALEATORIO.ENTRE(1;999);"000")</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>La celda de las siglas (<code class="inline">B2</code>) o la lista de siglas en <code class="inline">ELEGIR</code>.</li><li>El rango del número (<code class="inline">1;999</code> para 3 cifras; <code class="inline">1;9999</code> y <code class="inline">"0000"</code> para 4 cifras).</li><li>El formato <code class="inline">"000"</code>: tantos ceros como cifras quieras forzar.</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">TEXTO(...;"000")</code> es lo que garantiza las <strong>tres cifras siempre</strong> (rellena con ceros). Sin él, el 7 saldría "7" en vez de "007".</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span><code class="inline">&amp;</code> une textos. <code class="inline">="MD"&amp;"042"</code> da <code class="inline">"MD042"</code>. Es lo mismo que <code class="inline">CONCATENAR("MD";"042")</code> pero más corto.</div></div>
+<h3 id="fijar-los-valores-aleatorios-que-no-cambien">FIJAR los valores aleatorios (que no cambien)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"cópialas de manera que los valores aleatorios queden fijos", o cualquier paso posterior (clasificación, máximo, dinámica) que necesite datos estables. Los enunciados con <code class="inline">ALEATORIO</code> cambian cada vez que recalculas la hoja (cada cambio, cada <code class="inline">F9</code>).</div></div>
+<p>No es una fórmula, es a CLICKS. Pasos:</p>
+<p>1. Selecciona todas las celdas con fórmulas aleatorias (las columnas generadas). 2. <code class="inline">Ctrl+C</code> (Copiar). 3. Botón derecho sobre la misma selección → <strong>Pegado especial</strong> (o <code class="inline">Inicio &gt; Pegar &gt; Pegado especial...</code>). 4. Marca la opción <strong>Valores</strong> (en el menú rápido es el icono del portapapeles con "123"). 5. Acepta. Ahora las celdas tienen números fijos, no fórmulas: ya no cambian al recalcular.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Haz esto ANTES de calcular columnas que dependan de los aleatorios o de hacer el resumen. Si no, cada vez que toques algo, los números bailan y el "artículo con mayor valor" o el "Top 3" cambian.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para forzar un recálculo y ver que ya NO cambian, pulsa <code class="inline">F9</code>. Si los números se quedan quietos, está bien fijado.</div></div>
+<h3 id="columnas-calculadas-formulas-aritmeticas">Columnas CALCULADAS (fórmulas aritméticas)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"calcula una columna Stock final = Stock inicial + Entradas − Salidas", "Coste total = Unidades × Coste unitario", "Ingresos = Unidades Vendidas * Precio Unitario", "Beneficio = Ingresos − Costes".</div></div>
+<p>Son operaciones normales con referencias a celdas de la misma fila. Escribe la fórmula en la fila 2 y arrastra hacia abajo. Suponiendo: Stock inicial en <code class="inline">D</code>, Entradas en <code class="inline">E</code>, Salidas en <code class="inline">F</code>, Coste unitario en <code class="inline">G</code>.</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=D2+E2-F2</code></pre></div>
+<p>Valor de stock (Stock final en <code class="inline">I</code>, Coste unitario en <code class="inline">G</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=I2*G2</code></pre></div>
+<p>Más ejemplos típicos (ajusta las letras de columna a tu hoja):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=Precio2-Coste2
+=Unidades2*Coste2
+=Unidades2*Precio2
+=Ingreso2-CosteTotal2
+=Unidades2*Tiempo2/60
+=Unidades2*(1-Tasa2)
+=Consumo2*PorcentRenov2/100
+=Consumo2-ConsumoRenov2
+=Consumo2*Precio2</code></pre></div>
+<p>Una fórmula con varios términos y coeficientes (índice de rendimiento del ejercicio de ensamblaje, <code class="inline">IR = 0,4·Ubuenas + 0,4·Btotal − 0,2·Thoras</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=0,4*UnidBuenas2+0,4*Beneficio2-0,2*TiempoH2</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>solo las letras/celda de cada columna (<code class="inline">D2</code>, <code class="inline">E2</code>...). Escríbela una vez en la fila 2 y arrástrala; las referencias se ajustan solas a cada fila.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>NO uses <code class="inline">$</code> en estas fórmulas de columna: quieres que <code class="inline">D2</code> pase a <code class="inline">D3</code>, <code class="inline">D4</code>... al arrastrar (referencia <strong>relativa</strong>). El <code class="inline">$</code> solo se usa para señalar a un valor fijo (una constante en una celda, o un rango de búsqueda).</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>En lugar de adivinar la letra de columna, haz clic en la celda cuando escribes la fórmula: Excel pone la referencia correcta sola.</div></div>
+<h3 id="columna-de-clasificacion-si-anidado-y-si-conjunto-con-y-o">Columna de CLASIFICACIÓN: SI anidado y SI.CONJUNTO con Y / O</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"crea una columna Estado: Reponer ya / Vigilar / OK", "Clasificación: Óptima / Aceptable / Estudiar producto", "Etiqueta Ambiental: Alta / Media / Baja".</div></div>
+<p>Esto es lo que más puntúa y donde más se falla. Tienes dos herramientas: <code class="inline">SI</code> (IF) anidado, y <code class="inline">SI.CONJUNTO</code> (IFS). Y para condiciones combinadas, <code class="inline">Y</code> (AND, todas a la vez) y <code class="inline">O</code> (OR, al menos una).</p>
+<p><strong>Regla de oro para traducir condiciones:</strong></p>
+<ul><li>"A <strong>y</strong> B" (las dos a la vez) → <code class="inline">Y(A;B)</code>.</li><li>"A <strong>o</strong> B" (al menos una) → <code class="inline">O(A;B)</code>.</li><li>"entre 80 y 150" → <code class="inline">Y(X&gt;80;X&lt;150)</code>.</li></ul>
+<p><strong>Ejemplo del inventario</strong> (lo más liado). Estado, con Stock final en <code class="inline">I</code> y Categoría en <code class="inline">B</code>:</p>
+<ul><li><strong>Reponer ya</strong>: si <code class="inline">Stock final &lt; 80</code> O (<code class="inline">Categoría = "Crítico"</code> Y <code class="inline">Stock final &lt; 120</code>).</li><li><strong>Vigilar</strong>: si no es el caso anterior y <code class="inline">80 ≤ Stock final &lt; 150</code>.</li><li><strong>OK</strong>: en los demás casos.</li></ul>
+<p>Con <code class="inline">SI</code> anidado (un <code class="inline">SI</code> dentro de otro; el ORDEN importa, primero la condición más restrictiva):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(O(I2&lt;80;Y(B2="Crítico";I2&lt;120));"Reponer ya";SI(I2&lt;150;"Vigilar";"OK"))</code></pre></div>
+<p>Léelo: "SI (Stock&lt;80 O (Categoría=Crítico Y Stock&lt;120)) entonces 'Reponer ya'; si no, SI Stock&lt;150 entonces 'Vigilar'; si no 'OK'". Como ya hemos descartado "Reponer ya", basta con <code class="inline">I2&lt;150</code> para "Vigilar".</p>
+<p>La misma lógica con <code class="inline">SI.CONJUNTO</code> (IFS): evalúa condiciones en orden y devuelve el primer texto cuya condición sea <code class="inline">VERDADERO</code>. La última condición <code class="inline">VERDADERO</code> es el "en caso contrario".</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI.CONJUNTO(O(I2&lt;80;Y(B2="Crítico";I2&lt;120));"Reponer ya";I2&lt;150;"Vigilar";VERDADERO;"OK")</code></pre></div>
+<p><strong>Ejemplo Óptima / Aceptable / Estudiar</strong> (ensamblaje). Unidades en <code class="inline">D</code>, Margen en <code class="inline">M</code>, Tasa de defectos en <code class="inline">H</code>:</p>
+<ul><li>Óptima: Unidades &gt; 4500 Y Margen &gt; 12 Y Tasa &lt; 0,02.</li><li>Aceptable: 2000 &lt; Unidades &lt; 4500 O 6 &lt; Margen &lt; 12.</li><li>Estudiar producto: resto.</li></ul>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(Y(D2&gt;4500;M2&gt;12;H2&lt;0,02);"Óptima";SI(O(Y(D2&gt;2000;D2&lt;4500);Y(M2&gt;6;M2&lt;12));"Aceptable";"Estudiar producto"))</code></pre></div>
+<p><strong>Ejemplo Alta / Media / Baja</strong> (consumo energético). % Renovable en <code class="inline">F</code> (como entero 10–90):</p>
+<ul><li>Alta: ≥ 60. Media: entre 30 y 59. Baja: &lt; 30.</li></ul>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(F2&gt;=60;"Alta";SI(F2&gt;=30;"Media";"Baja"))</code></pre></div>
+<p>Fíjate qué limpio queda cuando las condiciones son "escalones" ordenados: solo necesitas comparar de mayor a menor y no hace falta <code class="inline">Y</code> ni <code class="inline">O</code>.</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>Las celdas de cada condición (<code class="inline">I2</code>, <code class="inline">B2</code>, <code class="inline">D2</code>...).</li><li>Los umbrales (80, 120, 150, 4500, 60, 30...).</li><li>Los textos de cada categoría, exactamente como los pide el enunciado (con tildes: "Crítico", "Óptima").</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>El ORDEN de los <code class="inline">SI</code> importa muchísimo. Pon primero la condición más exigente. Si pones "Vigilar" antes que "Reponer ya", un artículo crítico con stock 100 se clasificaría mal. Por eso "Reponer ya" (lo más urgente) va primero.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Las comparaciones de texto usan <code class="inline">=</code> con comillas: <code class="inline">B2="Crítico"</code>. Cópialo con la tilde y mayúscula iguales que el dato; si no, no coincide.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>"entre X e Y" SIEMPRE es dos comparaciones con <code class="inline">Y</code>: <code class="inline">Y(D2&gt;2000;D2&lt;4500)</code>. No escribas <code class="inline">2000&lt;D2&lt;4500</code> (eso no funciona en Excel).</div></div>
+<h3 id="columna-de-validacion-error">Columna de VALIDACIÓN (Error)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"asegura que Salidas no pueda ser mayor que Stock inicial + Entradas. Si ocurre, marca una columna Error con 'Salida inválida'; en caso contrario deja vacío."</div></div>
+<p>Un <code class="inline">SI</code> que comprueba la condición imposible y escribe el aviso, o cadena vacía <code class="inline">""</code> si todo está bien. Stock inicial en <code class="inline">D</code>, Entradas en <code class="inline">E</code>, Salidas en <code class="inline">F</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(F2&gt;D2+E2;"Salida inválida";"")</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>La condición imposible: <code class="inline">F2&gt;D2+E2</code> (Salidas mayores que lo que había disponible).</li><li>El texto de error: "Salida inválida".</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">""</code> (dos comillas seguidas) significa "celda vacía / sin texto". Es lo que pide "deja vacío". Esa celda vacía además NO dispara el formato condicional de error.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Otras validaciones que pueden pedir, mismo molde: <code class="inline">=SI(E2&lt;0;"Entrada negativa";"")</code>, <code class="inline">=SI(Precio2&lt;Coste2;"Pérdida";"")</code>.</div></div>
+<h3 id="buscar-datos-buscarx-buscarv-indice-coincidir">BUSCAR datos: BUSCARX, BUSCARV, INDICE + COINCIDIR</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"muestra el dato X correspondiente a Y", "busca el precio del producto Z", "trae la categoría del artículo seleccionado". También sirve para el "elemento con el máximo" (siguiente sección).</div></div>
+<p><code class="inline">BUSCARX</code> (XLOOKUP) es la moderna y la más fácil: <code class="inline">=BUSCARX(qué_busco; dónde_lo_busco; qué_devuelvo)</code>. Busca "Bomba" en la columna de artículos <code class="inline">A2:A9</code> y devuelve su valor de stock de <code class="inline">J2:J9</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=BUSCARX("Bomba";A2:A9;J2:J9)</code></pre></div>
+<p><code class="inline">BUSCARV</code> (VLOOKUP) es la clásica: <code class="inline">=BUSCARV(qué_busco; tabla; nº_columna; FALSO)</code>. El dato buscado debe estar en la PRIMERA columna de la tabla, y cuentas columnas hacia la derecha. Si Artículo está en <code class="inline">A</code> y Valor en la 10ª columna de la tabla <code class="inline">A2:J9</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=BUSCARV("Bomba";A2:J9;10;FALSO)</code></pre></div>
+<p><code class="inline">INDICE</code>+<code class="inline">COINCIDIR</code> (INDEX/MATCH) es la combinación todopoderosa (funciona aunque la columna buscada esté a la izquierda). <code class="inline">COINCIDIR</code> encuentra en qué fila está "Bomba", e <code class="inline">INDICE</code> saca el valor de esa fila:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=INDICE(J2:J9;COINCIDIR("Bomba";A2:A9;0))</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>el valor buscado ("Bomba" o una referencia a celda), el rango donde buscar, y el rango/columna que devuelves.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>En <code class="inline">BUSCARV</code> pon SIEMPRE <code class="inline">FALSO</code> (o <code class="inline">0</code>) como último argumento: significa "coincidencia exacta". Sin él, busca aproximado y da resultados raros. En <code class="inline">COINCIDIR</code>, el <code class="inline">0</code> final es lo mismo: exacto.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">BUSCARV</code> solo mira hacia la DERECHA desde la primera columna de la tabla. Si lo que devuelves está a la izquierda del valor buscado, usa <code class="inline">BUSCARX</code> o <code class="inline">INDICE</code>+<code class="inline">COINCIDIR</code>.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si <code class="inline">BUSCARX</code> no existe en tu versión de Excel (muy antiguo), usa <code class="inline">INDICE</code>+<code class="inline">COINCIDIR</code>, que funciona en todas.</div></div>
+<h3 id="el-elemento-con-el-maximo-articulo-con-mayor-valor-beneficio">El ELEMENTO con el MÁXIMO (artículo con mayor valor / beneficio)</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"muestra el artículo con mayor valor de stock", "identifica el producto con mayor beneficio total", "el producto con mayor tasa de defectos promedio".</div></div>
+<p>No quieres el número máximo, quieres el NOMBRE que lo tiene. <code class="inline">MAX</code> encuentra el mayor valor, <code class="inline">COINCIDIR</code> localiza en qué fila está ese máximo, e <code class="inline">INDICE</code> saca el artículo de esa fila. Artículos en <code class="inline">A2:A9</code>, valores en <code class="inline">J2:J9</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=INDICE(A2:A9;COINCIDIR(MAX(J2:J9);J2:J9;0))</code></pre></div>
+<p>Léelo de dentro a fuera: <code class="inline">MAX(J2:J9)</code> = el mayor valor; <code class="inline">COINCIDIR(ese_max; J2:J9; 0)</code> = la fila donde está; <code class="inline">INDICE(A2:A9; esa_fila)</code> = el artículo de esa fila.</p>
+<p>La alternativa con <code class="inline">BUSCARX</code> busca el máximo y devuelve el artículo de su misma fila:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=BUSCARX(MAX(J2:J9);J2:J9;A2:A9)</code></pre></div>
+<p>Para el de mayor beneficio (productos en <code class="inline">A</code>, beneficio en <code class="inline">P</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=INDICE(A2:A13;COINCIDIR(MAX(P2:P13);P2:P13;0))</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>el rango de NOMBRES (lo que devuelves) y el rango de NÚMEROS (donde mides el máximo). Deben tener las mismas filas.</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>El <code class="inline">0</code> en <code class="inline">COINCIDIR(...;0)</code> = coincidencia exacta. Imprescindible.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para el MÍNIMO, cambia <code class="inline">MAX</code> por <code class="inline">MIN</code>. Para "el de menor coste", <code class="inline">=INDICE(A2:A9;COINCIDIR(MIN(G2:G9);G2:G9;0))</code>.</div></div>
+<h3 id="resumen-agregacion-sumar-si-conjunto-contar-si-promedio-si">RESUMEN / agregación: SUMAR.SI(.CONJUNTO), CONTAR.SI, PROMEDIO.SI</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>hoja "Resumen": "valor total de stock por proveedor", "unidades totales por turno", "beneficio total por máquina", "número de artículos en estado Reponer ya", "plazo de entrega promedio por categoría", "consumo medio por ciudad".</div></div>
+<p><strong>Sumar con una condición</strong> → <code class="inline">SUMAR.SI</code> (SUMIF): <code class="inline">=SUMAR.SI(rango_criterio; criterio; rango_a_sumar)</code>. Valor total de stock del "Prov A" (Proveedor en <code class="inline">C</code>, Valor en <code class="inline">J</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI(C2:C9;"Prov A";J2:J9)</code></pre></div>
+<p><strong>Sumar con varias condiciones</strong> → <code class="inline">SUMAR.SI.CONJUNTO</code> (SUMIFS): el primer argumento es el rango a sumar, luego pares (rango;criterio). Beneficio de "M1" en turno "Mañana":</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI.CONJUNTO(P2:P13;Maquina2:Maquina13;"M1";Turno2:Turno13;"Mañana")</code></pre></div>
+<p><strong>Contar cuántos cumplen</strong> → <code class="inline">CONTAR.SI</code> (COUNTIF). Cuántos artículos en estado "Reponer ya" (Estado en <code class="inline">K</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=CONTAR.SI(K2:K9;"Reponer ya")</code></pre></div>
+<p><strong>Promedio con condición</strong> → <code class="inline">PROMEDIO.SI</code> (AVERAGEIF). Plazo de entrega promedio de la categoría "Crítico" (Categoría en <code class="inline">B</code>, Plazo en <code class="inline">H</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=PROMEDIO.SI(B2:B9;"Crítico";H2:H9)</code></pre></div>
+<p><strong>Promedio con varias condiciones</strong> → <code class="inline">PROMEDIO.SI.CONJUNTO</code> (AVERAGEIFS), mismo orden que <code class="inline">SUMAR.SI.CONJUNTO</code>. Consumo medio de Barcelona en turno Mañana:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=PROMEDIO.SI.CONJUNTO(Consumo2:Consumo30;Ciudad2:Ciudad30;"Barcelona";Turno2:Turno30;"Mañana")</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>En <code class="inline">SUMAR.SI</code>/<code class="inline">CONTAR.SI</code>/<code class="inline">PROMEDIO.SI</code>: el rango donde está la etiqueta, el texto del criterio, y el rango de números.</li><li>En <code class="inline">SUMAR.SI.CONJUNTO</code>/<code class="inline">PROMEDIO.SI.CONJUNTO</code> el rango de números va PRIMERO; en <code class="inline">SUMAR.SI</code>/<code class="inline">PROMEDIO.SI</code> va el ÚLTIMO. (Sí, el orden cambia; cuidado.)</li></ul></div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Si vas a copiar la fórmula para los 4 proveedores poniendo el criterio en celdas (<code class="inline">E2="Prov A"</code>, <code class="inline">E3="Prov B"</code>...), fija los rangos con <code class="inline">$</code>: <code class="inline">=SUMAR.SI($C$2:$C$9;E2;$J$2:$J$9)</code>. Así al arrastrar solo cambia el criterio <code class="inline">E2</code>, no los rangos.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>El criterio admite comodines y comparaciones como texto: <code class="inline">"&gt;100"</code>, <code class="inline">"&lt;&gt;OK"</code>, <code class="inline">"M*"</code>. Ej.: <code class="inline">=CONTAR.SI(I2:I9;"&lt;80")</code> cuenta stocks bajos.</div></div>
+<h3 id="texto-concatenar-sacar-siglas-mes-numero-construir-un-id-resumen">TEXTO: concatenar, sacar siglas, mes → número, construir un ID resumen</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"ID Resumen que combine las siglas de la ciudad + número de mes (2 cifras) + letra de etiqueta", "Ejemplo: BC_03_M".</div></div>
+<p><strong>Concatenar</strong> con <code class="inline">&amp;</code> o <code class="inline">CONCATENAR</code> (CONCAT). <code class="inline">="BC"&amp;"_"&amp;"03"</code> da <code class="inline">"BC_03"</code>.</p>
+<p><strong>Sacar siglas / trozos de texto</strong>: <code class="inline">IZQUIERDA</code> (LEFT) toma desde la izquierda, <code class="inline">DERECHA</code> (RIGHT) desde la derecha, <code class="inline">EXTRAE</code> (MID) desde una posición. <code class="inline">=IZQUIERDA("Barcelona";2)</code> da <code class="inline">"Ba"</code>; <code class="inline">=EXTRAE("BC042";1;2)</code> da <code class="inline">"BC"</code>.</p>
+<p><strong>Nombre de mes → número de 2 cifras</strong>: el truco es convertir el nombre a fecha con <code class="inline">MES(FECHANUMERO("1-"&amp;nombre))</code> y formatearlo a 2 cifras con <code class="inline">TEXTO(...;"00")</code>. Si el mes (texto, "Marzo") está en <code class="inline">C2</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=TEXTO(MES(FECHANUMERO("1-"&amp;C2));"00")</code></pre></div>
+<p>Léelo: <code class="inline">"1-"&amp;C2</code> arma "1-Marzo"; <code class="inline">FECHANUMERO</code> lo entiende como fecha; <code class="inline">MES</code> saca 3; <code class="inline">TEXTO(3;"00")</code> da "03".</p>
+<p>Alternativa robusta si lo anterior falla por el idioma: una tabla de meses y <code class="inline">COINCIDIR</code>, o un <code class="inline">ELEGIR</code> largo. Pero lo más simple si los meses los generaste tú con <code class="inline">ELEGIR</code> es guardar a la vez el número. En todo caso, la versión directa:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=TEXTO(COINCIDIR(C2;{"Enero";"Febrero";"Marzo";"Abril";"Mayo";"Junio";"Julio";"Agosto";"Septiembre";"Octubre";"Noviembre";"Diciembre"};0);"00")</code></pre></div>
+<p><strong>Letra de la etiqueta</strong> (Alta→"A", Media→"M", Baja→"B"), con Etiqueta en <code class="inline">G2</code>:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=IZQUIERDA(G2;1)</code></pre></div>
+<p>(funciona porque "Alta", "Media" y "Baja" empiezan justo por A, M, B).</p>
+<p><strong>El ID Resumen completo</strong> tipo <code class="inline">BC_03_M</code> (Ciudad/siglas en <code class="inline">B2</code>, Mes texto en <code class="inline">C2</code>, Etiqueta en <code class="inline">G2</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=B2&amp;"_"&amp;TEXTO(MES(FECHANUMERO("1-"&amp;C2));"00")&amp;"_"&amp;IZQUIERDA(G2;1)</code></pre></div>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>las celdas de cada trozo (<code class="inline">B2</code>, <code class="inline">C2</code>, <code class="inline">G2</code>) y los separadores (<code class="inline">"_"</code>).</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">TEXTO(...;"00")</code> es lo que fuerza las <strong>dos cifras</strong> del mes (3 → "03"). Sin <code class="inline">TEXTO</code>, saldría "3" y el ID quedaría mal.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si en tu hoja la columna Ciudad guarda el nombre completo ("Barcelona") y necesitas las siglas, cambia <code class="inline">B2</code> por <code class="inline">MAYUSC(IZQUIERDA(B2;2))</code> en el ID.</div></div>
+<h3 id="tabla-dinamica-pivot-table-a-clicks">TABLA DINÁMICA (pivot table) — a CLICKS</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"inserta una tabla dinámica", "que muestre la suma de Beneficio por producto", "muestre el porcentaje de la suma de beneficio", "tabla dinámica de beneficio por país".</div></div>
+<p>Pasos:</p>
+<p>1. Haz clic en cualquier celda de tu tabla de datos (con encabezados en la fila 1). 2. <code class="inline">Insertar &gt; Tabla dinámica</code>. Elige "Nueva hoja de cálculo" (o la hoja que pida el enunciado, p.ej. "Turnos") y Aceptar. 3. A la derecha aparece el panel "Campos de tabla dinámica". Arrastra los campos a las áreas:</p>
+<ul><li><strong>Filas</strong>: el campo por el que agrupas (Proveedor, País, Mes, Producto...).</li><li><strong>Valores</strong>: el número a resumir (Beneficio, Unidades, Valor...).</li><li><strong>Filtros</strong>: el campo por el que quieres filtrar arriba (p.ej. Turno).</li></ul>
+<p>4. En <strong>Valores</strong>, comprueba que dice "Suma de..." y no "Cuenta de...". Si no, clic en el campo → "Configuración de campo de valor" → elige <strong>Suma</strong> (o Promedio si lo piden).</p>
+<p><strong>Cambiar a % del total</strong>: clic en el campo de Valores → "Configuración de campo de valor" → pestaña <strong>Mostrar valores como</strong> → elige <strong>% del total general</strong>.</p>
+<p><strong>Ordenar de mayor a menor</strong>: botón derecho sobre un valor de la columna de datos → <code class="inline">Ordenar &gt; Ordenar de mayor a menor</code>.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Para que la tabla dinámica funcione, los datos NO pueden tener filas/columnas vacías intercaladas y la fila 1 debe ser de encabezados. Si añades datos luego, clic derecho en la dinámica → <strong>Actualizar</strong>.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>"Suma de Beneficio por producto, filtrando por turno" = Producto a Filas, Beneficio a Valores (como Suma), Turno a Filtros. "Porcentaje de la suma de beneficio" = pon Beneficio en Valores y cambia a "% del total general".</div></div>
+<h3 id="graficos-columnas-barras-lineas-circular-histograma-a-clicks">GRÁFICOS (columnas, barras, líneas, circular, histograma) — a CLICKS</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"crea un gráfico de columnas con el valor por proveedor", "gráfico de barras horizontal ordenado", "gráfico de líneas de unidades por mes", "gráfico circular del porcentaje", "histograma del Coste Total".</div></div>
+<p>Pasos generales:</p>
+<p>1. Selecciona los datos a graficar (en una dinámica, una celda dentro; en una tabla normal, las dos columnas: etiquetas + valores). 2. <code class="inline">Insertar</code> → grupo Gráficos → elige el tipo:</p>
+<ul><li><strong>Columnas</strong>: barras verticales (comparar categorías). "Gráfico de columnas agrupadas".</li><li><strong>Barras</strong>: barras horizontales (bueno para rankings con nombres largos).</li><li><strong>Líneas</strong>: evolución por tiempo (meses).</li><li><strong>Circular</strong> (pastel): porcentajes de un total.</li><li><strong>Histograma</strong>: distribución de una variable numérica (<code class="inline">Insertar &gt; Gráficos estadísticos &gt; Histograma</code>).</li></ul>
+<p>3. Si partes de una tabla dinámica, usa <code class="inline">Insertar &gt; Gráfico dinámico</code> para que se conecte a la dinámica (necesario para el dashboard con segmentadores).</p>
+<p><strong>Personalizar (lo que suele pedir):</strong></p>
+<ul><li><strong>Título</strong>: clic en el título del gráfico y escribe el texto exacto (p.ej. "Beneficio Total por País").</li><li><strong>Color de las barras/línea</strong>: clic en una barra (se seleccionan todas) → botón derecho → <code class="inline">Relleno</code> → elige el color (verde, azul...). Para una línea: clic en la línea → <code class="inline">Contorno</code>/<code class="inline">Relleno de forma</code> → color.</li><li><strong>Ordenar de mayor a menor</strong> (gráfico de barras horizontal "de arriba a abajo"): ordena los DATOS de origen de mayor a menor (en la dinámica, clic derecho → Ordenar). En barras horizontales Excel dibuja el primero abajo; si quieres el mayor arriba, ordena de <strong>menor a mayor</strong> en los datos, o invierte el eje (<code class="inline">Dar formato al eje &gt; Categorías en orden inverso</code>).</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>"Barras de color verde" / "línea de color azul" se hacen seleccionando la serie y cambiando el color de relleno/contorno. Es a clics, no hay fórmula.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para un histograma sin la herramienta de estadísticos, también vale <code class="inline">Datos &gt; Análisis de datos &gt; Histograma</code> (si el complemento está activo). Pero <code class="inline">Insertar &gt; Histograma</code> es lo más rápido.</div></div>
+<h3 id="formato-condicional-a-clicks">FORMATO CONDICIONAL — a CLICKS</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"resalta en rojo las celdas con Estado = Reponer ya", "en amarillo las de Vigilar", "en rojo el error de salida inválida", "resalta en verde los beneficios mayores a 15000", "en rojo los negativos", "Top 3 con otro color".</div></div>
+<p>Pasos base:</p>
+<p>1. Selecciona el rango de celdas (p.ej. toda la columna Estado, o toda la de Beneficio). 2. <code class="inline">Inicio &gt; Formato condicional</code>. 3. Elige el tipo de regla y el formato (relleno de color), Aceptar.</p>
+<p><strong>Reglas concretas que piden:</strong></p>
+<ul><li><strong>Texto igual a "Reponer ya" en rojo</strong>: <code class="inline">Formato condicional &gt; Reglas para resaltar celdas &gt; Texto que contiene...</code> (o "Es igual a") → escribe <code class="inline">Reponer ya</code> → formato Relleno rojo. Repite para "Vigilar" → amarillo, y para "Salida inválida" → rojo.</li><li><strong>Mayor que un número (&gt;15000) en verde</strong>: <code class="inline">Reglas para resaltar celdas &gt; Es mayor que...</code> → <code class="inline">15000</code> → relleno verde.</li><li><strong>Negativos en rojo</strong>: <code class="inline">Reglas para resaltar celdas &gt; Es menor que...</code> → <code class="inline">0</code> → relleno rojo.</li><li><strong>Top 3 con otro color</strong>: <code class="inline">Reglas superiores e inferiores &gt; 10 superiores...</code> → cambia el 10 por <strong>3</strong> → elige otro color (p.ej. azul). Esto resalta los 3 valores más altos.</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Para colorear según el texto de "Estado", selecciona la columna Estado y usa "Es igual a" con el texto EXACTO (con tildes). El error "Salida inválida" se colorea igual seleccionando la columna Error.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si quieres que se coloree la FILA entera según el estado (no solo la celda), usa <code class="inline">Formato condicional &gt; Nueva regla &gt; Usar una fórmula</code> con <code class="inline">=$K2="Reponer ya"</code> (el <code class="inline">$</code> solo delante de la letra fija la columna y deja variar la fila).</div></div>
+<h3 id="segmentadores-slicers-y-dashboard-a-clicks">SEGMENTADORES (slicers) y DASHBOARD — a CLICKS</h3>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>"agrega segmentadores para Turno y Máquina", "añade segmentadores (slicers) para Producto y País", "crea un dashboard interactivo que filtre los dos gráficos".</div></div>
+<p><strong>Insertar segmentadores:</strong> 1. Haz clic en una tabla dinámica (o gráfico dinámico). 2. <code class="inline">Insertar &gt; Segmentación de datos</code> (o, desde la dinámica, <code class="inline">Análisis de tabla dinámica &gt; Insertar Segmentación de datos</code>). 3. Marca los campos que quieres como filtro (Turno, Máquina / Producto, País) y Aceptar. Aparecen unas cajas con botones.</p>
+<p><strong>Conectar un segmentador a VARIOS gráficos</strong> (lo clave del dashboard): 1. Clic derecho sobre el segmentador → <strong>Conexiones de informe</strong> (o "Conexiones de tabla dinámica"). 2. Marca TODAS las tablas dinámicas que alimentan tus gráficos. 3. Aceptar. Ahora al pulsar un botón del segmentador, todos los gráficos conectados se filtran a la vez.</p>
+<p><strong>Montar el Dashboard:</strong> 1. Crea una hoja llamada <code class="inline">Dashboard</code>. 2. Copia/mueve allí los dos gráficos dinámicos y los segmentadores (cortar y pegar, o créalos en esa hoja). 3. Organízalos: gráficos arriba, segmentadores a un lado, alineados. Quita las líneas de cuadrícula (<code class="inline">Vista &gt; desmarcar Líneas de cuadrícula</code>) para que se vea limpio. 4. Prueba: pulsa un valor en un segmentador y confirma que AMBOS gráficos se actualizan.</p>
+<p><strong>Filtrar a un valor inicial</strong> ("Producto: Tablet, País: España"): en cada segmentador, haz clic sobre el valor pedido (Tablet / España). Quedan seleccionados y los gráficos muestran solo eso.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Los segmentadores solo funcionan con tablas/gráficos DINÁMICOS. Si tus gráficos son normales, conviértelos en gráficos dinámicos primero (insertados desde una tabla dinámica).</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Para que un segmentador filtre dos gráficos, ambos deben venir de tablas dinámicas basadas en los MISMOS datos. Si no se actualiza alguno, revisa "Conexiones de informe" y márcalo.</div></div>
+<h3 id="ejemplo-resuelto-completo-inventario-de-almacen">EJEMPLO RESUELTO COMPLETO — Inventario de almacén</h3>
+<p>Este es el problema del <code class="inline">final_coding.txt</code>: generas inventario aleatorio de 8 artículos (Motor, Bomba, Filtro, Correa, Sensor, Válvula, Conector, Manguera), calculas columnas, clasificas el Estado, validas, haces el Resumen y un gráfico, y aplicas formato condicional. Aquí está resuelto.</p>
+<p><strong>Layout de columnas de la hoja "Inventario"</strong> (fila 1 = encabezados, datos desde la fila 2):</p>
+<ul><li>A: Artículo · B: Categoría · C: Proveedor · D: Stock inicial · E: Entradas · F: Salidas · G: Coste unitario · H: Plazo entrega · I: Stock final · J: Valor de stock · K: Estado · L: Error</li></ul>
+<p><strong>1) Generar los datos (columnas A–H, fila 2; luego arrastrar y FIJAR con Pegado especial &gt; Valores):</strong></p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;8);"Motor";"Bomba";"Filtro";"Correa";"Sensor";"Válvula";"Conector";"Manguera")</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;3);"Crítico";"Estándar";"Auxiliar")</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ELEGIR(ALEATORIO.ENTRE(1;4);"Prov A";"Prov B";"Prov C";"Prov D")</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(50;500)</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(0;200)</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(0;250)</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=REDONDEAR(ALEATORIO()*(40-3)+3;2)</code></pre></div>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=ALEATORIO.ENTRE(2;20)</code></pre></div>
+<p><strong>2) Columnas calculadas:</strong></p>
+<p>Stock final (I2) = Stock inicial + Entradas − Salidas:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=D2+E2-F2</code></pre></div>
+<p>Valor de stock (J2) = Stock final × Coste unitario:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=I2*G2</code></pre></div>
+<p>Estado (K2): Reponer ya si Stock final &lt; 80 O (Categoría=Crítico Y Stock final &lt; 120); Vigilar si Stock final &lt; 150; OK en otro caso:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(O(I2&lt;80;Y(B2="Crítico";I2&lt;120));"Reponer ya";SI(I2&lt;150;"Vigilar";"OK"))</code></pre></div>
+<p>Error (L2): "Salida inválida" si Salidas &gt; Stock inicial + Entradas; si no, vacío:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SI(F2&gt;D2+E2;"Salida inválida";"")</code></pre></div>
+<p><strong>Así queda la hoja</strong> (ejemplo con valores ya fijados; en verde/amarillo/rojo lo que coloreará el formato condicional):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Inventario" (ejemplo resuelto, valores ya fijados)</caption>
+<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>I</th><th>J</th><th>K</th><th>L</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Artículo</td><td>Categoría</td><td>Proveedor</td><td>Stock ini.</td><td>Entradas</td><td>Salidas</td><td>Coste u.</td><td>Stock final</td><td>Valor stock</td><td>Estado</td><td>Error</td></tr>
+<tr><td>2</td><td>Motor</td><td>Estándar</td><td>Prov A</td><td class="num">420</td><td class="num">60</td><td class="num">160</td><td class="num">14,00</td><td class="num">320</td><td class="num">4480,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>3</td><td>Bomba</td><td>Crítico</td><td>Prov B</td><td class="num">90</td><td class="num">10</td><td class="num">40</td><td class="num">9,00</td><td class="num">60</td><td class="num">540,00</td><td class="cf-red">Reponer ya</td><td></td></tr>
+<tr><td>4</td><td>Filtro</td><td>Auxiliar</td><td>Prov A</td><td class="num">200</td><td class="num">30</td><td class="num">120</td><td class="num">5,50</td><td class="num">110</td><td class="num">605,00</td><td class="cf-yellow">Vigilar</td><td></td></tr>
+<tr><td>5</td><td>Correa</td><td>Crítico</td><td>Prov C</td><td class="num">300</td><td class="num">40</td><td class="num">80</td><td class="num">7,20</td><td class="num">260</td><td class="num">1872,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>6</td><td>Sensor</td><td>Estándar</td><td>Prov D</td><td class="num">150</td><td class="num">20</td><td class="num">200</td><td class="num">22,00</td><td class="num">-30</td><td class="num">-660,00</td><td class="cf-red">Reponer ya</td><td class="cf-red">Salida inválida</td></tr>
+<tr><td>7</td><td>Válvula</td><td>Crítico</td><td>Prov B</td><td class="num">130</td><td class="num">10</td><td class="num">30</td><td class="num">18,40</td><td class="num">110</td><td class="num">2024,00</td><td class="cf-red">Reponer ya</td><td></td></tr>
+<tr><td>8</td><td>Conector</td><td>Auxiliar</td><td>Prov C</td><td class="num">260</td><td class="num">50</td><td class="num">90</td><td class="num">3,80</td><td class="num">220</td><td class="num">836,00</td><td class="cf-green">OK</td><td></td></tr>
+<tr><td>9</td><td>Manguera</td><td>Estándar</td><td>Prov A</td><td class="num">140</td><td class="num">15</td><td class="num">25</td><td class="num">6,10</td><td class="num">130</td><td class="num">793,00</td><td class="cf-yellow">Vigilar</td><td></td></tr>
+</tbody></table></div>
+<p>Fíjate en la fila 6 (Sensor): Salidas (200) &gt; Stock inicial+Entradas (170), así que el Stock final sale negativo (−30), el Estado es "Reponer ya" y la columna Error marca "Salida inválida".</p>
+<p><strong>3) Hoja "Resumen" — funciones de agregación.</strong> (Los rangos apuntan a la hoja Inventario; aquí los escribo sin el nombre de hoja para que se lean fáciles. En tu archivo, si la fórmula está en la hoja Resumen, antepón <code class="inline">Inventario!</code> a cada rango, p.ej. <code class="inline">Inventario!$C$2:$C$9</code>.)</p>
+<p>(a) Valor total de stock por proveedor (Proveedor en C, Valor en J). Una fórmula por proveedor:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI($C$2:$C$9;"Prov A";$J$2:$J$9)</code></pre></div>
+<p>Si pones "Prov A", "Prov B"... en celdas <code class="inline">A2</code>, <code class="inline">A3</code>... de la hoja Resumen, arrastra esta y solo cambia el criterio:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=SUMAR.SI(Inventario!$C$2:$C$9;A2;Inventario!$J$2:$J$9)</code></pre></div>
+<p>(b) Número de artículos en estado "Reponer ya" (Estado en K):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=CONTAR.SI($K$2:$K$9;"Reponer ya")</code></pre></div>
+<p>(c) Plazo de entrega promedio por categoría (Categoría en B, Plazo en H). Una por categoría:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=PROMEDIO.SI($B$2:$B$9;"Crítico";$H$2:$H$9)</code></pre></div>
+<p>(d) Artículo con mayor valor de stock (Artículo en A, Valor en J):</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=INDICE($A$2:$A$9;COINCIDIR(MAX($J$2:$J$9);$J$2:$J$9;0))</code></pre></div>
+<p>o con BUSCARX:</p>
+<div class="codeblock"><div class="bar"><span class="lang">excel</span><button class="copy">Copiar</button></div><pre><code class="language-text">=BUSCARX(MAX($J$2:$J$9);$J$2:$J$9;$A$2:$A$9)</code></pre></div>
+<p><strong>Así queda la hoja Resumen</strong> (con los valores del ejemplo de arriba):</p>
+<div class="xlwrap"><table class="xlsheet">
+<caption>Hoja "Resumen" (ejemplo resuelto)</caption>
+<thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+<tbody>
+<tr class="hdr"><td>1</td><td>Métrica</td><td>Valor</td></tr>
+<tr><td>2</td><td>Valor total Prov A</td><td class="num">6109,00</td></tr>
+<tr><td>3</td><td>Valor total Prov B</td><td class="num">2564,00</td></tr>
+<tr><td>4</td><td>Valor total Prov C</td><td class="num">2708,00</td></tr>
+<tr><td>5</td><td>Valor total Prov D</td><td class="num">-660,00</td></tr>
+<tr><td>6</td><td>Nº "Reponer ya"</td><td class="num">3</td></tr>
+<tr><td>7</td><td>Plazo medio Crítico</td><td class="num">9,3</td></tr>
+<tr><td>8</td><td>Artículo mayor valor</td><td class="cf-blue">Motor</td></tr>
+</tbody></table></div>
+<p><strong>4) Visualización (a clics):</strong></p>
+<p>Gráfico de columnas con el valor total de stock por proveedor: 1. Selecciona la mini-tabla de proveedores y sus valores totales (las filas 2–5 de Resumen: etiqueta + número). 2. <code class="inline">Insertar &gt; Gráfico de columnas agrupadas</code>. 3. Pon el título "Valor total de stock por proveedor" (clic en el título y escribe). 4. (Opcional) cambia el color de las barras: clic en una barra → botón derecho → Relleno → color.</p>
+<p>Formato condicional en la tabla Inventario: 1. Selecciona la columna <strong>Estado</strong> (K2:K9). <code class="inline">Inicio &gt; Formato condicional &gt; Reglas para resaltar celdas &gt; Es igual a</code> → escribe <code class="inline">Reponer ya</code> → relleno <strong>rojo</strong>. Repite con <code class="inline">Vigilar</code> → <strong>amarillo</strong> (y, si quieres, <code class="inline">OK</code> → verde). 2. Selecciona la columna <strong>Error</strong> (L2:L9). <code class="inline">Formato condicional &gt; Es igual a</code> → <code class="inline">Salida inválida</code> → relleno <strong>rojo</strong>.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Acuérdate de FIJAR los aleatorios (Copiar → Pegado especial → Valores) ANTES de hacer el Resumen y el gráfico. Si no, cada recálculo cambia el "artículo con mayor valor" y los totales.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Guarda como <code class="inline">apellido_inventario.xlsx</code> (tu apellido real). El nombre incorrecto resta puntos.</div></div>
+<h3 id="mini-chuleta-de-funciones-espanol-ingles">Mini-chuleta de funciones (español → inglés)</h3>
+<ul><li><code class="inline">ALEATORIO.ENTRE(min;max)</code> (RANDBETWEEN) — entero aleatorio.</li><li><code class="inline">ALEATORIO()</code> (RAND) — decimal 0–1.</li><li><code class="inline">ELEGIR(n; a; b; ...)</code> (CHOOSE) — devuelve la opción nº n.</li><li><code class="inline">INDICE(rango; fila)</code> (INDEX) — el valor de esa fila del rango.</li><li><code class="inline">COINCIDIR(valor; rango; 0)</code> (MATCH) — en qué posición está el valor (0 = exacto).</li><li><code class="inline">REDONDEAR(x; n)</code> (ROUND) — redondea a n decimales.</li><li><code class="inline">TEXTO(x; "000")</code> (TEXT) — formatea un número como texto ("007").</li><li><code class="inline">SI(cond; siVerdad; siFalso)</code> (IF) — condicional.</li><li><code class="inline">SI.CONJUNTO(c1;v1;c2;v2;...)</code> (IFS) — varios SI sin anidar.</li><li><code class="inline">Y(...)</code> (AND) / <code class="inline">O(...)</code> (OR) — todas / al menos una.</li><li><code class="inline">SI.ERROR(formula; valor_si_error)</code> (IFERROR) — captura errores (#¡DIV/0!, #N/A).</li><li><code class="inline">SUMAR.SI</code> / <code class="inline">SUMAR.SI.CONJUNTO</code> (SUMIF/SUMIFS) — suma con condición(es).</li><li><code class="inline">CONTAR.SI</code> (COUNTIF) — cuenta con condición.</li><li><code class="inline">PROMEDIO.SI</code> / <code class="inline">PROMEDIO.SI.CONJUNTO</code> (AVERAGEIF/AVERAGEIFS) — promedio con condición(es).</li><li><code class="inline">MAX</code> / <code class="inline">MIN</code> — mayor / menor.</li><li><code class="inline">BUSCARX(valor; busca_en; devuelve)</code> (XLOOKUP) — búsqueda moderna.</li><li><code class="inline">BUSCARV(valor; tabla; nº_col; FALSO)</code> (VLOOKUP) — búsqueda clásica a la derecha.</li><li><code class="inline">CONCATENAR(...)</code> / <code class="inline">&amp;</code> (CONCAT) — unir textos.</li><li><code class="inline">IZQUIERDA</code> / <code class="inline">DERECHA</code> / <code class="inline">EXTRAE</code> (LEFT/RIGHT/MID) — trozos de texto.</li><li><code class="inline">MES(fecha)</code> (MONTH) — número de mes.</li><li><code class="inline">MAYUSC</code> / <code class="inline">MINUSC</code> (UPPER/LOWER) — mayúsculas / minúsculas.</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Si una fórmula da <code class="inline">#¿NOMBRE?</code>, suele ser una función mal escrita o el separador equivocado (<code class="inline">;</code> vs <code class="inline">,</code>). Si da <code class="inline">#N/A</code> en una búsqueda, el valor no existe o falta el <code class="inline">FALSO</code>/<code class="inline">0</code> de coincidencia exacta; envuélvela en <code class="inline">SI.ERROR(...;"")</code> si quieres ocultar el error.</div></div>
+
+<!-- part-18.txt -->
+<h2 id="18-programacion-orientada-a-objetos-clases-y-herencia"><span class="num">18</span>Programación orientada a objetos (clases y herencia)</h2>
+<p>La POO sirve para agrupar <strong>datos</strong> (atributos) y <strong>funciones</strong> (métodos) que van juntos, dentro de un molde llamado <strong>clase</strong>. En estos exámenes suele caer un ejercicio entero de "Clases y Herencia": te piden una clase base, varias clases hijas que heredan de ella, atributos privados con getters/setters, el método <code class="inline">__str__</code> para imprimir, y una <code class="inline">main()</code> que cree objetos y los imprima. Aquí tienes el cartucho completo.</p>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>TODOS los métodos llevan <code class="inline">self</code> como primer parámetro (tú no lo pasas al llamar, Python lo pone solo). Los atributos privados <code class="inline">__x</code> se acceden DENTRO de la clase como <code class="inline">self.__x</code>, y desde FUERA con su getter (<code class="inline">obj.get_x()</code>). <code class="inline">super().__init__(...)</code> ejecuta el constructor del padre.</div></div>
+<h3 id="que-es-una-clase-y-un-objeto">Qué es una clase y un objeto</h3>
+<p>Una <strong>clase</strong> es el molde (el plano); un <strong>objeto</strong> es un ejemplar concreto hecho con ese molde. Ejemplo: la clase <code class="inline">Perro</code> es la idea de "perro"; <code class="inline">mi_perro = Perro("Toby")</code> es un perro concreto. De un mismo molde puedes crear muchos objetos distintos.</p>
+<div class="callout when"><span class="ico">🎯</span><div class="body"><span class="label">Cuándo usar</span>el enunciado dice "crea una clase llamada...", "implementa las siguientes clases", "que herede de", "atributo privado", "método <code class="inline">__str__</code>".</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python"># Clase = molde. Objeto = ejemplar hecho con ese molde.
+class Perro:
+    def __init__(self, nombre):
+        self.nombre = nombre   # atributo: dato propio de cada objeto
+
+    def ladra(self):           # método: función propia de la clase
+        return self.nombre + " dice guau"
+
+# Creamos dos objetos (dos ejemplares) del mismo molde
+a = Perro("Toby")
+b = Perro("Luna")
+print(a.ladra())
+print(b.ladra())</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Toby dice guau
+Luna dice guau</div></div>
+<h3 id="clase-basica-init-atributos-y-metodos">Clase básica: __init__, atributos y métodos</h3>
+<p>El constructor <code class="inline">__init__(self, ...)</code> se ejecuta SOLO al crear el objeto y sirve para guardar los datos iniciales en atributos (<code class="inline">self.x = x</code>). Los <strong>métodos</strong> son funciones dentro de la clase; siempre reciben <code class="inline">self</code> para poder usar los atributos del objeto.</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>En <code class="inline">__init__</code>: los parámetros y las líneas <code class="inline">self.algo = algo</code>.</li><li>Los nombres de los métodos y lo que hacen.</li><li>Al crear el objeto: los valores que pasas, p.ej. <code class="inline">Punto(3, 4)</code>.</li></ul></div></div>
+<div class="callout notouch"><span class="ico">🚫</span><div class="body"><span class="label">NO tocar</span>la palabra <code class="inline">self</code> (va siempre como primer parámetro de cada método).</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Punto:
+    def __init__(self, x, y):
+        self.x = x          # atributo x
+        self.y = y          # atributo y
+
+    def mover(self, dx, dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+
+    def distancia_origen(self):
+        return (self.x**2 + self.y**2) ** 0.5
+
+# Crear un objeto y usarlo
+p = Punto(3, 4)
+print(p.x, p.y)
+print(p.distancia_origen())
+p.mover(1, 0)               # ahora x=4, y=4
+print(p.x, p.y)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>3 4
+5.0
+4 4</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>dentro de la clase, para usar un atributo escribes <code class="inline">self.x</code> (NO <code class="inline">x</code> a secas). Para llamar a otro método de la misma clase: <code class="inline">self.metodo()</code>.</div></div>
+<h3 id="atributos-privados-y-getters-setters">Atributos privados y getters/setters</h3>
+<p>Si pones dos guiones bajos delante (<code class="inline">self.__color</code>), el atributo es <strong>privado</strong>: no se debe tocar directamente desde fuera. Para leerlo y cambiarlo se usan métodos: un <strong>getter</strong> <code class="inline">get_color()</code> que lo devuelve, y un <strong>setter</strong> <code class="inline">set_color(c)</code> que lo cambia. Se hace así para controlar el acceso al dato (es lo que pide el examen).</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li>El nombre del atributo privado <code class="inline">self.__color</code>.</li><li>Los getters/setters: <code class="inline">get_color</code> devuelve <code class="inline">self.__color</code>; <code class="inline">set_color</code> hace <code class="inline">self.__color = color</code>.</li></ul></div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Coche:
+    def __init__(self, color):
+        self.__color = color          # atributo PRIVADO (dos guiones bajos)
+
+    def get_color(self):              # getter: devuelve el valor
+        return self.__color
+
+    def set_color(self, color):       # setter: cambia el valor
+        self.__color = color
+
+c = Coche("Rojo")
+print(c.get_color())                  # leer con el getter
+c.set_color("Azul")                   # cambiar con el setter
+print(c.get_color())</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Rojo
+Azul</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>desde fuera NO escribas <code class="inline">c.__color</code> (da error o no funciona). Dentro de la clase SÍ es <code class="inline">self.__color</code>; fuera usa el getter <code class="inline">c.get_color()</code>.</div></div>
+<h3 id="el-metodo-str-como-se-imprime-un-objeto">El método __str__ (cómo se imprime un objeto)</h3>
+<p>Si defines <code class="inline">def __str__(self): return ...</code> (devolviendo un texto), al hacer <code class="inline">print(objeto)</code> se mostrará ese texto en vez de algo raro como <code class="inline">&lt;__main__.Coche object at 0x...&gt;</code>. Es lo que el examen llama "que devuelva: Color: &lt;color&gt;".</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>el texto que devuelve <code class="inline">__str__</code>, normalmente con un f-string que mete los atributos.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Coche:
+    def __init__(self, marca, color):
+        self.marca = marca
+        self.color = color
+
+    def __str__(self):
+        return f"Coche {self.marca} de color {self.color}"
+
+c = Coche("Seat", "Rojo")
+print(c)              # llama solo a __str__</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Coche Seat de color Rojo</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">__str__</code> debe <strong>devolver</strong> (<code class="inline">return</code>) un string, NO hacer <code class="inline">print</code> dentro. El <code class="inline">print(c)</code> de fuera ya lo imprime.</div></div>
+<h3 id="herencia-una-clase-que-hereda-de-otra">Herencia (una clase que hereda de otra)</h3>
+<p><code class="inline">class Hija(Padre):</code> hace que la hija reciba todo lo del padre (atributos y métodos). En el constructor de la hija llamas al del padre con <code class="inline">super().__init__(...)</code> para que cree los atributos del padre, y luego añades los tuyos. Puedes <strong>redefinir</strong> un método (escribir uno con el mismo nombre); si quieres reutilizar el del padre dentro, usa <code class="inline">super().__str__()</code>.</p>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span><ul><li><code class="inline">class Hija(Padre):</code> con el nombre del padre entre paréntesis.</li><li><code class="inline">super().__init__(...)</code> pasando lo que el padre necesita.</li><li>Los atributos nuevos <code class="inline">self.__nuevo = nuevo</code>.</li><li>El <code class="inline">__str__</code> redefinido (puede empezar por <code class="inline">super().__str__()</code> y añadir texto).</li></ul></div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Animal:
+    def __init__(self, nombre):
+        self.__nombre = nombre
+
+    def get_nombre(self):
+        return self.__nombre
+
+    def __str__(self):
+        return f"Animal: {self.__nombre}"
+
+class Perro(Animal):                       # Perro hereda de Animal
+    def __init__(self, nombre, raza):
+        super().__init__(nombre)           # crea el atributo del padre
+        self.__raza = raza                 # atributo nuevo de la hija
+
+    def __str__(self):                     # redefinimos __str__
+        return super().__str__() + f", raza: {self.__raza}"
+
+class Cachorro(Perro):                     # segundo nivel: hereda de Perro
+    def __init__(self, nombre, raza, meses):
+        super().__init__(nombre, raza)     # llama al constructor de Perro
+        self.__meses = meses
+
+    def __str__(self):
+        return super().__str__() + f", meses: {self.__meses}"
+
+a = Animal("Bicho")
+p = Perro("Toby", "Labrador")
+c = Cachorro("Luna", "Beagle", 3)
+print(a)
+print(p)
+print(c)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Animal: Bicho
+Animal: Toby, raza: Labrador
+Animal: Luna, raza: Beagle, meses: 3</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>cada hija debe llamar a <code class="inline">super().__init__(...)</code> con EXACTAMENTE los argumentos que pide el constructor del padre. Si el padre necesita <code class="inline">nombre</code>, hay que pasárselo desde la hija.</div></div>
+<h3 id="ejemplo-de-examen-resuelto-formas-forma-poligono-elipse-cuadrado">Ejemplo de examen resuelto: Formas (Forma, Polígono, Elipse, Cuadrado)</h3>
+<p>Este es el ejercicio 2 del recuperatorio 24/25, resuelto entero. Estructura:</p>
+<ul><li><code class="inline">Forma</code>: atributo privado <code class="inline">__color</code>, con <code class="inline">get_color</code>/<code class="inline">set_color</code> y <code class="inline">__str__</code> que devuelve <code class="inline">Color: &lt;color&gt;</code>.</li><li><code class="inline">Poligono(Forma)</code>: añade <code class="inline">__num_lados</code>, con sus getter/setter, y <code class="inline">__str__</code> que devuelve <code class="inline">Color: &lt;color&gt;, núm. lados: &lt;n&gt;</code>.</li><li><code class="inline">Elipse(Forma)</code>: añade <code class="inline">__eje_mayor</code>, con sus getter/setter, y <code class="inline">__str__</code> que devuelve <code class="inline">Color: &lt;color&gt;, eje mayor: &lt;valor&gt;</code>.</li><li><code class="inline">Cuadrado(Poligono)</code>: añade <code class="inline">__lado</code>, con sus getter/setter, y <code class="inline">__str__</code> que devuelve <code class="inline">Color: &lt;color&gt;, núm. lados: &lt;n&gt;, lado: &lt;valor&gt;</code>.</li><li><code class="inline">main()</code>: crea los 4 objetos, los imprime, imprime el eje mayor de la elipse, cambia el lado del cuadrado a 6.4 y lo reimprime.</li></ul>
+<div class="callout touch"><span class="ico">✏️</span><div class="body"><span class="label">Solo tocar</span>solo los nombres de clases, atributos y los textos de cada <code class="inline">__str__</code>. La estructura (super, getters, setters) se queda igual.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Forma:
+    def __init__(self, color):
+        self.__color = color
+
+    def get_color(self):
+        return self.__color
+
+    def set_color(self, color):
+        self.__color = color
+
+    def __str__(self):
+        return f"Color: {self.__color}"
+
+
+class Poligono(Forma):
+    def __init__(self, color, num_lados):
+        super().__init__(color)            # crea el __color del padre
+        self.__num_lados = num_lados
+
+    def get_num_lados(self):
+        return self.__num_lados
+
+    def set_num_lados(self, num_lados):
+        self.__num_lados = num_lados
+
+    def __str__(self):
+        return super().__str__() + f", núm. lados: {self.__num_lados}"
+
+
+class Elipse(Forma):
+    def __init__(self, color, eje_mayor):
+        super().__init__(color)
+        self.__eje_mayor = eje_mayor
+
+    def get_eje_mayor(self):
+        return self.__eje_mayor
+
+    def set_eje_mayor(self, eje_mayor):
+        self.__eje_mayor = eje_mayor
+
+    def __str__(self):
+        return super().__str__() + f", eje mayor: {self.__eje_mayor}"
+
+
+class Cuadrado(Poligono):
+    def __init__(self, color, num_lados, lado):
+        super().__init__(color, num_lados)  # pasa color Y num_lados a Poligono
+        self.__lado = lado
+
+    def get_lado(self):
+        return self.__lado
+
+    def set_lado(self, lado):
+        self.__lado = lado
+
+    def __str__(self):
+        return super().__str__() + f", lado: {self.__lado}"
+
+
+def main():
+    forma = Forma("Amarillo")
+    poligono = Poligono("Verde", 6)
+    elipse = Elipse("Azul", 34.5)
+    cuadrado = Cuadrado("Blanco", 4, 4.3)
+
+    # Imprime todos los objetos
+    print(forma)
+    print(poligono)
+    print(elipse)
+    print(cuadrado)
+
+    # Imprime el eje mayor de la elipse
+    print(elipse.get_eje_mayor())
+
+    # Cambia el lado del cuadrado a 6.4 y lo reimprime
+    cuadrado.set_lado(6.4)
+    print(cuadrado)
+
+
+main()</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Color: Amarillo
+Color: Verde, núm. lados: 6
+Color: Azul, eje mayor: 34.5
+Color: Blanco, núm. lados: 4, lado: 4.3
+34.5
+Color: Blanco, núm. lados: 4, lado: 6.4</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>fíjate en <code class="inline">Cuadrado</code>: hereda de <code class="inline">Poligono</code> (no de <code class="inline">Forma</code>), así que su <code class="inline">super().__init__(color, num_lados)</code> pasa DOS valores, porque el constructor de <code class="inline">Poligono</code> pide <code class="inline">color</code> y <code class="inline">num_lados</code>. Su <code class="inline">__str__</code> reutiliza el de <code class="inline">Poligono</code> (que a su vez reutiliza el de <code class="inline">Forma</code>), por eso sale <code class="inline">Color: ..., núm. lados: ..., lado: ...</code> con todo encadenado.</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si el <code class="inline">__str__</code> de una hija usa <code class="inline">super().__str__()</code>, la cadena se va montando sola subiendo por la herencia. No tienes que repetir el color ni los lados a mano.</div></div>
+<h4 id="variantes-otras-formas-de-pedirlo">Variantes (otras formas de pedirlo)</h4>
+<ul><li><strong>Atributo público en vez de privado</strong>: a veces no piden <code class="inline">__</code>. Entonces es <code class="inline">self.color = color</code> y se accede con <code class="inline">obj.color</code> directamente (sin getter). Pero si dicen "privado", usa <code class="inline">__</code> y getters/setters.</li></ul>
+<ul><li><strong>Pedir un método que calcula algo</strong> (área, perímetro). Igual que un getter pero con cuenta dentro:</li></ul>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Rectangulo:
+    def __init__(self, base, altura):
+        self.__base = base
+        self.__altura = altura
+
+    def area(self):
+        return self.__base * self.__altura
+
+    def perimetro(self):
+        return 2 * (self.__base + self.__altura)
+
+    def __str__(self):
+        return f"Rectángulo {self.__base}x{self.__altura}, área: {self.area()}"
+
+r = Rectangulo(3, 4)
+print(r.area())
+print(r)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>12
+Rectángulo 3x4, área: 12</div></div>
+<ul><li><strong>Redefinir un método de cálculo en la hija</strong> (mismo nombre, fórmula distinta):</li></ul>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Cuadrado2(Rectangulo):
+    def __init__(self, lado):
+        super().__init__(lado, lado)     # un cuadrado es un rectángulo con base=altura
+
+c = Cuadrado2(5)
+print(c.area())
+print(c.perimetro())</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>25
+20</div></div>
+<ul><li><strong>Lista de objetos y recorrerla</strong> (muy típico: crear varios y procesarlos en un bucle):</li></ul>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">formas = [Forma("Rojo"), Poligono("Verde", 3), Elipse("Azul", 10.0)]
+for f in formas:
+    print(f)                 # cada uno usa SU propio __str__</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Color: Rojo
+Color: Verde, núm. lados: 3
+Color: Azul, eje mayor: 10.0</div></div>
+<h3 id="plantilla-en-blanco-para-clases-con-herencia">Plantilla en blanco para clases con herencia</h3>
+<p>Esqueleto reutilizable: copia, renombra y rellena. Sirve para casi cualquier "Clases y Herencia".</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Base:
+    def __init__(self, dato1):
+        self.__dato1 = dato1                 # atributo privado
+
+    def get_dato1(self):                     # getter
+        return self.__dato1
+
+    def set_dato1(self, dato1):              # setter
+        self.__dato1 = dato1
+
+    def __str__(self):                       # cómo se imprime
+        return f"dato1: {self.__dato1}"
+
+
+class Hija(Base):                            # Hija hereda de Base
+    def __init__(self, dato1, dato2):
+        super().__init__(dato1)              # crea lo del padre
+        self.__dato2 = dato2                 # atributo nuevo
+
+    def get_dato2(self):
+        return self.__dato2
+
+    def set_dato2(self, dato2):
+        self.__dato2 = dato2
+
+    def __str__(self):                       # redefine, reusando el del padre
+        return super().__str__() + f", dato2: {self.__dato2}"
+
+
+def main():
+    a = Base("X")
+    b = Hija("Y", "Z")
+    print(a)
+    print(b)
+    print(b.get_dato2())                     # leer con getter
+    b.set_dato2("Z2")                        # cambiar con setter
+    print(b)
+
+
+main()</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>dato1: X
+dato1: Y, dato2: Z
+Z
+dato1: Y, dato2: Z2</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>pasos para rellenar la plantilla: (1) renombra <code class="inline">Base</code>/<code class="inline">Hija</code> con los nombres del enunciado; (2) pon los atributos privados que pidan, cada uno con su getter y setter; (3) escribe el <code class="inline">__str__</code> con el texto exacto que pide la "salida esperada" (cuidado con comas, dos puntos y mayúsculas); (4) en <code class="inline">main()</code> crea los objetos con los valores del enunciado y haz los <code class="inline">print</code> en el orden pedido.</div></div>
+
+<!-- part-19.txt -->
+<h2 id="19-identifica-el-error-depuracion-tipica-de-examen"><span class="num">19</span>Identifica el error (depuración típica de examen)</h2>
+<p>Esta sección vale 2 puntos y SIEMPRE cae: te dan un fragmento de código con un fallo, y tienes que (a) identificar el error y explicar el porqué, y (b) reescribir la parte errónea para que funcione. No hace falta reescribir todo el programa: corrige SOLO lo que está mal.</p>
+<h3 id="como-enfrentarte-a-identifica-el-error">Cómo enfrentarte a "identifica el error"</h3>
+<p>Método rápido en 3 pasos:</p>
+<ul><li><strong>1) Lee el traceback de abajo a arriba.</strong> La ÚLTIMA línea dice el tipo de error (<code class="inline">TypeError</code>, <code class="inline">NameError</code>...) y el mensaje. Justo encima te dice el número de línea donde explotó.</li><li><strong>2) Clasifica el error.</strong> ¿Es de <strong>sintaxis</strong> (no arranca), de <strong>tipo</strong>, de <strong>índice</strong>, de <strong>división por cero</strong>, de <strong>indentación</strong>, o es <strong>LÓGICO</strong> (no da error, pero el resultado está mal)? Los lógicos son los más traicioneros: el programa termina sin quejarse pero el número es incorrecto.</li><li><strong>3) Corrige solo lo necesario.</strong> Toca la línea del fallo, no reescribas el resto.</li></ul>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si el código NO da error pero el resultado es raro (caso lógico), repásalo "a mano" con un ejemplo pequeño: coge 2 o 3 datos y sigue el bucle paso a paso. Casi siempre el fallo es un índice mal puesto o una variable que no se reinicia.</div></div>
+<h4 id="tabla-rapida-de-errores-y-causa-tipica">Tabla rápida de errores y causa típica</h4>
+<ul><li><code class="inline">NameError</code> → usas una variable o función que no existe (mal escrita, o aún no definida). Ej: escribes <code class="inline">Print</code> o usas <code class="inline">x</code> antes de crearla.</li><li><code class="inline">TypeError</code> → operas con tipos incompatibles. Ej: <code class="inline">[1,2]**2</code>, <code class="inline">"3" + 5</code>, o llamar a algo que vale <code class="inline">None</code>.</li><li><code class="inline">IndexError</code> → accedes a un índice que no existe (<code class="inline">lista[10]</code> con 5 elementos). Suele ser un off-by-one (<code class="inline">x[i+1]</code> saliéndose).</li><li><code class="inline">KeyError</code> → pides una clave que no está en el diccionario.</li><li><code class="inline">ZeroDivisionError</code> → divides entre 0 (lista vacía con <code class="inline">len()==0</code>, contador a 0...).</li><li><code class="inline">ValueError</code> → el valor no vale para esa operación. Ej: <code class="inline">int("hola")</code>, <code class="inline">math.sqrt(-1)</code>.</li><li><code class="inline">IndentationError</code> / <code class="inline">TabError</code> → sangría mal puesta o mezcla de tabs y espacios.</li><li><code class="inline">SyntaxError</code> → falta algo de sintaxis: los dos puntos <code class="inline">:</code>, un paréntesis, un <code class="inline">=</code>...</li><li><strong>Error LÓGICO</strong> → NO da error, pero el resultado está mal. Causas típicas: índice equivocado en bucles anidados, variable que no se reinicia, <code class="inline">=</code> en vez de <code class="inline">==</code>, condición al revés.</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Para más detalle sobre cada error y cómo prevenirlos, mira la Parte 16 (errores comunes). Aquí vamos directos a resolver los 4 casos clásicos del examen.</div></div>
+<h3 id="caso-1-funcion-que-calcula-la-media-falta-el-return">Caso 1: función que calcula la media (falta el return)</h3>
+<p>Código con el fallo:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def media(lista):
+    total = 0
+    for x in lista:
+        total += x
+    m = total / len(lista)
+    print("La media es:", m)
+
+notas = [5.0, 6.5, 7.0]
+m = media(notas)
+print("Media redondeada:", round(m, 2))</code></pre></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>La función <code class="inline">media</code> calcula bien la media y la IMPRIME, pero NO la devuelve: le falta <code class="inline">return m</code>. Una función que no tiene <code class="inline">return</code> devuelve <code class="inline">None</code>. Por eso <code class="inline">m = media(notas)</code> guarda <code class="inline">None</code>, y al hacer <code class="inline">round(m, 2)</code> Python da <code class="inline">TypeError: type NoneType doesn't define __round__ method</code> (no se puede redondear <code class="inline">None</code>). Imprimir un valor NO es lo mismo que devolverlo: <code class="inline">print</code> solo lo muestra por pantalla, <code class="inline">return</code> lo entrega para poder usarlo fuera.</div></div>
+<p>Código corregido (añadir <code class="inline">return m</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def media(lista):
+    total = 0
+    for x in lista:
+        total += x
+    m = total / len(lista)
+    return m
+
+notas = [5.0, 6.5, 7.0]
+m = media(notas)
+print("Media redondeada:", round(m, 2))</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Media redondeada: 6.17</div></div>
+<h3 id="caso-2-elevar-al-cuadrado-una-lista-typeerror">Caso 2: elevar al cuadrado una lista (TypeError)</h3>
+<p>Código con el fallo:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
+x = [0, 1, 2, 3, 4]
+y = x**2
+print(y)</code></pre></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span><code class="inline">x</code> es una <strong>lista normal</strong> de Python, y una lista no se puede elevar al cuadrado: <code class="inline">lista<strong>2</code> da <code class="inline">TypeError: unsupported operand type(s) for </strong> or pow(): 'list' and 'int'</code>. El operador <code class="inline">**</code> sobre listas no existe (y <code class="inline">lista*2</code> tampoco eleva al cuadrado: solo repetiría la lista dos veces). Para elevar al cuadrado CADA elemento tienes dos opciones: usar un array de numpy (que sí permite operar elemento a elemento), o recorrer la lista con una comprensión.</div></div>
+<p>Solución A — con numpy (convertir la lista a <code class="inline">np.array</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
+x = np.array([0, 1, 2, 3, 4])
+y = x**2
+print(y)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>[ 0  1  4  9 16]</div></div>
+<p>Solución B — sin numpy, con comprensión de lista:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">x = [0, 1, 2, 3, 4]
+y = [v**2 for v in x]
+print(y)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>[0, 1, 4, 9, 16]</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>El fallo real estaba en <code class="inline">x = [0, 1, 2, 3, 4]</code>: importar numpy no basta, hay que convertir la lista a array con <code class="inline">np.array(...)</code>. Si no te dejan usar librerías, tira de la comprensión (Solución B).</div></div>
+<h3 id="caso-3-producto-de-matrices-indice-equivocado">Caso 3: producto de matrices (índice equivocado)</h3>
+<p>Código con el fallo:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">A = [[1, 2, 3],
+     [4, 5, 6]]   # 2x3
+
+B = [[7, 8],
+     [9, 10],
+     [11, 12]]    # 3x2
+
+num_filasA = len(A)
+num_columnasA = len(A[0])
+num_filasB = len(B)
+num_columnasB = len(B[0])
+C = []
+for i in range(num_filasA):
+    fila_resultado = []
+    for j in range(num_columnasB):
+        suma = 0
+        for k in range(num_columnasA):
+            suma += A[i][j] * B[j][k]
+        fila_resultado.append(suma)
+    C.append(fila_resultado)
+print(C)</code></pre></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Es un error LÓGICO (no da error, pero el resultado está mal). En el bucle interior pone <code class="inline">suma += A[i][j] * B[j][k]</code>, y eso está MAL: usa <code class="inline">j</code> donde debería usar <code class="inline">k</code>. El índice que recorre la <strong>dimensión común</strong> (las columnas de A, que son las filas de B) es <code class="inline">k</code>. En el producto de matrices, el elemento <code class="inline">C[i][j]</code> se calcula sumando <code class="inline">A[i][k] * B[k][j]</code> para todos los <code class="inline">k</code>. Es decir: la fila <code class="inline">i</code> de A se multiplica con la columna <code class="inline">j</code> de B, y <code class="inline">k</code> es el que "avanza" por esa fila y esa columna a la vez. Lo correcto es <code class="inline">suma += A[i][k] * B[k][j]</code>.</div></div>
+<p>Código corregido completo (sin numpy):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">A = [[1, 2, 3],
+     [4, 5, 6]]   # 2x3
+
+B = [[7, 8],
+     [9, 10],
+     [11, 12]]    # 3x2
+
+num_filasA = len(A)
+num_columnasA = len(A[0])
+num_filasB = len(B)
+num_columnasB = len(B[0])
+C = []
+for i in range(num_filasA):
+    fila_resultado = []
+    for j in range(num_columnasB):
+        suma = 0
+        for k in range(num_columnasA):
+            suma += A[i][k] * B[k][j]
+        fila_resultado.append(suma)
+    C.append(fila_resultado)
+print(C)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>[[58, 64], [139, 154]]</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Truco para no equivocarte nunca: en <code class="inline">A[i][k] * B[k][j]</code>, la <code class="inline">k</code> SIEMPRE va en la segunda posición de A y en la primera de B (las dos "tocan" la dimensión que desaparece). <code class="inline">i</code> es la fila del resultado, <code class="inline">j</code> la columna del resultado.</div></div>
+<h3 id="caso-4-minimo-por-alumno-variable-que-no-se-reinicia">Caso 4: mínimo por alumno (variable que no se reinicia)</h3>
+<p>Código con el fallo:</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">notas = [
+    [5.0, 6.5, 7.0],
+    [4.0, 3.5, 6.0],
+    [8.0, 7.5, 9.0]
+]
+mins = []
+m = notas[0][0]
+for alumno in notas:
+    for nota in alumno:
+        if nota &lt; m:
+            m = nota
+    mins.append(m)
+print(mins)</code></pre></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Es un error LÓGICO. La variable <code class="inline">m</code> se inicializa UNA sola vez fuera del bucle, con <code class="inline">m = notas[0][0]</code>, y nunca se reinicia para cada alumno. Como <code class="inline">m</code> se queda con el mínimo encontrado hasta ahora, va arrastrando el mínimo GLOBAL en vez de calcular el mínimo de cada alumno por separado. Resultado: para el alumno 2 y siguientes, <code class="inline">m</code> ya vale 3.5 (el mínimo global) y <code class="inline">mins</code> sale mal: <code class="inline">[5.0, 3.5, 3.5]</code> en vez de <code class="inline">[5.0, 3.5, 7.5]</code>. La solución es reiniciar <code class="inline">m</code> al empezar CADA alumno: pon <code class="inline">m = alumno[0]</code> dentro del bucle de alumnos, ANTES del bucle de notas.</div></div>
+<p>Código corregido (sin usar <code class="inline">min()</code>):</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">notas = [
+    [5.0, 6.5, 7.0],
+    [4.0, 3.5, 6.0],
+    [8.0, 7.5, 9.0]
+]
+mins = []
+for alumno in notas:
+    m = alumno[0]          # reiniciar el mínimo en cada alumno
+    for nota in alumno:
+        if nota &lt; m:
+            m = nota
+    mins.append(m)
+print(mins)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>[5.0, 3.5, 7.5]</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Regla de oro para máximos/mínimos/sumas/contadores dentro de bucles anidados: la variable acumuladora se reinicia JUSTO al empezar cada grupo. Si la inicializas fuera del todo, arrastra el valor del grupo anterior. Si dudas, pregúntate "¿esto debe valer lo mismo para todos, o uno por cada fila?".</div></div>
+<h3 id="otros-errores-clasicos-que-te-pueden-poner">Otros errores clásicos que te pueden poner</h3>
+<p>Lista de fallos típicos con su ejemplo y su corrección, por si te cae uno distinto a los cuatro de arriba.</p>
+<h4 id="usar-en-vez-de-en-un-if">Usar <code class="inline">=</code> en vez de <code class="inline">==</code> en un if</h4>
+<p><code class="inline">=</code> asigna, <code class="inline">==</code> compara. Dentro de un <code class="inline">if</code> siempre va <code class="inline">==</code>.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">x = 5
+# MAL:  if x = 5:   -&gt; SyntaxError
+# BIEN:
+if x == 5:
+    print("vale cinco")</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>vale cinco</div></div>
+<h4 id="indice-decimal-debe-ser-entero">Índice decimal (debe ser entero)</h4>
+<p>Los índices de una lista son SIEMPRE enteros. <code class="inline">lista[1.5]</code> da <code class="inline">TypeError: list indices must be integers or slices, not float</code>.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">lista = [10, 20, 30, 40]
+# MAL:  lista[1.5]  -&gt; TypeError
+# BIEN (entero):
+print(lista[1])
+# Si viene de una división, usa // (división entera):
+i = 3 // 2          # vale 1, es entero
+print(lista[i])</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>20
+20</div></div>
+<h4 id="olvidar-los-dos-puntos">Olvidar los dos puntos <code class="inline">:</code></h4>
+<p>Después de <code class="inline">if</code>, <code class="inline">for</code>, <code class="inline">while</code>, <code class="inline">def</code>, <code class="inline">else</code>... siempre van dos puntos. Si faltan, <code class="inline">SyntaxError</code>.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python"># MAL:  for i in range(3)   -&gt; SyntaxError
+# BIEN:
+for i in range(3):
+    print(i)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>0
+1
+2</div></div>
+<h4 id="off-by-one-x-i-1-saliendose-de-la-lista">Off-by-one: <code class="inline">x[i+1]</code> saliéndose de la lista</h4>
+<p>Con <code class="inline">range(len(x))</code>, <code class="inline">i</code> llega hasta el último índice; si dentro accedes a <code class="inline">x[i+1]</code>, en la última vuelta te sales y da <code class="inline">IndexError</code>. Solución: recorrer hasta <code class="inline">len(x)-1</code>.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">x = [10, 20, 30]
+# MAL:  for i in range(len(x)):  ...  x[i+1]  -&gt; IndexError en la última vuelta
+# BIEN (parar uno antes):
+for i in range(len(x) - 1):
+    print(x[i] + x[i+1])</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>30
+50</div></div>
+<h4 id="mezclar-tabs-y-espacios">Mezclar tabs y espacios</h4>
+<p>Si sangras unas líneas con TAB y otras con espacios, Python da <code class="inline">TabError: inconsistent use of tabs and spaces</code>. Solución: usar SIEMPRE 4 espacios (en Spyder, deja activado "convertir tabs a espacios").</p>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>Si te sale <code class="inline">IndentationError</code> o <code class="inline">TabError</code> y "a ojo" todo parece alineado, borra la sangría de las líneas conflictivas y vuelve a teclear 4 espacios a mano.</div></div>
+<h4 id="dividir-por-cero">Dividir por cero</h4>
+<p>Si la lista está vacía, <code class="inline">len(lista)</code> vale 0 y <code class="inline">total / len(lista)</code> da <code class="inline">ZeroDivisionError</code>. Protege el caso vacío.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">def media_segura(lista):
+    if len(lista) == 0:
+        return 0          # o el valor que pida el enunciado
+    total = 0
+    for x in lista:
+        total += x
+    return total / len(lista)
+
+print(media_segura([]))
+print(media_segura([4, 6]))</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>0
+5.0</div></div>
+<h4 id="modificar-una-lista-mientras-la-recorres">Modificar una lista mientras la recorres</h4>
+<p>Borrar o añadir elementos a una lista DENTRO del <code class="inline">for</code> que la recorre salta posiciones y da resultados mal (o errores). Solución: recorrer una copia, o construir una lista nueva.</p>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">nums = [1, 2, 3, 4, 5, 6]
+# MAL:  for n in nums:  if n % 2 == 0: nums.remove(n)   -&gt; se salta elementos
+# BIEN (construir lista nueva con los impares):
+nums = [n for n in nums if n % 2 != 0]
+print(nums)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>[1, 3, 5]</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>Resumen para el examen: lee el traceback (última línea), clasifica el error con la tabla de arriba, y corrige SOLO la línea que falla. Si no hay traceback pero el resultado está mal, es un error lógico: repasa índices de bucles anidados y variables que deberían reiniciarse en cada vuelta.</div></div>
+
+<!-- part-20.txt -->
+<h2 id="20-resoluciones-de-examenes-recientes-parcial-25-26-recu-24-25-final-24-25"><span class="num">20</span>Resoluciones de exámenes recientes (parcial 25-26, recu 24-25, final 24-25)</h2>
+<p>Aquí tienes resueltos, enteros y listos para copiar, los ejercicios de <strong>Python</strong> de los tres exámenes más recientes. Lo de <strong>Excel</strong> no se resuelve aquí (mira la Parte 17) y los de <strong>backtracking</strong> no entran este año (los omito). Para cada uno: una frase de enunciado, el plan (qué cartuchos usar), el código completo y la salida esperada.</p>
+<h3 id="parcial-25-26-ejercicio-1-identifica-el-error">Parcial 25-26 — Ejercicio 1: Identifica el error</h3>
+<p>Te dan 4 fragmentos con fallos; hay que decir el error y arreglarlo. El detalle completo de cada uno está en la <strong>Parte 19</strong>; aquí va el resumen rápido en viñetas.</p>
+<p>Plan:</p>
+<ul><li>Cartucho "Identifica el error" de la <strong>Parte 19</strong> (lectura paso a paso del fallo).</li></ul>
+<ul><li><strong>Fallo 1 (media):</strong> la función calcula <code class="inline">m</code> pero <strong>no hace <code class="inline">return</code></strong>, así que fuera vale <code class="inline">None</code> y <code class="inline">round(None,2)</code> peta. Arreglo: añadir <code class="inline">return m</code> al final de <code class="inline">media</code>.</li><li><strong>Fallo 2 (cuadrado):</strong> <code class="inline">x</code> es una <strong>lista</strong> de Python y <code class="inline">x<strong>2</code> no existe para listas. Arreglo: convertir a numpy (<code class="inline">x = np.array([0,1,2,3,4])</code>, luego <code class="inline">y = x</strong>2</code>) o usar comprensión (<code class="inline">y = [v**2 for v in x]</code>).</li><li><strong>Fallo 3 (producto de matrices):</strong> dentro del bucle pone <code class="inline">A[i][j]*B[j][k]</code>, índices mal. Lo correcto es <code class="inline">A[i][k]*B[k][j]</code> (se recorre <code class="inline">k</code> sobre las columnas de A / filas de B).</li><li><strong>Fallo 4 (mínimo por alumno):</strong> <code class="inline">m</code> se inicializa <strong>una sola vez fuera</strong> del bucle, así que arrastra el mínimo global. Arreglo: <strong>reiniciar <code class="inline">m</code> dentro</strong> del bucle de alumno (<code class="inline">m = alumno[0]</code> al empezar cada alumno).</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>estos cuatro arreglos son los que valen los puntos. Si los escribes ya bien desde el principio, el código corregido sería:</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
+
+# Fallo 1: media con return
+def media(lista):
+    total = 0
+    for x in lista:
+        total += x
+    return total / len(lista)
+
+notas = [5.0, 6.5, 7.0]
+m = media(notas)
+print("Media redondeada:", round(m, 2))
+
+# Fallo 2: cuadrado con numpy
+x = np.array([0, 1, 2, 3, 4])
+y = x**2
+print(y)
+
+# Fallo 3: producto de matrices correcto
+A = [[1, 2, 3], [4, 5, 6]]      # 2x3
+B = [[7, 8], [9, 10], [11, 12]] # 3x2
+filasA, colsA = len(A), len(A[0])
+colsB = len(B[0])
+C = []
+for i in range(filasA):
+    fila = []
+    for j in range(colsB):
+        suma = 0
+        for k in range(colsA):
+            suma += A[i][k] * B[k][j]   # índice correcto
+        fila.append(suma)
+    C.append(fila)
+print(C)
+
+# Fallo 4: mínimo por alumno reiniciando m dentro
+notas2 = [[5.0, 6.5, 7.0], [4.0, 3.5, 6.0], [8.0, 7.5, 9.0]]
+mins = []
+for alumno in notas2:
+    m = alumno[0]              # reinicia para cada alumno
+    for nota in alumno:
+        if nota &lt; m:
+            m = nota
+    mins.append(m)
+print(mins)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Media redondeada: 6.17
+[ 0  1  4  9 16]
+[[58, 64], [139, 154]]
+[5.0, 3.5, 7.5]</div></div>
+<h3 id="parcial-25-26-ejercicio-2-puntos-del-plano-sin-sum-max-min-sin-numpy">Parcial 25-26 — Ejercicio 2: Puntos del plano (sin sum/max/min, sin numpy)</h3>
+<p>Con una lista de puntos hay que calcular distancias, centroide, el punto más lejano al centroide y el vecino más cercano de cada punto, todo <strong>a mano</strong> (prohibido <code class="inline">sum</code>, <code class="inline">max</code>, <code class="inline">min</code> y <code class="inline">numpy</code>).</p>
+<p>Plan:</p>
+<ul><li>Cartucho "distancia euclídea a mano" (raíz con <code class="inline">**0.5</code>).</li><li>Cartucho "recorrer lista con bucles" para sumas/máximos manuales (acumulador y comparación con <code class="inline">if</code>).</li><li>Cartucho "vecino más cercano" (doble bucle, <code class="inline">j != i</code>, empate al menor índice).</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>nada de <code class="inline">sum/max/min/numpy</code>. Sumas con un acumulador <code class="inline">total = 0</code>, máximos con un <code class="inline">if valor &gt; mejor</code>, y raíz con <code class="inline">**0.5</code> (o <code class="inline">math.sqrt</code>).</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import math   # solo para sqrt; también vale **0.5
+
+puntos = [
+    [1.0, 2.0],
+    [2.5, -1.0],
+    [-3.0, 0.5],
+    [0.0, 0.0],
+    [4.0, 3.0],
+    [-2.0, -2.0]
+]
+
+# 1) distancia euclídea entre dos puntos
+def distancia(p, q):
+    dx = p[0] - q[0]
+    dy = p[1] - q[1]
+    return math.sqrt(dx**2 + dy**2)   # o (dx**2 + dy**2)**0.5
+
+# 2) centroide = media de las x y media de las y (sin sum)
+def centroide(puntos):
+    sx = 0.0
+    sy = 0.0
+    n = len(puntos)
+    for p in puntos:
+        sx += p[0]
+        sy += p[1]
+    return [sx / n, sy / n]
+
+# 3) distancia de cada punto al origen
+distancias_origen = []
+for p in puntos:
+    distancias_origen.append(round(distancia(p, [0.0, 0.0]), 2))
+print("Distancias al origen:", distancias_origen)
+
+# 4) centroide, punto más lejano y su distancia (máximo a mano)
+C = centroide(puntos)
+print("Centroide:", [round(C[0], 2), round(C[1], 2)])
+
+idx_lejano = 0
+dist_max = distancia(puntos[0], C)
+for i in range(len(puntos)):
+    d = distancia(puntos[i], C)
+    if d &gt; dist_max:
+        dist_max = d
+        idx_lejano = i
+print("Punto más lejano al centroide:", puntos[idx_lejano])
+print("Distancia al centroide:", round(dist_max, 2))
+
+# 5) vecino más cercano de cada punto (j != i, empate -&gt; menor índice)
+vecinos = []
+for i in range(len(puntos)):
+    mejor_j = -1
+    dist_min = -1.0
+    for j in range(len(puntos)):
+        if j == i:
+            continue
+        d = distancia(puntos[i], puntos[j])
+        if mejor_j == -1 or d &lt; dist_min:   # estrictamente menor -&gt; empate al menor j
+            dist_min = d
+            mejor_j = j
+    vecinos.append(mejor_j)
+print("Vecinos:", vecinos)</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Distancias al origen: [2.24, 2.69, 3.04, 0.0, 5.0, 2.83]
+Centroide: [0.42, 0.42]
+Punto más lejano al centroide: [4.0, 3.0]
+Distancia al centroide: 4.42
+Vecinos: [3, 3, 5, 0, 0, 2]</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>para el empate "al menor índice" usa <strong><code class="inline">&lt;</code> estricto</strong> (no <code class="inline">&lt;=</code>): así el primer <code class="inline">j</code> que da esa distancia se queda y los siguientes empatados no lo sustituyen.</div></div>
+<h3 id="parcial-25-26-ejercicio-3-cruces-de-dos-funciones">Parcial 25-26 — Ejercicio 3: Cruces de dos funciones</h3>
+<p>Con <code class="inline">f(x)=sin(x)</code> y <code class="inline">g(x)=0.1x</code> en <code class="inline">[0,10]</code> hay que detectar dónde se cruzan (cambio de signo de <code class="inline">h=f-g</code>), aproximar cada cruce y hacer dos gráficas.</p>
+<p>Plan:</p>
+<ul><li>Cartucho "malla con linspace" (<code class="inline">np.linspace(0,10,1000)</code>).</li><li>Cartucho "detectar cambio de signo" (<code class="inline">h[i]*h[i+1] &lt; 0</code>) y punto medio como aproximación.</li><li>Cartucho "gráfica matplotlib" con título/leyenda/ejes y línea horizontal (<code class="inline">axhline</code>).</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>hay cruce entre <code class="inline">x[i]</code> y <code class="inline">x[i+1]</code> cuando <code class="inline">h[i]*h[i+1] &lt; 0</code> (signos opuestos). La aproximación del cruce es el punto medio <code class="inline">(x[i]+x[i+1])/2</code>.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# 1) malla de 1000 puntos en [0, 10]
+x = np.linspace(0, 10, 1000)
+
+# 2) las dos funciones
+f = np.sin(x)
+g = 0.1 * x
+
+# 3) diferencia y detección de cruces
+h = f - g
+cruces = []
+for i in range(len(h) - 1):
+    if h[i] * h[i+1] &lt; 0:          # cambio de signo -&gt; cruce
+        xc = (x[i] + x[i+1]) / 2
+        cruces.append(round(xc, 3))
+
+print("Se han encontrado", len(cruces), "cruces.")
+print("Cruces:", cruces)
+
+# 4a) figura 1: f y g
+plt.figure()
+plt.plot(x, f, label="f(x) = sin(x)")
+plt.plot(x, g, label="g(x) = 0.1x")
+plt.title("Cruces de f(x)=sin(x) y g(x)=0.1x")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.grid(True)
+
+# 4b) figura 2: h con línea horizontal en y=0
+plt.figure()
+plt.plot(x, h, label="h(x) = f(x) - g(x)")
+plt.axhline(y=0, color="red", linestyle="--")
+plt.title("h(x) = sin(x) - 0.1x")
+plt.xlabel("x")
+plt.ylabel("h(x)")
+plt.legend()
+plt.grid(True)
+
+plt.show()</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Se han encontrado 4 cruces.
+Cruces: [0.115, 2.853, 7.073, 8.408]</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>si te piden el valor exacto del cruce con más precisión, podrías refinar con bisección sobre <code class="inline">h</code> (Parte 5), pero el enunciado pide solo el punto medio.</div></div>
+<h3 id="recu-24-25-ejercicio-1-excel-consumo-energetico">Recu 24-25 — Ejercicio 1: Excel (consumo energético)</h3>
+<p>Parte de Excel → ver la Parte 17.</p>
+<h3 id="recu-24-25-ejercicio-2-clases-y-herencia-forma-poligono-elipse-cuadrado">Recu 24-25 — Ejercicio 2: Clases y herencia (Forma, Polígono, Elipse, Cuadrado)</h3>
+<p>Hay que montar una jerarquía de clases geométricas con atributos privados, getters/setters y <code class="inline">__str__</code> redefinido en cada una. Está explicado en la <strong>Parte 18</strong>; aquí va el código entero otra vez para copiar directo.</p>
+<p>Plan:</p>
+<ul><li>Cartucho "clases con atributo privado" (<code class="inline">self.__x</code>, getters/setters).</li><li>Cartucho "herencia" (<code class="inline">class Hija(Padre)</code> + <code class="inline">super().__init__(...)</code>).</li><li>Cartucho "<code class="inline">__str__</code> redefinido" que reutiliza el del padre con <code class="inline">super().__str__()</code>.</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>atributo privado = dos guiones bajos delante (<code class="inline">self.__color</code>). Para encadenar el texto del padre usa <code class="inline">super().__str__()</code> y le añades lo nuevo.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">class Forma:
+    def __init__(self, color):
+        self.__color = color
+    def get_color(self):
+        return self.__color
+    def set_color(self, color):
+        self.__color = color
+    def __str__(self):
+        return "Color: " + self.__color
+
+class Poligono(Forma):
+    def __init__(self, color, num_lados):
+        super().__init__(color)
+        self.__num_lados = num_lados
+    def get_num_lados(self):
+        return self.__num_lados
+    def set_num_lados(self, num_lados):
+        self.__num_lados = num_lados
+    def __str__(self):
+        return super().__str__() + ", núm. lados: " + str(self.__num_lados)
+
+class Elipse(Forma):
+    def __init__(self, color, eje_mayor):
+        super().__init__(color)
+        self.__eje_mayor = eje_mayor
+    def get_eje_mayor(self):
+        return self.__eje_mayor
+    def set_eje_mayor(self, eje_mayor):
+        self.__eje_mayor = eje_mayor
+    def __str__(self):
+        return super().__str__() + ", eje mayor: " + str(self.__eje_mayor)
+
+class Cuadrado(Poligono):
+    def __init__(self, color, num_lados, lado):
+        super().__init__(color, num_lados)
+        self.__lado = lado
+    def get_lado(self):
+        return self.__lado
+    def set_lado(self, lado):
+        self.__lado = lado
+    def __str__(self):
+        return super().__str__() + ", lado: " + str(self.__lado)
+
+def main():
+    forma = Forma("Amarillo")
+    poligono = Poligono("Verde", 6)
+    elipse = Elipse("Azul", 34.5)
+    cuadrado = Cuadrado("Blanco", 4, 4.3)
+
+    print(forma)
+    print(poligono)
+    print(elipse)
+    print(cuadrado)
+
+    print(elipse.get_eje_mayor())
+
+    cuadrado.set_lado(6.4)
+    print(cuadrado)
+
+main()</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>Color: Amarillo
+Color: Verde, núm. lados: 6
+Color: Azul, eje mayor: 34.5
+Color: Blanco, núm. lados: 4, lado: 4.3
+34.5
+Color: Blanco, núm. lados: 4, lado: 6.4</div></div>
+<h3 id="recu-24-25-ejercicio-3-backtracking-matrices-binarias">Recu 24-25 — Ejercicio 3: Backtracking (matrices binarias)</h3>
+<p>Backtracking: no entra este año — omitido.</p>
+<h3 id="final-24-25-ejercicio-1-excel-ventas-internacionales">Final 24-25 — Ejercicio 1: Excel (ventas internacionales)</h3>
+<p>Parte de Excel → ver la Parte 17.</p>
+<h3 id="final-24-25-ejercicio-2-backtracking-presupuesto">Final 24-25 — Ejercicio 2: Backtracking (presupuesto)</h3>
+<p>Backtracking: no entra este año — omitido.</p>
+<h3 id="final-24-25-ejercicio-3-interpolacion-vs-minimos-cuadrados">Final 24-25 — Ejercicio 3: Interpolación vs mínimos cuadrados</h3>
+<p>Con 4 datos <code class="inline">semana=[1,2,3,4]</code>, <code class="inline">producción=[5.0,6.2,5.5,7.8]</code> hay que ajustar un polinomio de grado 3 que pase por todos los puntos y una recta por mínimos cuadrados, evaluar ambos dentro (<code class="inline">x=2.5</code>) y fuera (<code class="inline">x=5</code>) del rango, graficarlo y comentar cuál sirve mejor para extrapolar.</p>
+<p>Plan:</p>
+<ul><li>Cartucho "polyfit/poly1d" de numpy: grado 3 = interpolación exacta de 4 puntos; grado 1 = recta de mínimos cuadrados (Parte 6 / Parte 7).</li><li>Cartucho "evaluar un polinomio" (<code class="inline">p(x)</code> con <code class="inline">np.poly1d</code>).</li><li>Cartucho "gráfica con puntos + curvas + marcadores" (matplotlib).</li></ul>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>con <strong>4 puntos</strong>, <code class="inline">np.polyfit(x, y, 3)</code> da el polinomio de grado 3 que pasa <strong>exacto</strong> por todos (interpolación). <code class="inline">np.polyfit(x, y, 1)</code> da la recta de mínimos cuadrados. No hace falta librería de interpolación: <code class="inline">polyfit</code>/<code class="inline">poly1d</code> valen.</div></div>
+<div class="codeblock"><div class="bar"><span class="lang">python</span><button class="copy">Copiar</button></div><pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# 1) datos
+semana = [1, 2, 3, 4]
+produccion = [5.0, 6.2, 5.5, 7.8]
+x = np.array(semana, dtype=float)
+y = np.array(produccion, dtype=float)
+
+# 2) polinomio interpolador de grado 3 (pasa por los 4 puntos)
+coef_interp = np.polyfit(x, y, 3)
+p_interp = np.poly1d(coef_interp)
+
+# 3) recta de mínimos cuadrados (grado 1)
+coef_lineal = np.polyfit(x, y, 1)
+p_lineal = np.poly1d(coef_lineal)
+
+# 4) evaluación dentro del rango (x = 2.5)
+x_eval = 2.5
+print("=== Evaluación en x = 2.5 (dentro del rango) ===")
+print("Interpolador grado 3:", round(p_interp(x_eval), 4))
+print("Recta mínimos cuadrados:", round(p_lineal(x_eval), 4))
+
+# 7) extrapolación fuera del rango (x = 5)
+x_extra = 5
+print("=== Extrapolación en x = 5 (fuera del rango) ===")
+print("Interpolador grado 3:", round(p_interp(x_extra), 4))
+print("Recta mínimos cuadrados:", round(p_lineal(x_extra), 4))
+
+# 6 y 8) gráfica: puntos + curvas + predicciones
+x_curva = np.linspace(1, 5, 400)   # hasta 5 para ver la extrapolación
+plt.figure()
+plt.plot(x, y, "ko", label="Datos originales")
+plt.plot(x_curva, p_interp(x_curva), "b-", label="Interpolador grado 3")
+plt.plot(x_curva, p_lineal(x_curva), "g-", label="Recta mínimos cuadrados")
+
+# predicciones marcadas: azul = interpolador, rojo = lineal
+plt.plot(x_eval, p_interp(x_eval), "bs", markersize=10)
+plt.plot(x_eval, p_lineal(x_eval), "r^", markersize=10)
+plt.plot(x_extra, p_interp(x_extra), "bs", markersize=10)
+plt.plot(x_extra, p_lineal(x_extra), "r^", markersize=10)
+
+plt.title("Interpolación (grado 3) vs ajuste lineal")
+plt.xlabel("Semana")
+plt.ylabel("Producción (toneladas)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Comentario final:
+# Para EXTRAPOLAR (x=5, fuera del rango) es mejor la RECTA de mínimos
+# cuadrados: el polinomio de grado 3 pasa exacto por los datos pero
+# fuera del rango se dispara y da valores poco realistas. La recta es
+# más estable y razonable fuera de los datos observados.</code></pre></div>
+<div class="callout out"><span class="ico">🖥️</span><div class="body"><span class="label">Salida esperada</span>=== Evaluación en x = 2.5 (dentro del rango) ===
+Interpolador grado 3: 5.7813
+Recta mínimos cuadrados: 6.125
+=== Extrapolación en x = 5 (fuera del rango) ===
+Interpolador grado 3: 18.0
+Recta mínimos cuadrados: 8.05</div></div>
+<div class="callout tip"><span class="ico">💡</span><div class="body"><span class="label">Truco</span>alternativa sin polyfit: el polinomio interpolador con <strong>Lagrange a mano</strong> o con <code class="inline">sympy</code> (Parte 6). Para el examen, <code class="inline">polyfit</code>/<code class="inline">poly1d</code> es lo más rápido y está permitido (no es "librería de interpolación", es ajuste polinómico de numpy).</div></div>
+<div class="callout key"><span class="ico">⚠️</span><div class="body"><span class="label">Importante</span>el comentario final es parte de la nota: <strong>la recta es mejor para extrapolar</strong> porque el polinomio de grado alto se dispara fuera del rango (oscila), mientras que la recta mantiene una tendencia estable.</div></div>
 
     </div>
   </div>
